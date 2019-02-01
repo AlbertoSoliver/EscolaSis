@@ -1,0 +1,9 @@
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\bin\Debug\EscolaSis.exe.config
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\bin\Debug\EscolaSis.exe
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\bin\Debug\EscolaSis.pdb
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.csprojResolveAssemblyReference.cache
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Properties.Resources.resources
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.csproj.GenerateResource.Cache
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.exe
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.pdb
+C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.MDIPrincipal.resources
