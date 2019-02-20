@@ -7,3 +7,18 @@ C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\ob
 C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.exe
 C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.pdb
 C:\Users\OliveiA\Documents\Projetos\Laboratorio\EscolaSis\EscolaSis\EscolaSis\obj\Debug\EscolaSis.MDIPrincipal.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\bin\Debug\EscolaSis.exe.config
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\bin\Debug\EscolaSis.exe
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\bin\Debug\EscolaSis.pdb
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.csprojAssemblyReference.cache
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.MDIPrincipal.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Properties.Resources.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.csproj.GenerateResource.cache
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.csproj.CoreCompileInputs.cache
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.exe
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.pdb
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Forms.Aluno.FormAlunoNovo.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Forms.Aluno.FormAlunosCadastro.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Forms.Aluno.MatricNova.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Forms.Aluno.ParcelaManter.resources
+D:\Carvalho Oliveira\Documents\Alberto\EscolaSis\EscolaSis\obj\Debug\EscolaSis.Forms.Aluno.FormResponsavelNovo.resources

@@ -68,12 +68,10 @@ namespace EscolaSis
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +110,27 @@ namespace EscolaSis
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void alunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Aluno.AlunoCadastro();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void tutoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Responsavel.ResponsavelCadastro();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Orientador.OrientadorCadastro();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }

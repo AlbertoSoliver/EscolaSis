@@ -1,20 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4599757-31B8-4D6D-8BFF-7700974F097D}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{BC7443DA-D35D-4F1D-87E7-826F57F35002}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EscolaSis</RootNamespace>
+    <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>EscolaSis</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,72 +33,202 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>EscolaSis</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Aluno.cs" />
+    <Compile Include="Model\DB.cs" />
+    <Compile Include="Forms\Aluno\AlunoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\AlunoCadastro.Designer.cs">
+      <DependentUpon>AlunoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluno\AlunoNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\AlunoNovo.Designer.cs">
+      <DependentUpon>AlunoNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluno\MatricNova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\MatricNova.Designer.cs">
+      <DependentUpon>MatricNova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluno\MensalidadeManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\MensalidadeManter.Designer.cs">
+      <DependentUpon>MensalidadeManter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluno\MensalidadesPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\MensalidadesPeriodo.designer.cs">
+      <DependentUpon>MensalidadesPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluno\ResponsavelNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluno\ResponsavelNovo.Designer.cs">
+      <DependentUpon>ResponsavelNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orientador\OrientadorCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orientador\OrientadorCadastro.Designer.cs">
+      <DependentUpon>OrientadorCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Orientador\OrientadorNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Orientador\OrientadorNovo.Designer.cs">
+      <DependentUpon>OrientadorNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Responsavel\ResponsavelCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Responsavel\ResponsavelCadastro.designer.cs">
+      <DependentUpon>ResponsavelCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Responsavel\ResponsavelNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Responsavel\ResponsavelNovo.designer.cs">
+      <DependentUpon>ResponsavelNovo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIPrincipal.Designer.cs">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Matricula.cs" />
+    <Compile Include="Model\Mensalidade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Aluno\AlunoCadastro.resx">
+      <DependentUpon>AlunoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluno\AlunoNovo.resx">
+      <DependentUpon>AlunoNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluno\MatricNova.resx">
+      <DependentUpon>MatricNova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluno\MensalidadeManter.resx">
+      <DependentUpon>MensalidadeManter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluno\MensalidadesPeriodo.resx">
+      <DependentUpon>MensalidadesPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluno\ResponsavelNovo.resx">
+      <DependentUpon>ResponsavelNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orientador\OrientadorCadastro.resx">
+      <DependentUpon>OrientadorCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Orientador\OrientadorNovo.resx">
+      <DependentUpon>OrientadorNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Responsavel\ResponsavelCadastro.resx">
+      <DependentUpon>ResponsavelCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Responsavel\ResponsavelNovo.resx">
+      <DependentUpon>ResponsavelNovo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="img\3x4.png" />
+    <Content Include="img\agt_family.png" />
+    <Content Include="img\alunocomlivro25x25.jpg" />
+    <Content Include="img\ana_3x4.png" />
+    <Content Include="img\cash_single_share.png" />
+    <Content Include="img\deletered.png" />
+    <Content Include="img\edit 16x16.png" />
+    <Content Include="img\emoji.jpg" />
+    <Content Include="img\emoji3x4.png" />
+    <Content Include="img\find.png" />
+    <Content Include="img\forms.png" />
+    <Content Include="img\gnome_document_new.png" />
+    <Content Include="img\gnome_edit_delete 16x16.png" />
+    <Content Include="img\gnome_edit_delete.png" />
+    <Content Include="img\matricula24x24.png" />
+    <Content Include="img\my_profile.png" />
+    <Content Include="img\pagamentomensalidade24x24.png" />
+    <Content Include="img\paimae24x24.png" />
+    <Content Include="img\parcelamento.png" />
+    <Content Include="img\professora24x24.png" />
+    <Content Include="img\report.png" />
+    <Content Include="img\save.png" />
+    <Content Include="img\security_card.png" />
+    <Content Include="img\sid-the-science-kid.png" />
+    <Content Include="img\site icons.txt" />
+    <Content Include="img\teacher_female.png" />
+    <Content Include="img\user_student.png" />
+    <Content Include="BaseEscola.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="img\" />
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
 </Project>
