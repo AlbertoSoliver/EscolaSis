@@ -29,9 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoCadastro));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbxListaAlunosBuscar = new System.Windows.Forms.ListBox();
+            this.dgvListaAlunoBuscar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txbBuscarAluno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,6 +53,10 @@
             this.btnSalvarAluno = new System.Windows.Forms.Button();
             this.tspManuAluno = new System.Windows.Forms.ToolStrip();
             this.btnNovoAluno = new System.Windows.Forms.ToolStripButton();
+            this.btnExcluirAluno = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnImpCarteirinha = new System.Windows.Forms.ToolStripButton();
+            this.btnImpCarne = new System.Windows.Forms.ToolStripButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txbTelefoneAluno = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -78,17 +95,19 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvAlunoResponsaveis = new System.Windows.Forms.DataGridView();
+            this.excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txbTutorAlunoID = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.ckbPodePegar = new System.Windows.Forms.CheckBox();
             this.ckbPagador = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cbxRelacAluno = new System.Windows.Forms.ComboBox();
+            this.txbTeefoneRespons = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxResponsNome = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txbNomeAlunoResp = new System.Windows.Forms.TextBox();
@@ -97,26 +116,26 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cbxTurmaMatricula = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txbRelatorioMatricula = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.cbxResultadoMatricula = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbDisciplinaMatricula = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cbxOrientadorMatricula = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cbxPeriodoLetivoMatricula = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cbxAnoLetivoMatricula = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.dgvAlunoDisciplinas = new System.Windows.Forms.DataGridView();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.label22 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -129,17 +148,16 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.cbxSituacMensaliade = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.cbxPeriodoLetivoMensal = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.cbxAnoLetidoMensal = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txbNomeAlunoMensal = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txbNumMatricMensal = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -150,11 +168,31 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.itmParcela = new System.Windows.Forms.ToolStripMenuItem();
             this.itmParcelamento = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExcluirAluno = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnImpCarteirinha = new System.Windows.Forms.ToolStripButton();
-            this.btnImpCarne = new System.Windows.Forms.ToolStripButton();
+            this.btnBuscarAluno = new System.Windows.Forms.Button();
+            this.dgvAlunoMensalidades = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tutorAlunoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matriculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mensalidadeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorMensalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.situacaoPagtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensalidadeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.alunoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mensalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mensalidadeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mensalidadeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.matriculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matriculaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disciplinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlunoBuscar)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -169,23 +207,33 @@
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.toolStrip3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoResponsaveis)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoDisciplinas)).BeginInit();
             this.toolStrip4.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoMensalidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lbxListaAlunosBuscar);
+            this.panel1.Controls.Add(this.btnBuscarAluno);
+            this.panel1.Controls.Add(this.dgvListaAlunoBuscar);
             this.panel1.Controls.Add(this.txbBuscarAluno);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -195,20 +243,65 @@
             this.panel1.Size = new System.Drawing.Size(242, 518);
             this.panel1.TabIndex = 0;
             // 
-            // lbxListaAlunosBuscar
+            // dgvListaAlunoBuscar
             // 
-            this.lbxListaAlunosBuscar.FormattingEnabled = true;
-            this.lbxListaAlunosBuscar.Location = new System.Drawing.Point(15, 52);
-            this.lbxListaAlunosBuscar.Name = "lbxListaAlunosBuscar";
-            this.lbxListaAlunosBuscar.Size = new System.Drawing.Size(214, 459);
-            this.lbxListaAlunosBuscar.TabIndex = 2;
-            this.lbxListaAlunosBuscar.Click += new System.EventHandler(this.lbxListaAlunosBuscar_Click);
+            this.dgvListaAlunoBuscar.AllowUserToAddRows = false;
+            this.dgvListaAlunoBuscar.AllowUserToDeleteRows = false;
+            this.dgvListaAlunoBuscar.AllowUserToResizeColumns = false;
+            this.dgvListaAlunoBuscar.AllowUserToResizeRows = false;
+            this.dgvListaAlunoBuscar.AutoGenerateColumns = false;
+            this.dgvListaAlunoBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaAlunoBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListaAlunoBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaAlunoBuscar.ColumnHeadersVisible = false;
+            this.dgvListaAlunoBuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.alunoIDDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
+            this.dgvListaAlunoBuscar.DataSource = this.alunoBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaAlunoBuscar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListaAlunoBuscar.Location = new System.Drawing.Point(15, 52);
+            this.dgvListaAlunoBuscar.MultiSelect = false;
+            this.dgvListaAlunoBuscar.Name = "dgvListaAlunoBuscar";
+            this.dgvListaAlunoBuscar.ReadOnly = true;
+            this.dgvListaAlunoBuscar.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvListaAlunoBuscar.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListaAlunoBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaAlunoBuscar.Size = new System.Drawing.Size(214, 452);
+            this.dgvListaAlunoBuscar.TabIndex = 38;
+            this.dgvListaAlunoBuscar.SelectionChanged += new System.EventHandler(this.dgvListaAlunoBuscar_SelectionChanged);
+            this.dgvListaAlunoBuscar.Click += new System.EventHandler(this.dgvListaAlunoBuscar_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 213;
             // 
             // txbBuscarAluno
             // 
             this.txbBuscarAluno.Location = new System.Drawing.Point(15, 26);
             this.txbBuscarAluno.Name = "txbBuscarAluno";
-            this.txbBuscarAluno.Size = new System.Drawing.Size(214, 20);
+            this.txbBuscarAluno.Size = new System.Drawing.Size(182, 20);
             this.txbBuscarAluno.TabIndex = 1;
             this.txbBuscarAluno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbBuscarAluno_KeyUp);
             // 
@@ -242,6 +335,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(622, 498);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -291,9 +385,42 @@
             this.btnNovoAluno.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnNovoAluno.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNovoAluno.Name = "btnNovoAluno";
-            this.btnNovoAluno.Size = new System.Drawing.Size(28, 36);
+            this.btnNovoAluno.Size = new System.Drawing.Size(28, 28);
             this.btnNovoAluno.Text = "Novo Aluno";
             this.btnNovoAluno.Click += new System.EventHandler(this.btnNovoAluno_Click);
+            // 
+            // btnExcluirAluno
+            // 
+            this.btnExcluirAluno.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExcluirAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirAluno.Image")));
+            this.btnExcluirAluno.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnExcluirAluno.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcluirAluno.Name = "btnExcluirAluno";
+            this.btnExcluirAluno.Size = new System.Drawing.Size(28, 28);
+            this.btnExcluirAluno.Text = "Excluir Aluno";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btnImpCarteirinha
+            // 
+            this.btnImpCarteirinha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImpCarteirinha.Image = ((System.Drawing.Image)(resources.GetObject("btnImpCarteirinha.Image")));
+            this.btnImpCarteirinha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImpCarteirinha.Name = "btnImpCarteirinha";
+            this.btnImpCarteirinha.Size = new System.Drawing.Size(23, 28);
+            this.btnImpCarteirinha.Text = "imprimir Carteirinha";
+            // 
+            // btnImpCarne
+            // 
+            this.btnImpCarne.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImpCarne.Image = ((System.Drawing.Image)(resources.GetObject("btnImpCarne.Image")));
+            this.btnImpCarne.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImpCarne.Name = "btnImpCarne";
+            this.btnImpCarne.Size = new System.Drawing.Size(23, 28);
+            this.btnImpCarne.Text = "Imprimir Carnê de Pagamentos";
             // 
             // groupBox4
             // 
@@ -628,7 +755,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.toolStrip3);
-            this.groupBox7.Controls.Add(this.dataGridView2);
+            this.groupBox7.Controls.Add(this.dgvAlunoResponsaveis);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.groupBox8);
             this.groupBox7.Location = new System.Drawing.Point(20, 89);
@@ -657,13 +784,60 @@
             this.toolStripButton8.Size = new System.Drawing.Size(28, 28);
             this.toolStripButton8.Text = "toolStripButton8";
             // 
-            // dataGridView2
+            // dgvAlunoResponsaveis
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 66);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(538, 101);
-            this.dataGridView2.TabIndex = 37;
+            this.dgvAlunoResponsaveis.AllowUserToAddRows = false;
+            this.dgvAlunoResponsaveis.AllowUserToDeleteRows = false;
+            this.dgvAlunoResponsaveis.AllowUserToResizeRows = false;
+            this.dgvAlunoResponsaveis.AutoGenerateColumns = false;
+            this.dgvAlunoResponsaveis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoResponsaveis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAlunoResponsaveis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunoResponsaveis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tutorAlunoIDDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn,
+            this.telefoneDataGridViewTextBoxColumn,
+            this.excluir});
+            this.dgvAlunoResponsaveis.DataSource = this.responsavelBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoResponsaveis.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvAlunoResponsaveis.Location = new System.Drawing.Point(16, 66);
+            this.dgvAlunoResponsaveis.MultiSelect = false;
+            this.dgvAlunoResponsaveis.Name = "dgvAlunoResponsaveis";
+            this.dgvAlunoResponsaveis.ReadOnly = true;
+            this.dgvAlunoResponsaveis.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoResponsaveis.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvAlunoResponsaveis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlunoResponsaveis.Size = new System.Drawing.Size(538, 101);
+            this.dgvAlunoResponsaveis.TabIndex = 37;
+            this.dgvAlunoResponsaveis.SelectionChanged += new System.EventHandler(this.dgvAlunoResponsaveis_SelectionChanged);
+            // 
+            // excluir
+            // 
+            this.excluir.HeaderText = "";
+            this.excluir.Image = ((System.Drawing.Image)(resources.GetObject("excluir.Image")));
+            this.excluir.Name = "excluir";
+            this.excluir.ReadOnly = true;
+            this.excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.excluir.Width = 36;
             // 
             // label15
             // 
@@ -676,20 +850,29 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.txbTutorAlunoID);
             this.groupBox8.Controls.Add(this.button1);
             this.groupBox8.Controls.Add(this.ckbPodePegar);
             this.groupBox8.Controls.Add(this.ckbPagador);
-            this.groupBox8.Controls.Add(this.comboBox2);
-            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Controls.Add(this.cbxRelacAluno);
+            this.groupBox8.Controls.Add(this.txbTeefoneRespons);
             this.groupBox8.Controls.Add(this.label12);
             this.groupBox8.Controls.Add(this.label16);
-            this.groupBox8.Controls.Add(this.comboBox1);
+            this.groupBox8.Controls.Add(this.cbxResponsNome);
             this.groupBox8.Controls.Add(this.label17);
             this.groupBox8.Location = new System.Drawing.Point(16, 173);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(538, 174);
             this.groupBox8.TabIndex = 21;
             this.groupBox8.TabStop = false;
+            // 
+            // txbTutorAlunoID
+            // 
+            this.txbTutorAlunoID.Location = new System.Drawing.Point(47, 10);
+            this.txbTutorAlunoID.Name = "txbTutorAlunoID";
+            this.txbTutorAlunoID.Size = new System.Drawing.Size(100, 20);
+            this.txbTutorAlunoID.TabIndex = 40;
+            this.txbTutorAlunoID.Visible = false;
             // 
             // button1
             // 
@@ -713,18 +896,19 @@
             // ckbPagador
             // 
             this.ckbPagador.AutoSize = true;
-            this.ckbPagador.Location = new System.Drawing.Point(222, 80);
+            this.ckbPagador.Location = new System.Drawing.Point(235, 80);
             this.ckbPagador.Name = "ckbPagador";
             this.ckbPagador.Size = new System.Drawing.Size(145, 17);
             this.ckbPagador.TabIndex = 26;
             this.ckbPagador.Text = "Responsável Pagamento";
             this.ckbPagador.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbxRelacAluno
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbxRelacAluno.AccessibleName = "";
+            this.cbxRelacAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRelacAluno.FormattingEnabled = true;
+            this.cbxRelacAluno.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -733,17 +917,17 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox2.Location = new System.Drawing.Point(9, 78);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(204, 21);
-            this.comboBox2.TabIndex = 25;
+            this.cbxRelacAluno.Location = new System.Drawing.Point(9, 78);
+            this.cbxRelacAluno.Name = "cbxRelacAluno";
+            this.cbxRelacAluno.Size = new System.Drawing.Size(204, 21);
+            this.cbxRelacAluno.TabIndex = 25;
             // 
-            // textBox6
+            // txbTeefoneRespons
             // 
-            this.textBox6.Location = new System.Drawing.Point(395, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(137, 20);
-            this.textBox6.TabIndex = 24;
+            this.txbTeefoneRespons.Location = new System.Drawing.Point(395, 33);
+            this.txbTeefoneRespons.Name = "txbTeefoneRespons";
+            this.txbTeefoneRespons.Size = new System.Drawing.Size(137, 20);
+            this.txbTeefoneRespons.TabIndex = 24;
             // 
             // label12
             // 
@@ -763,14 +947,14 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "Telefone";
             // 
-            // comboBox1
+            // cbxResponsNome
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(355, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbxResponsNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxResponsNome.FormattingEnabled = true;
+            this.cbxResponsNome.Location = new System.Drawing.Point(9, 32);
+            this.cbxResponsNome.Name = "cbxResponsNome";
+            this.cbxResponsNome.Size = new System.Drawing.Size(355, 21);
+            this.cbxResponsNome.TabIndex = 2;
             // 
             // label17
             // 
@@ -842,32 +1026,42 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.comboBox12);
+            this.groupBox11.Controls.Add(this.button2);
+            this.groupBox11.Controls.Add(this.cbxTurmaMatricula);
             this.groupBox11.Controls.Add(this.button4);
-            this.groupBox11.Controls.Add(this.textBox8);
+            this.groupBox11.Controls.Add(this.txbRelatorioMatricula);
             this.groupBox11.Controls.Add(this.label29);
-            this.groupBox11.Controls.Add(this.comboBox8);
+            this.groupBox11.Controls.Add(this.cbxResultadoMatricula);
             this.groupBox11.Controls.Add(this.label28);
-            this.groupBox11.Controls.Add(this.textBox5);
+            this.groupBox11.Controls.Add(this.txbDisciplinaMatricula);
             this.groupBox11.Controls.Add(this.label27);
             this.groupBox11.Controls.Add(this.label26);
-            this.groupBox11.Controls.Add(this.comboBox7);
+            this.groupBox11.Controls.Add(this.cbxOrientadorMatricula);
             this.groupBox11.Controls.Add(this.label23);
-            this.groupBox11.Controls.Add(this.comboBox5);
+            this.groupBox11.Controls.Add(this.cbxPeriodoLetivoMatricula);
             this.groupBox11.Controls.Add(this.label24);
-            this.groupBox11.Controls.Add(this.comboBox6);
+            this.groupBox11.Controls.Add(this.cbxAnoLetivoMatricula);
             this.groupBox11.Controls.Add(this.label25);
             this.groupBox11.Location = new System.Drawing.Point(289, 90);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(306, 363);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Cadastro de Matrícula";
             // 
-            // comboBox12
+            // button2
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(178, 314);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(46, 43);
+            this.button2.TabIndex = 44;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cbxTurmaMatricula
+            // 
+            this.cbxTurmaMatricula.FormattingEnabled = true;
+            this.cbxTurmaMatricula.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -876,28 +1070,28 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox12.Location = new System.Drawing.Point(21, 198);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(126, 21);
-            this.comboBox12.TabIndex = 43;
+            this.cbxTurmaMatricula.Location = new System.Drawing.Point(21, 198);
+            this.cbxTurmaMatricula.Name = "cbxTurmaMatricula";
+            this.cbxTurmaMatricula.Size = new System.Drawing.Size(126, 21);
+            this.cbxTurmaMatricula.TabIndex = 43;
             // 
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(237, 314);
+            this.button4.Location = new System.Drawing.Point(234, 314);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(46, 43);
             this.button4.TabIndex = 42;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txbRelatorioMatricula
             // 
-            this.textBox8.Location = new System.Drawing.Point(21, 248);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(259, 60);
-            this.textBox8.TabIndex = 41;
+            this.txbRelatorioMatricula.Location = new System.Drawing.Point(21, 248);
+            this.txbRelatorioMatricula.Multiline = true;
+            this.txbRelatorioMatricula.Name = "txbRelatorioMatricula";
+            this.txbRelatorioMatricula.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txbRelatorioMatricula.Size = new System.Drawing.Size(259, 60);
+            this.txbRelatorioMatricula.TabIndex = 41;
             // 
             // label29
             // 
@@ -908,11 +1102,11 @@
             this.label29.TabIndex = 40;
             this.label29.Text = "Relatório Final";
             // 
-            // comboBox8
+            // cbxResultadoMatricula
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.cbxResultadoMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxResultadoMatricula.FormattingEnabled = true;
+            this.cbxResultadoMatricula.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -921,10 +1115,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox8.Location = new System.Drawing.Point(178, 198);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(102, 21);
-            this.comboBox8.TabIndex = 39;
+            this.cbxResultadoMatricula.Location = new System.Drawing.Point(178, 198);
+            this.cbxResultadoMatricula.Name = "cbxResultadoMatricula";
+            this.cbxResultadoMatricula.Size = new System.Drawing.Size(102, 21);
+            this.cbxResultadoMatricula.TabIndex = 39;
             // 
             // label28
             // 
@@ -935,12 +1129,12 @@
             this.label28.TabIndex = 38;
             this.label28.Text = "Resultado Final";
             // 
-            // textBox5
+            // txbDisciplinaMatricula
             // 
-            this.textBox5.Location = new System.Drawing.Point(21, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(262, 20);
-            this.textBox5.TabIndex = 37;
+            this.txbDisciplinaMatricula.Location = new System.Drawing.Point(21, 148);
+            this.txbDisciplinaMatricula.Name = "txbDisciplinaMatricula";
+            this.txbDisciplinaMatricula.Size = new System.Drawing.Size(262, 20);
+            this.txbDisciplinaMatricula.TabIndex = 37;
             // 
             // label27
             // 
@@ -960,11 +1154,11 @@
             this.label26.TabIndex = 34;
             this.label26.Text = "Tuma";
             // 
-            // comboBox7
+            // cbxOrientadorMatricula
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.cbxOrientadorMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOrientadorMatricula.FormattingEnabled = true;
+            this.cbxOrientadorMatricula.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -973,10 +1167,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox7.Location = new System.Drawing.Point(21, 99);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(262, 21);
-            this.comboBox7.TabIndex = 33;
+            this.cbxOrientadorMatricula.Location = new System.Drawing.Point(21, 99);
+            this.cbxOrientadorMatricula.Name = "cbxOrientadorMatricula";
+            this.cbxOrientadorMatricula.Size = new System.Drawing.Size(262, 21);
+            this.cbxOrientadorMatricula.TabIndex = 33;
             // 
             // label23
             // 
@@ -987,11 +1181,11 @@
             this.label23.TabIndex = 32;
             this.label23.Text = "Orientador";
             // 
-            // comboBox5
+            // cbxPeriodoLetivoMatricula
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cbxPeriodoLetivoMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPeriodoLetivoMatricula.FormattingEnabled = true;
+            this.cbxPeriodoLetivoMatricula.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -1000,10 +1194,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox5.Location = new System.Drawing.Point(151, 51);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(132, 21);
-            this.comboBox5.TabIndex = 28;
+            this.cbxPeriodoLetivoMatricula.Location = new System.Drawing.Point(151, 51);
+            this.cbxPeriodoLetivoMatricula.Name = "cbxPeriodoLetivoMatricula";
+            this.cbxPeriodoLetivoMatricula.Size = new System.Drawing.Size(132, 21);
+            this.cbxPeriodoLetivoMatricula.TabIndex = 28;
             // 
             // label24
             // 
@@ -1014,10 +1208,10 @@
             this.label24.TabIndex = 27;
             this.label24.Text = "Período Letivo";
             // 
-            // comboBox6
+            // cbxAnoLetivoMatricula
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cbxAnoLetivoMatricula.FormattingEnabled = true;
+            this.cbxAnoLetivoMatricula.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -1026,10 +1220,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox6.Location = new System.Drawing.Point(21, 51);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(109, 21);
-            this.comboBox6.TabIndex = 26;
+            this.cbxAnoLetivoMatricula.Location = new System.Drawing.Point(21, 51);
+            this.cbxAnoLetivoMatricula.Name = "cbxAnoLetivoMatricula";
+            this.cbxAnoLetivoMatricula.Size = new System.Drawing.Size(109, 21);
+            this.cbxAnoLetivoMatricula.TabIndex = 26;
             // 
             // label25
             // 
@@ -1042,9 +1236,8 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.dgvAlunoDisciplinas);
             this.groupBox10.Controls.Add(this.toolStrip4);
-            this.groupBox10.Controls.Add(this.label22);
-            this.groupBox10.Controls.Add(this.listBox3);
             this.groupBox10.Controls.Add(this.comboBox4);
             this.groupBox10.Controls.Add(this.label21);
             this.groupBox10.Controls.Add(this.comboBox3);
@@ -1055,6 +1248,49 @@
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Seleção de Matrícula";
+            // 
+            // dgvAlunoDisciplinas
+            // 
+            this.dgvAlunoDisciplinas.AllowUserToAddRows = false;
+            this.dgvAlunoDisciplinas.AllowUserToDeleteRows = false;
+            this.dgvAlunoDisciplinas.AllowUserToResizeColumns = false;
+            this.dgvAlunoDisciplinas.AllowUserToResizeRows = false;
+            this.dgvAlunoDisciplinas.AutoGenerateColumns = false;
+            this.dgvAlunoDisciplinas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoDisciplinas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvAlunoDisciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunoDisciplinas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.matriculaIDDataGridViewTextBoxColumn,
+            this.disciplinaDataGridViewTextBoxColumn});
+            this.dgvAlunoDisciplinas.DataSource = this.matriculaBindingSource1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoDisciplinas.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvAlunoDisciplinas.Location = new System.Drawing.Point(25, 102);
+            this.dgvAlunoDisciplinas.MultiSelect = false;
+            this.dgvAlunoDisciplinas.Name = "dgvAlunoDisciplinas";
+            this.dgvAlunoDisciplinas.ReadOnly = true;
+            this.dgvAlunoDisciplinas.RowHeadersVisible = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoDisciplinas.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAlunoDisciplinas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlunoDisciplinas.Size = new System.Drawing.Size(214, 253);
+            this.dgvAlunoDisciplinas.TabIndex = 45;
             // 
             // toolStrip4
             // 
@@ -1077,23 +1313,6 @@
             this.toolStripButton9.Size = new System.Drawing.Size(28, 28);
             this.toolStripButton9.Text = "toolStripButton9";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(22, 161);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(101, 13);
-            this.label22.TabIndex = 30;
-            this.label22.Text = "Disciplina/Atividade";
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(25, 177);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(216, 160);
-            this.listBox3.TabIndex = 29;
-            // 
             // comboBox4
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1107,15 +1326,15 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox4.Location = new System.Drawing.Point(25, 123);
+            this.comboBox4.Location = new System.Drawing.Point(129, 75);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(216, 21);
+            this.comboBox4.Size = new System.Drawing.Size(110, 21);
             this.comboBox4.TabIndex = 28;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(22, 107);
+            this.label21.Location = new System.Drawing.Point(138, 59);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(77, 13);
             this.label21.TabIndex = 27;
@@ -1136,7 +1355,7 @@
             "Amigo(a)"});
             this.comboBox3.Location = new System.Drawing.Point(25, 75);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(216, 21);
+            this.comboBox3.Size = new System.Drawing.Size(79, 21);
             this.comboBox3.TabIndex = 26;
             // 
             // label20
@@ -1208,13 +1427,13 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.dgvAlunoMensalidades);
             this.groupBox13.Controls.Add(this.toolStrip2);
-            this.groupBox13.Controls.Add(this.dataGridView1);
-            this.groupBox13.Controls.Add(this.comboBox11);
+            this.groupBox13.Controls.Add(this.cbxSituacMensaliade);
             this.groupBox13.Controls.Add(this.label34);
-            this.groupBox13.Controls.Add(this.comboBox9);
+            this.groupBox13.Controls.Add(this.cbxPeriodoLetivoMensal);
             this.groupBox13.Controls.Add(this.label32);
-            this.groupBox13.Controls.Add(this.comboBox10);
+            this.groupBox13.Controls.Add(this.cbxAnoLetidoMensal);
             this.groupBox13.Controls.Add(this.label33);
             this.groupBox13.Location = new System.Drawing.Point(20, 89);
             this.groupBox13.Name = "groupBox13";
@@ -1231,27 +1450,19 @@
             this.toolStrip2.TabIndex = 42;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // dataGridView1
+            // cbxSituacMensaliade
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(529, 228);
-            this.dataGridView1.TabIndex = 36;
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
+            this.cbxSituacMensaliade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSituacMensaliade.FormattingEnabled = true;
+            this.cbxSituacMensaliade.Items.AddRange(new object[] {
             "Qualquer Situção",
             "Apenas Pagas",
             "Apenas Em Aberto"});
-            this.comboBox11.Location = new System.Drawing.Point(278, 78);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(109, 21);
-            this.comboBox11.TabIndex = 34;
-            this.comboBox11.Tag = "";
+            this.cbxSituacMensaliade.Location = new System.Drawing.Point(278, 78);
+            this.cbxSituacMensaliade.Name = "cbxSituacMensaliade";
+            this.cbxSituacMensaliade.Size = new System.Drawing.Size(109, 21);
+            this.cbxSituacMensaliade.TabIndex = 34;
+            this.cbxSituacMensaliade.Tag = "";
             // 
             // label34
             // 
@@ -1262,14 +1473,14 @@
             this.label34.TabIndex = 33;
             this.label34.Text = "Situação";
             // 
-            // comboBox9
+            // cbxPeriodoLetivoMensal
             // 
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(112, 78);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(136, 21);
-            this.comboBox9.TabIndex = 32;
+            this.cbxPeriodoLetivoMensal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPeriodoLetivoMensal.FormattingEnabled = true;
+            this.cbxPeriodoLetivoMensal.Location = new System.Drawing.Point(112, 78);
+            this.cbxPeriodoLetivoMensal.Name = "cbxPeriodoLetivoMensal";
+            this.cbxPeriodoLetivoMensal.Size = new System.Drawing.Size(136, 21);
+            this.cbxPeriodoLetivoMensal.TabIndex = 32;
             // 
             // label32
             // 
@@ -1280,19 +1491,19 @@
             this.label32.TabIndex = 31;
             this.label32.Text = "Período Letivo";
             // 
-            // comboBox10
+            // cbxAnoLetidoMensal
             // 
-            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(29, 78);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(64, 21);
-            this.comboBox10.TabIndex = 30;
+            this.cbxAnoLetidoMensal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAnoLetidoMensal.FormattingEnabled = true;
+            this.cbxAnoLetidoMensal.Location = new System.Drawing.Point(25, 78);
+            this.cbxAnoLetidoMensal.Name = "cbxAnoLetidoMensal";
+            this.cbxAnoLetidoMensal.Size = new System.Drawing.Size(64, 21);
+            this.cbxAnoLetidoMensal.TabIndex = 30;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(26, 62);
+            this.label33.Location = new System.Drawing.Point(22, 62);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(58, 13);
             this.label33.TabIndex = 29;
@@ -1300,9 +1511,9 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.textBox9);
+            this.groupBox12.Controls.Add(this.txbNomeAlunoMensal);
             this.groupBox12.Controls.Add(this.label30);
-            this.groupBox12.Controls.Add(this.textBox10);
+            this.groupBox12.Controls.Add(this.txbNumMatricMensal);
             this.groupBox12.Controls.Add(this.label31);
             this.groupBox12.Location = new System.Drawing.Point(20, 6);
             this.groupBox12.Name = "groupBox12";
@@ -1310,13 +1521,13 @@
             this.groupBox12.TabIndex = 3;
             this.groupBox12.TabStop = false;
             // 
-            // textBox9
+            // txbNomeAlunoMensal
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(154, 37);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(400, 20);
-            this.textBox9.TabIndex = 3;
+            this.txbNomeAlunoMensal.Enabled = false;
+            this.txbNomeAlunoMensal.Location = new System.Drawing.Point(154, 37);
+            this.txbNomeAlunoMensal.Name = "txbNomeAlunoMensal";
+            this.txbNomeAlunoMensal.Size = new System.Drawing.Size(400, 20);
+            this.txbNomeAlunoMensal.TabIndex = 3;
             // 
             // label30
             // 
@@ -1327,13 +1538,13 @@
             this.label30.TabIndex = 2;
             this.label30.Text = "Nome do Aluno";
             // 
-            // textBox10
+            // txbNumMatricMensal
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(25, 37);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 1;
+            this.txbNumMatricMensal.Enabled = false;
+            this.txbNumMatricMensal.Location = new System.Drawing.Point(25, 37);
+            this.txbNumMatricMensal.Name = "txbNumMatricMensal";
+            this.txbNumMatricMensal.Size = new System.Drawing.Size(100, 20);
+            this.txbNumMatricMensal.TabIndex = 1;
             // 
             // label31
             // 
@@ -1425,38 +1636,196 @@
             this.itmParcelamento.Text = "Mnesalidas do Período";
             this.itmParcelamento.Click += new System.EventHandler(this.itmParcelamento_Click);
             // 
-            // btnExcluirAluno
+            // btnBuscarAluno
             // 
-            this.btnExcluirAluno.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExcluirAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirAluno.Image")));
-            this.btnExcluirAluno.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnExcluirAluno.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExcluirAluno.Name = "btnExcluirAluno";
-            this.btnExcluirAluno.Size = new System.Drawing.Size(28, 36);
-            this.btnExcluirAluno.Text = "Excluir Aluno";
+            this.btnBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarAluno.Image")));
+            this.btnBuscarAluno.Location = new System.Drawing.Point(203, 24);
+            this.btnBuscarAluno.Name = "btnBuscarAluno";
+            this.btnBuscarAluno.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarAluno.TabIndex = 39;
+            this.btnBuscarAluno.UseVisualStyleBackColor = true;
+            this.btnBuscarAluno.Click += new System.EventHandler(this.btnBuscarAluno_Click);
             // 
-            // toolStripSeparator2
+            // dgvAlunoMensalidades
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.dgvAlunoMensalidades.AllowUserToAddRows = false;
+            this.dgvAlunoMensalidades.AllowUserToDeleteRows = false;
+            this.dgvAlunoMensalidades.AllowUserToResizeRows = false;
+            this.dgvAlunoMensalidades.AutoGenerateColumns = false;
+            this.dgvAlunoMensalidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoMensalidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvAlunoMensalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunoMensalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mensalidadeIDDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.vencimentoDataGridViewTextBoxColumn,
+            this.valorMensalidadeDataGridViewTextBoxColumn,
+            this.situacaoPagtoDataGridViewTextBoxColumn,
+            this.dataGridViewImageColumn1});
+            this.dgvAlunoMensalidades.DataSource = this.mensalidadeBindingSource3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoMensalidades.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvAlunoMensalidades.Location = new System.Drawing.Point(25, 105);
+            this.dgvAlunoMensalidades.MultiSelect = false;
+            this.dgvAlunoMensalidades.Name = "dgvAlunoMensalidades";
+            this.dgvAlunoMensalidades.ReadOnly = true;
+            this.dgvAlunoMensalidades.RowHeadersVisible = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoMensalidades.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvAlunoMensalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlunoMensalidades.Size = new System.Drawing.Size(529, 243);
+            this.dgvAlunoMensalidades.TabIndex = 43;
             // 
-            // btnImpCarteirinha
+            // dataGridViewImageColumn1
             // 
-            this.btnImpCarteirinha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImpCarteirinha.Image = ((System.Drawing.Image)(resources.GetObject("btnImpCarteirinha.Image")));
-            this.btnImpCarteirinha.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImpCarteirinha.Name = "btnImpCarteirinha";
-            this.btnImpCarteirinha.Size = new System.Drawing.Size(23, 28);
-            this.btnImpCarteirinha.Text = "imprimir Carteirinha";
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 36;
             // 
-            // btnImpCarne
+            // tutorAlunoIDDataGridViewTextBoxColumn
             // 
-            this.btnImpCarne.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImpCarne.Image = ((System.Drawing.Image)(resources.GetObject("btnImpCarne.Image")));
-            this.btnImpCarne.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImpCarne.Name = "btnImpCarne";
-            this.btnImpCarne.Size = new System.Drawing.Size(23, 28);
-            this.btnImpCarne.Text = "Imprimir Carnê de Pagamentos";
+            this.tutorAlunoIDDataGridViewTextBoxColumn.DataPropertyName = "TutorAlunoID";
+            this.tutorAlunoIDDataGridViewTextBoxColumn.HeaderText = "TutorAlunoID";
+            this.tutorAlunoIDDataGridViewTextBoxColumn.Name = "tutorAlunoIDDataGridViewTextBoxColumn";
+            this.tutorAlunoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tutorAlunoIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // relacaoAlunoDescrDataGridViewTextBoxColumn
+            // 
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.DataPropertyName = "RelacaoAlunoDescr";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.HeaderText = "Parentesco";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.Name = "relacaoAlunoDescrDataGridViewTextBoxColumn";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // responsavelBindingSource
+            // 
+            this.responsavelBindingSource.DataSource = typeof(EscolaSis.Model.Responsavel);
+            // 
+            // matriculaBindingSource1
+            // 
+            this.matriculaBindingSource1.DataSource = typeof(EscolaSis.Model.Matricula);
+            // 
+            // mensalidadeIDDataGridViewTextBoxColumn
+            // 
+            this.mensalidadeIDDataGridViewTextBoxColumn.DataPropertyName = "MensalidadeID";
+            this.mensalidadeIDDataGridViewTextBoxColumn.HeaderText = "MensalidadeID";
+            this.mensalidadeIDDataGridViewTextBoxColumn.Name = "mensalidadeIDDataGridViewTextBoxColumn";
+            this.mensalidadeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mensalidadeIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // vencimentoDataGridViewTextBoxColumn
+            // 
+            this.vencimentoDataGridViewTextBoxColumn.DataPropertyName = "Vencimento";
+            this.vencimentoDataGridViewTextBoxColumn.HeaderText = "Vencimento";
+            this.vencimentoDataGridViewTextBoxColumn.Name = "vencimentoDataGridViewTextBoxColumn";
+            this.vencimentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vencimentoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // valorMensalidadeDataGridViewTextBoxColumn
+            // 
+            this.valorMensalidadeDataGridViewTextBoxColumn.DataPropertyName = "ValorMensalidade";
+            this.valorMensalidadeDataGridViewTextBoxColumn.HeaderText = "Valor Mensal.";
+            this.valorMensalidadeDataGridViewTextBoxColumn.Name = "valorMensalidadeDataGridViewTextBoxColumn";
+            this.valorMensalidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorMensalidadeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // situacaoPagtoDataGridViewTextBoxColumn
+            // 
+            this.situacaoPagtoDataGridViewTextBoxColumn.DataPropertyName = "SituacaoPagto";
+            this.situacaoPagtoDataGridViewTextBoxColumn.HeaderText = "Situção";
+            this.situacaoPagtoDataGridViewTextBoxColumn.Name = "situacaoPagtoDataGridViewTextBoxColumn";
+            this.situacaoPagtoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mensalidadeBindingSource3
+            // 
+            this.mensalidadeBindingSource3.DataSource = typeof(EscolaSis.Model.Mensalidade);
+            // 
+            // alunoIDDataGridViewTextBoxColumn
+            // 
+            this.alunoIDDataGridViewTextBoxColumn.DataPropertyName = "AlunoID";
+            this.alunoIDDataGridViewTextBoxColumn.HeaderText = "AlunoID";
+            this.alunoIDDataGridViewTextBoxColumn.Name = "alunoIDDataGridViewTextBoxColumn";
+            this.alunoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.alunoIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // alunoBindingSource
+            // 
+            this.alunoBindingSource.DataSource = typeof(EscolaSis.Model.Aluno);
+            // 
+            // mensalidadeBindingSource
+            // 
+            this.mensalidadeBindingSource.DataSource = typeof(EscolaSis.Model.Mensalidade);
+            // 
+            // mensalidadeBindingSource1
+            // 
+            this.mensalidadeBindingSource1.DataSource = typeof(EscolaSis.Model.Mensalidade);
+            // 
+            // mensalidadeBindingSource2
+            // 
+            this.mensalidadeBindingSource2.DataSource = typeof(EscolaSis.Model.Mensalidade);
+            // 
+            // matriculaBindingSource
+            // 
+            this.matriculaBindingSource.DataSource = typeof(EscolaSis.Model.Matricula);
+            // 
+            // matriculaIDDataGridViewTextBoxColumn
+            // 
+            this.matriculaIDDataGridViewTextBoxColumn.DataPropertyName = "MatriculaID";
+            this.matriculaIDDataGridViewTextBoxColumn.HeaderText = "MatriculaID";
+            this.matriculaIDDataGridViewTextBoxColumn.Name = "matriculaIDDataGridViewTextBoxColumn";
+            this.matriculaIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.matriculaIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // disciplinaDataGridViewTextBoxColumn
+            // 
+            this.disciplinaDataGridViewTextBoxColumn.DataPropertyName = "Disciplina";
+            this.disciplinaDataGridViewTextBoxColumn.HeaderText = "Disciplina/Atividade";
+            this.disciplinaDataGridViewTextBoxColumn.Name = "disciplinaDataGridViewTextBoxColumn";
+            this.disciplinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.disciplinaDataGridViewTextBoxColumn.Width = 213;
             // 
             // AlunoCadastro
             // 
@@ -1476,6 +1845,7 @@
             this.Load += new System.EventHandler(this.FormAlunosCadastro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlunoBuscar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1498,7 +1868,7 @@
             this.groupBox7.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoResponsaveis)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1508,6 +1878,7 @@
             this.groupBox11.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoDisciplinas)).EndInit();
             this.toolStrip4.ResumeLayout(false);
             this.toolStrip4.PerformLayout();
             this.groupBox9.ResumeLayout(false);
@@ -1515,9 +1886,17 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoMensalidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1525,7 +1904,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox lbxListaAlunosBuscar;
         private System.Windows.Forms.TextBox txbBuscarAluno;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -1541,12 +1919,12 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.CheckBox ckbPodePegar;
         private System.Windows.Forms.CheckBox ckbPagador;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cbxRelacAluno;
+        private System.Windows.Forms.TextBox txbTeefoneRespons;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxResponsNome;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txbNomeAlunoResp;
         private System.Windows.Forms.Label label13;
@@ -1554,8 +1932,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -1566,36 +1942,34 @@
         private System.Windows.Forms.TextBox txbNumMatricMatric;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cbxOrientadorMatricula;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbxPeriodoLetivoMatricula;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cbxAnoLetivoMatricula;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txbRelatorioMatricula;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cbxResultadoMatricula;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbDisciplinaMatricula;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox cbxSituacMensaliade;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox cbxPeriodoLetivoMensal;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox cbxAnoLetidoMensal;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txbNomeAlunoMensal;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txbNumMatricMensal;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cbxTurmaMatricula;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStrip toolStrip2;
@@ -1648,5 +2022,35 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnImpCarteirinha;
         private System.Windows.Forms.ToolStripButton btnImpCarne;
+        private System.Windows.Forms.TextBox txbTutorAlunoID;
+        private System.Windows.Forms.DataGridView dgvAlunoResponsaveis;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvListaAlunoBuscar;
+        private System.Windows.Forms.BindingSource alunoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alunoIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tutorAlunoIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn relacaoAlunoDescrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn excluir;
+        private System.Windows.Forms.BindingSource responsavelBindingSource;
+        private System.Windows.Forms.DataGridView dgvAlunoDisciplinas;
+        private System.Windows.Forms.BindingSource mensalidadeBindingSource1;
+        private System.Windows.Forms.BindingSource mensalidadeBindingSource;
+        private System.Windows.Forms.BindingSource matriculaBindingSource;
+        private System.Windows.Forms.BindingSource mensalidadeBindingSource2;
+        private System.Windows.Forms.BindingSource matriculaBindingSource1;
+        private System.Windows.Forms.Button btnBuscarAluno;
+        private System.Windows.Forms.DataGridView dgvAlunoMensalidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mensalidadeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vencimentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorMensalidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn situacaoPagtoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.BindingSource mensalidadeBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matriculaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn disciplinaDataGridViewTextBoxColumn;
     }
 }

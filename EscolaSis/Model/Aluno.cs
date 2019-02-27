@@ -151,56 +151,96 @@ namespace EscolaSis.Model
 
             foreach (DataRow item in dt.Rows)
             {
-                lstMatric.Add(new Mensalidade
-                {
-                    AlunoID = Convert.ToInt32(item["AlunoID"].ToString()),
-                    MensalidadeID = Convert.ToInt32(item["MensalidadeID"].ToString()),
-                    TutorAlunoID = Convert.ToInt32(item["TutorAlunoID"].ToString()),
-                    RespPagto = item["RespPagto"].ToString(),
-                    Descricao = item["Descricao"].ToString(),
-                    MesAnoRefer = item["MesAnoRefer"].ToString(),
-                    DataEmissao = Convert.ToDateTime(item["DataEmissao"].ToString()),
-                    Vencimento = Convert.ToDateTime(item["Vencimento"].ToString()),
-                    ValorMensalidade = Convert.ToDecimal(item["ValorMensalidade"].ToString()),
-                    DataPagto = Convert.ToDateTime(item["DataPagto"].ToString()),
-                    Desconto = Convert.ToDecimal(item["Desconto"].ToString()),
-                    JurosMulta = Convert.ToDecimal(item["JurosMulta"].ToString()),
-                    ValorPago = Convert.ToDecimal(item["ValorPago"].ToString()),
-                    FormaPagto = item["FormaPagto"].ToString()
-                });
-            }
+                Mensalidade mensal = new Mensalidade();
+                mensal.AlunoID = Convert.ToInt32(item["AlunoID"].ToString());
+                mensal.MensalidadeID = Convert.ToInt32(item["MensalidadeID"].ToString());
+                mensal.TutorAlunoID = Convert.ToInt32(item["TutorAlunoID"].ToString());
+                mensal.RespPagto = item["RespPagto"].ToString();
+                mensal.Descricao = item["Descricao"].ToString();
+                mensal.MesAnoRefer = item["MesAnoRefer"].ToString();
+                if (item["DataEmissao"].ToString() != "") mensal.DataEmissao = Convert.ToDateTime(item["DataEmissao"].ToString());
+                if (item["Vencimento"].ToString() != "") mensal.Vencimento = Convert.ToDateTime(item["Vencimento"].ToString());
+                mensal.ValorMensalidade = Convert.ToDecimal(item["ValorMensalidade"].ToString());
+                if (item["DataPagto"].ToString() != "") mensal.DataPagto = Convert.ToDateTime(item["DataPagto"].ToString());
+                mensal.Desconto = Convert.ToDecimal(item["Desconto"].ToString());
+                mensal.JurosMulta = Convert.ToDecimal(item["JurosMulta"].ToString());
+                mensal.ValorPago = Convert.ToDecimal(item["ValorPago"].ToString());
+                mensal.FormaPagto = item["FormaPagto"].ToString();
+
+                lstMatric.Add(mensal);
+        }
 
             return lstMatric;
 
         }
 
-        public static OleDbDataAdapter CreateCustomerAdapter(
-        OleDbConnection connection)
+    public static List<Responsavel> ListarResponsaveisAluno(int alunoID)
+    {
+        OleDbCommand cmd = new OleDbCommand();
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.CommandText = "cstAlunoResponsaveis";
+        cmd.Parameters.Clear();
+        cmd.Parameters.AddWithValue("@AlunoID", alunoID);
+
+        OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+        DataTable dt = new DataTable();
+        adp.Fill(dt);
+
+        List<Responsavel> lstMatric = new List<Responsavel>();
+
+        foreach (DataRow item in dt.Rows)
         {
-            OleDbDataAdapter adapter = new OleDbDataAdapter();
-            OleDbCommand command;
-
-            // Create the SelectCommand.
-            command = new OleDbCommand("SELECT CustomerID FROM Customers " +
-                "WHERE Country = ? AND City = ?", connection);
-
-            command.Parameters.Add("Country", OleDbType.VarChar, 15);
-            command.Parameters.Add("City", OleDbType.VarChar, 15);
-
-            adapter.SelectCommand = command;
-
-            // Create the InsertCommand.
-            command = new OleDbCommand(
-                "INSERT INTO Customers (CustomerID, CompanyName) " +
-                "VALUES (?, ?)", connection);
-
-            command.Parameters.Add(
-                "CustomerID", OleDbType.Char, 5, "CustomerID");
-            command.Parameters.Add(
-                "CompanyName", OleDbType.VarChar, 40, "CompanyName");
-
-            adapter.InsertCommand = command;
-            return adapter;
+            lstMatric.Add(new Responsavel
+            {
+                AlunoID = Convert.ToInt32(item["AlunoID"].ToString()),
+                TutorID = Convert.ToInt32(item["TutorID"].ToString()),
+                TutorAlunoID = Convert.ToInt32(item["TutorAlunoID"].ToString()),
+                RelacaoAluno = item["RelacaoAluno"].ToString(),
+                Pagador = item["Pagador"].ToString(),
+                PodePegarEscola = item["PodePegarEscola"].ToString(),
+                Nome = item["Nome"].ToString(),
+                RG = item["RG"].ToString(),
+                CPF = item["CPF"].ToString(),
+                Endereco = item["Endereco"].ToString(),
+                Bairro = item["Bairro"].ToString(),
+                Cidade = item["Cidade"].ToString(),
+                CEP = item["CEP"].ToString(),
+                Telefone = item["Telefone"].ToString(),
+                Sexo = item["Sexo"].ToString()
+            });
         }
+
+        return lstMatric;
+
     }
+
+    public static OleDbDataAdapter CreateCustomerAdapter(OleDbConnection connection)
+    {
+        OleDbDataAdapter adapter = new OleDbDataAdapter();
+        OleDbCommand command;
+
+        // Create the SelectCommand.
+        command = new OleDbCommand("SELECT CustomerID FROM Customers " +
+            "WHERE Country = ? AND City = ?", connection);
+
+        command.Parameters.Add("Country", OleDbType.VarChar, 15);
+        command.Parameters.Add("City", OleDbType.VarChar, 15);
+
+        adapter.SelectCommand = command;
+
+        // Create the InsertCommand.
+        command = new OleDbCommand(
+            "INSERT INTO Customers (CustomerID, CompanyName) " +
+            "VALUES (?, ?)", connection);
+
+        command.Parameters.Add(
+            "CustomerID", OleDbType.Char, 5, "CustomerID");
+        command.Parameters.Add(
+            "CompanyName", OleDbType.VarChar, 40, "CompanyName");
+
+        adapter.InsertCommand = command;
+        return adapter;
+    }
+}
 }

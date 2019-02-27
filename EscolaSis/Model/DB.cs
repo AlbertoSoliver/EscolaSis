@@ -12,10 +12,13 @@ namespace EscolaSis.Model
             string strConnectionString = ConfigurationManager.ConnectionStrings["DBEscolaSis"].ToString();
             OleDbConnection cn;
             cn = new OleDbConnection(strConnectionString);
-            cn.Open();
 
+            cn.Open();
+            
             OleDbDataAdapter adp = new OleDbDataAdapter(Cmd);
             Cmd.Connection = cn;
+
+            cn.Close();
 
             return adp;
         }
