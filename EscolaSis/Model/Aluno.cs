@@ -121,7 +121,6 @@ namespace EscolaSis.Model
                     MatriculaID = Convert.ToInt32(item["MatriculaID"].ToString()),
                     Disciplina = item["Disciplina"].ToString(),
                     AnoLetivo = item["AnoLetivo"].ToString(),
-                    PeriodoMatriculaID = Convert.ToInt32(item["PeriodoMatriculaID"].ToString()),
                     OrientadorID = Convert.ToInt32(dt.Rows[0]["OrientadorID"].ToString()),
                     NomeOrientador = item["NomeOrientador"].ToString(),
                     Turma = item["Turma"].ToString(),

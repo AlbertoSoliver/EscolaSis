@@ -11,7 +11,6 @@ namespace EscolaSis.Model
     {
         public int AlunoID { get; set; }
         public int MatriculaID { get; set; }
-        public int PeriodoMatriculaID { get; set; }
         public int OrientadorID { get; set; }
         public string NomeOrientador { get; set; }
         public string AnoLetivo { get; set; }
@@ -52,7 +51,6 @@ namespace EscolaSis.Model
             {
                 AlunoID = Convert.ToInt32(dt.Rows[0]["AlunoID"].ToString());
                 MatriculaID = Convert.ToInt32(dt.Rows[0]["MatriculaID"].ToString());
-                PeriodoMatriculaID = Convert.ToInt32(dt.Rows[0]["PeriodoMatriculaID"].ToString());
                 OrientadorID = Convert.ToInt32(dt.Rows[0]["OrientadorID"].ToString());
                 NomeOrientador = dt.Rows[0]["NomeOrientador"].ToString();
                 AnoLetivo = dt.Rows[0]["AnoLetivo"].ToString();

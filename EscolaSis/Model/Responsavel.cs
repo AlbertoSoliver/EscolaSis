@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
 
 namespace EscolaSis.Model
 {
@@ -13,43 +10,7 @@ namespace EscolaSis.Model
         public int TutorID { get; set; }
         public int TutorAlunoID { get; set; }
         public string RelacaoAluno { get; set; }
-        public string RelacaoAlunoDescr
-        {
-            get
-            {
-                string relAluno = "";
-
-                switch (RelacaoAluno)
-                {
-                    //P-Pai, M-Mãe, I-Irmão(ã), A-Avô(ó), T-Tio(a), R-Primo(a), G-Amigo(a)
-                    case "P":
-                        relAluno = "Pai";
-                        break;
-                    case "M":
-                        relAluno = "Mãe";
-                        break;
-                    case "I":
-                        relAluno = "I-Irmão(ã)";
-                        break;
-                    case "A":
-                        relAluno = "Avô(ó)";
-                        break;
-                    case "T":
-                        relAluno = "Tio(a)";
-                        break;
-                    case "R":
-                        relAluno = "Primo(a)";
-                        break;
-                    case "G":
-                        relAluno = "Amigo(a)";
-                        break;
-                    default:
-                        break;
-                }
-
-                return relAluno;
-            }
-        }
+        public string RelacaoAlunoDescr { get { return Tools.Parenteso.GetDescricao(RelacaoAluno); } }
         public string Pagador { get; set; }
         public string PodePegarEscola { get; set; }
         public string Nome { get; set; }
