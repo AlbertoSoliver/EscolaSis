@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 
@@ -58,6 +59,42 @@ namespace EscolaSis.Model
 
             }
 
+        }
+
+        public List<Responsavel> ListaResponsaveis(string filtro = "%")
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstTutorRespLista";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Nome", filtro);
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            List<Responsavel> lstResp = new List<Responsavel>();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                Responsavel responsavel = new Responsavel();
+                responsavel.TutorID = Convert.ToInt32(item["TutorID"].ToString());
+                responsavel.Nome = item["Nome"].ToString();
+                if (item["DataNascimento"].ToString() !="") responsavel.DataNascimento = Convert.ToDateTime(item["DataNascimento"].ToString());
+                responsavel.RG = item["RG"].ToString();
+                responsavel.CPF = item["CPF"].ToString();
+                responsavel.Endereco = item["Endereco"].ToString();
+                responsavel.Bairro = item["Bairro"].ToString();
+                responsavel.Cidade = item["Cidade"].ToString();
+                responsavel.CEP = item["CEP"].ToString();
+                responsavel.Telefone = item["Telefone"].ToString();
+                responsavel.Sexo = item["Sexo"].ToString();
+
+                lstResp.Add(responsavel);
+            }
+
+            return lstResp;
         }
     }
 }

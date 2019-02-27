@@ -15,7 +15,7 @@ namespace EscolaSis.Model
         public string NomeOrientador { get; set; }
         public string AnoLetivo { get; set; }
         public string CodigoPeriodo { get; set; }
-        public string NomePeriodo { get; set; }
+        public string NomePeriodo { get { return Tools.PeriodoLetivo.GetDescricao(CodigoPeriodo); } }
         public string Turma { get; set; }
         public string Disciplina { get; set; }
         public string RelatorioAtividade { get; set; }
@@ -55,8 +55,7 @@ namespace EscolaSis.Model
                 NomeOrientador = dt.Rows[0]["NomeOrientador"].ToString();
                 AnoLetivo = dt.Rows[0]["AnoLetivo"].ToString();
                 //DataNascim = Convert.ToDateTime(dt.Rows[0]["DataNascim"].ToString());
-                CodigoPeriodo = dt.Rows[0]["CodigoPeriodo"].ToString();
-                NomePeriodo = dt.Rows[0]["NomePeriodo"].ToString();
+                CodigoPeriodo = dt.Rows[0]["CodigoPeriodoMatr"].ToString();
                 Turma = dt.Rows[0]["Turma"].ToString();
                 Disciplina = dt.Rows[0]["Disciplina"].ToString();
                 RelatorioAtividade = dt.Rows[0]["RelatorioAtividade"].ToString();

@@ -162,6 +162,19 @@ namespace EscolaSis.Forms.Aluno
             List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(alunoID);
             List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(alunoID);
 
+            cbxResponsNome.DataSource = (new Model.Responsavel()).ListaResponsaveis();
+            cbxRelacAluno.DataSource = Model.Tools.Parenteso.ListaParentesco();
+            cbxAnoLetivoMatric.DataSource = Model.Tools.ListaAnoLetivo();
+            cbxAnoLetivoMatricula.DataSource = cbxAnoLetivoMatric.DataSource;
+            cbxPeriodoLetivoMatri.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo();
+            cbxPeriodoLetivoMatricula.DataSource = cbxPeriodoLetivoMatri.DataSource;
+            cbxOrientadorMatricula.DataSource = (new Model.Orientador()).ListaOrientadores();
+            cbxResultadoMatricula.DataSource = Model.Tools.ResultadoFinal.ListaResultadoFinal();
+            cbxTurmaMatricula.DataSource = Model.Tools.ListaTurma();
+            cbxAnoLetidoMensal.DataSource = cbxAnoLetivoMatric.DataSource;
+            cbxPeriodoLetivoMensal.DataSource = cbxPeriodoLetivoMatri.DataSource;
+            cbxSituacMensaliade.Text = "Qualquer Situação";
+
             // dados do aluno
             txbAlunoID.Text = aluno.AlunoID.ToString();
             txbNumMatricAluno.Text = aluno.NumMatricula;
@@ -211,8 +224,8 @@ namespace EscolaSis.Forms.Aluno
                 responsavel.DadosResponsavel((int)dgvAlunoResponsaveis.SelectedRows[0].Cells[0].Value);
                 txbTutorAlunoID.Text = responsavel.TutorAlunoID.ToString();
                 cbxResponsNome.Text = responsavel.Nome;
-                txbTeefoneRespons.Text = responsavel.Telefone;
-                cbxRelacAluno.Text = responsavel.RelacaoAluno;
+                txbTelefoneRespons.Text = responsavel.Telefone;
+                cbxRelacAluno.Text = responsavel.RelacaoAlunoDescr;
                 ckbPagador.Checked = (responsavel.Pagador == "S");
                 ckbPodePegar.Checked = (responsavel.PodePegarEscola == "S");
             }
@@ -223,6 +236,27 @@ namespace EscolaSis.Forms.Aluno
         {
             List<Model.Aluno> lst = Model.Aluno.ListarAlunosPesquisa(txbBuscarAluno.Text);
             dgvListaAlunoBuscar.DataSource = lst;
+        }
+
+        private void cbxResponsNome_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvAlunoDisciplinas_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAlunoDisciplinas.SelectedRows.Count > 0)
+            {
+                Model.Matricula matricula = new Model.Matricula();
+                matricula.DadosMatricula((int)dgvAlunoDisciplinas.SelectedRows[0].Cells[0].Value);
+                cbxAnoLetivoMatricula.Text = matricula.AnoLetivo;
+                cbxPeriodoLetivoMatricula.Text = matricula.NomePeriodo;
+                cbxOrientadorMatricula.Text = matricula.NomeOrientador;
+                txbDisciplinaMatricula.Text = matricula.Disciplina;
+                cbxTurmaMatricula.Text = matricula.Turma;
+                cbxResultadoMatricula.Text = matricula.ResultadoFinalDescr;
+                txbRelatorioMatricula.Text = matricula.RelatorioAtividade;
+            }
         }
     }
 }

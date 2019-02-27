@@ -1,9 +1,46 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
 
 namespace EscolaSis.Model
 {
     class Tools
     {
+        public static List<string> ListaAnoLetivo()
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstAnoLetivoLista";
+            cmd.Parameters.Clear();
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            List<string> lstAnoLetivo = new List<string>();
+            foreach (DataRow item in dt.Rows) lstAnoLetivo.Add(item["AnoLetivo"].ToString());
+
+            return lstAnoLetivo;
+        }
+        public static List<string> ListaTurma()
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstTurmaLista";
+            cmd.Parameters.Clear();
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            List<string> lstaTurma = new List<string>();
+            foreach (DataRow item in dt.Rows) lstaTurma.Add(item["Turma"].ToString());
+
+            return lstaTurma;
+        }
+
         public class Parenteso
         {
             public string Codigo { get; set; }
@@ -294,7 +331,69 @@ namespace EscolaSis.Model
             public string CodigoPeriodoLetivo { get; set; }
             public string PeriodoLetivo { get; set; }
         }
+        public class ResultadoFinal
+        {
+            public string Codigo { get; set; }
+            public string Descricao { get; set; }
 
+            public static string GetCodigo(string decricao)
+            {
+                string codigParentesco = "";
+
+                switch (decricao)
+                {
+                    case "Aprovado":
+                        codigParentesco = "A";
+                        break;
+                    case "Reprovado":
+                        codigParentesco = "R";
+                        break;
+                    default:
+                        codigParentesco = "N";
+                        break;
+                }
+
+                return codigParentesco;
+
+            }
+            public static string GetDescricao(string codigo)
+            {
+                string descricaoParentesco = "";
+
+                switch (codigo)
+                {
+                    case "A":
+                        descricaoParentesco = "Aprovador";
+                        break;
+                    case "R":
+                        descricaoParentesco = "Reprovador";
+                        break;
+                    default:
+                        descricaoParentesco = "Não Avaliado";
+                        break;
+                }
+
+                return descricaoParentesco;
+            }
+            public static List<ResultadoFinal> ListaResultadoFinal()
+            {
+                return new List<ResultadoFinal>
+                {
+                    new ResultadoFinal {
+                        Codigo = "A",
+                        Descricao = "Aprovador"
+                    },
+                    new ResultadoFinal {
+                        Codigo = "R",
+                        Descricao = "Reprovador"
+                    },
+                new ResultadoFinal {
+                        Codigo = "N",
+                        Descricao = "Não Avaliado"
+                    }
+                };
+            }
+        }
 
     }
 
