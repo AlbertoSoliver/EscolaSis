@@ -148,6 +148,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.dgvAlunoDisciplinas = new System.Windows.Forms.DataGridView();
+            this.MatriculaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matriculaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -201,8 +203,6 @@
             this.mensalidadeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mensalidadeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.matriculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MatriculaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlunoBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
@@ -268,7 +268,6 @@
             // 
             // btnBuscarAluno
             // 
-            this.btnBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarAluno.Image")));
             this.btnBuscarAluno.Location = new System.Drawing.Point(203, 24);
             this.btnBuscarAluno.Name = "btnBuscarAluno";
@@ -321,7 +320,6 @@
             this.dgvListaAlunoBuscar.Size = new System.Drawing.Size(214, 452);
             this.dgvListaAlunoBuscar.TabIndex = 38;
             this.dgvListaAlunoBuscar.SelectionChanged += new System.EventHandler(this.dgvListaAlunoBuscar_SelectionChanged);
-            this.dgvListaAlunoBuscar.Click += new System.EventHandler(this.dgvListaAlunoBuscar_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -408,6 +406,7 @@
             this.btnSalvarAluno.Size = new System.Drawing.Size(46, 43);
             this.btnSalvarAluno.TabIndex = 40;
             this.btnSalvarAluno.UseVisualStyleBackColor = true;
+            this.btnSalvarAluno.Click += new System.EventHandler(this.btnSalvarAluno_Click);
             // 
             // tspManuAluno
             // 
@@ -734,7 +733,7 @@
             // 
             // txbDataNascimAluno
             // 
-            this.txbDataNascimAluno.CustomFormat = " ";
+            this.txbDataNascimAluno.CustomFormat = "  ";
             this.txbDataNascimAluno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txbDataNascimAluno.Location = new System.Drawing.Point(316, 84);
             this.txbDataNascimAluno.Name = "txbDataNascimAluno";
@@ -1375,6 +1374,22 @@
             this.dgvAlunoDisciplinas.TabIndex = 45;
             this.dgvAlunoDisciplinas.SelectionChanged += new System.EventHandler(this.dgvAlunoDisciplinas_SelectionChanged);
             // 
+            // MatriculaID
+            // 
+            this.MatriculaID.DataPropertyName = "MatriculaID";
+            this.MatriculaID.HeaderText = "MatriculaID";
+            this.MatriculaID.Name = "MatriculaID";
+            this.MatriculaID.ReadOnly = true;
+            this.MatriculaID.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Disciplina";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Disciplina";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 213;
+            // 
             // matriculaBindingSource2
             // 
             this.matriculaBindingSource2.DataSource = typeof(EscolaSis.Model.Matricula);
@@ -1838,22 +1853,6 @@
             this.itmParcelamento.Text = "Mnesalidas do Período";
             this.itmParcelamento.Click += new System.EventHandler(this.itmParcelamento_Click);
             // 
-            // MatriculaID
-            // 
-            this.MatriculaID.DataPropertyName = "MatriculaID";
-            this.MatriculaID.HeaderText = "MatriculaID";
-            this.MatriculaID.Name = "MatriculaID";
-            this.MatriculaID.ReadOnly = true;
-            this.MatriculaID.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Disciplina";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Disciplina";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 213;
-            // 
             // AlunoCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2065,11 +2064,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvListaAlunoBuscar;
         private System.Windows.Forms.BindingSource alunoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alunoIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tutorAlunoIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn relacaoAlunoDescrDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource responsavelBindingSource;
         private System.Windows.Forms.DataGridView dgvAlunoDisciplinas;
         private System.Windows.Forms.BindingSource mensalidadeBindingSource1;
@@ -2079,14 +2073,7 @@
         private System.Windows.Forms.BindingSource matriculaBindingSource1;
         private System.Windows.Forms.Button btnBuscarAluno;
         private System.Windows.Forms.DataGridView dgvAlunoMensalidades;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mensalidadeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vencimentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorMensalidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn situacaoPagtoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mensalidadeBindingSource3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matriculaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn disciplinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource responsavelBindingSource1;
         private System.Windows.Forms.BindingSource parentesoBindingSource;
         private System.Windows.Forms.BindingSource orientadorBindingSource;

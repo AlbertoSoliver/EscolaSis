@@ -48,6 +48,7 @@ namespace EscolaSis.Model
             OleDbDataAdapter adp = DB.DBAdapter(cmd);
 
             DataTable dt = new DataTable();
+
             adp.Fill(dt);
 
             List<Aluno> lstAluno = new List<Aluno>();
@@ -96,6 +97,40 @@ namespace EscolaSis.Model
                 Foto = dt.Rows[0]["Foto"].ToString();
 
             }
+
+        }
+
+        public void SalvarAluno()
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = "UPDATE Alunos ";
+            cmd.CommandText += "SET ";
+            cmd.CommandText += "Nome = @Nome, ";
+            cmd.CommandText += "DataNascim = @DataNascim, ";
+            cmd.CommandText += "RG = @RG, ";
+            cmd.CommandText += "CPF = @CPF, ";
+            cmd.CommandText += "Sexo = @Sexo, ";
+            cmd.CommandText += "Endereco = @Endereco, ";
+            cmd.CommandText += "Bairro = @Bairro, ";
+            cmd.CommandText += "Cidade = @Cidade, ";
+            cmd.CommandText += "CEP = @CEP, ";
+            cmd.CommandText += "Telefone = @Telefone ";
+            cmd.CommandText += "WHERE AlunoID = @AlunoID ";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Nome", Nome.ToString());
+            if (DataNascim.Year < 1900) cmd.Parameters.AddWithValue("@DataNascim", DBNull.Value);
+            else cmd.Parameters.AddWithValue("@DataNascim", DataNascim);
+            cmd.Parameters.AddWithValue("@RG", RG.ToString());
+            cmd.Parameters.AddWithValue("@CPF", CPF.ToString());
+            cmd.Parameters.AddWithValue("@Sexo", Sexo.ToString());
+            cmd.Parameters.AddWithValue("@Endereco", Endereco.ToString());
+            cmd.Parameters.AddWithValue("@Bairro", Bairro.ToString());
+            cmd.Parameters.AddWithValue("@Cidade", Cidade.ToString());
+            cmd.Parameters.AddWithValue("@CEP", CEP.ToString());
+            cmd.Parameters.AddWithValue("@Telefone", Telefone.ToString());
+            cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
+
+            DB.ExecCommand(cmd);
 
         }
 
@@ -214,5 +249,5 @@ namespace EscolaSis.Model
 
         }
     }
-        
+
 }

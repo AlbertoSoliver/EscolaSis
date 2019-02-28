@@ -224,7 +224,7 @@
     <Content Include="img\teacher_female.png" />
     <Content Include="img\user_student.png" />
     <Content Include="BaseEscola.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup />
