@@ -12,48 +12,10 @@ namespace EscolaSis.Forms.Aluno
             InitializeComponent();
         }
 
-        private void maskedTextBox1_Leave(object sender, EventArgs e)
-        {
-        }
-        private void txbValorMens_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void Label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNovoAluno_Click(object sender, EventArgs e)
         {
             Form childForm = new AlunoNovo();
             childForm.ShowDialog();
-        }
-
-        private void btnNovoResp_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNovaMatric_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormAlunosCadastro_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void itmParcela_Click(object sender, EventArgs e)
@@ -80,19 +42,10 @@ namespace EscolaSis.Forms.Aluno
             childForm.ShowDialog();
         }
 
-        private void txbBuscarAluno_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void lbxListaAlunosBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txbDataNascimAluno_ValueChanged(object sender, EventArgs e)
         {
             txbDataNascimAluno.CustomFormat = "dd/MM/yyyy";
+            txbIdadeAluno.Text = Model.Aluno.CalculaIdade(txbDataNascimAluno.Value).ToString();
         }
 
         private void txbDataNascimAluno_KeyUp(object sender, KeyEventArgs e)
@@ -130,16 +83,6 @@ namespace EscolaSis.Forms.Aluno
         private void pbxFoto_Click_1(object sender, EventArgs e)
         {
             mnuFoto.Show(Cursor.Position);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListaAlunoBuscar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvListaAlunoBuscar_SelectionChanged(object sender, EventArgs e)
@@ -220,7 +163,6 @@ namespace EscolaSis.Forms.Aluno
             this.Cursor = Cursors.Default;
 
         }
-
         private void dgvAlunoResponsaveis_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvAlunoResponsaveis.SelectedRows.Count > 0)
@@ -243,11 +185,6 @@ namespace EscolaSis.Forms.Aluno
             List<Model.Aluno> lst = Model.Aluno.ListarAlunosPesquisa(txbBuscarAluno.Text);
             dgvListaAlunoBuscar.DataSource = lst;
             this.Cursor = Cursors.Default;
-        }
-
-        private void cbxResponsNome_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvAlunoDisciplinas_SelectionChanged(object sender, EventArgs e)
@@ -273,7 +210,7 @@ namespace EscolaSis.Forms.Aluno
             alunoUpdate.Nome = txbNomeAluno.Text;
             if (txbDataNascimAluno.CustomFormat.Trim() != "") alunoUpdate.DataNascim = Convert.ToDateTime(txbDataNascimAluno.Text);
             alunoUpdate.RG = txbNumRGAluno.Text;
-            alunoUpdate.CPF = txbNumRGAluno.Text;
+            alunoUpdate.CPF = txbCPFAluno.Text;
             alunoUpdate.Sexo = rbtMasc.Checked ? "M" : "F";
             alunoUpdate.Endereco = txbEnderecoAluno.Text;
             alunoUpdate.Bairro = txbBairroAluno.Text;
@@ -283,7 +220,7 @@ namespace EscolaSis.Forms.Aluno
 
             try
             {
-                alunoUpdate.SalvarAluno();
+                alunoUpdate.SalvarAluno("U");
                 if (pbxFoto.Image == null)
                 {
                     pbxFoto.ImageLocation = @"Fotos\SemFoto.png";
@@ -302,9 +239,6 @@ namespace EscolaSis.Forms.Aluno
             {
                 MessageBox.Show(ex.Message.ToString(), "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
     }
 }

@@ -17,12 +17,7 @@ namespace EscolaSis.Model
         {
             get
             {
-                int idade = DateTime.Now.Year - DataNascim.Year;
-                if (DateTime.Now.Month >= DataNascim.Month)
-                {
-                    idade += 1;
-                }
-                return idade;
+                return CalculaIdade(DataNascim);
             }
         }
         public string RG { get; set; }
@@ -37,6 +32,33 @@ namespace EscolaSis.Model
 
         public Aluno() { }
 
+        public static int UltimoAlunoIDCriado()
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT MAX(AlunoID) AS NovoID FROM Alunos";
+            cmd.Parameters.Clear();
+
+            int IDCriado = 0;
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                IDCriado = Convert.ToUInt16(dt.Rows[0][0].ToString());
+            }
+            return IDCriado;
+        }
+        public static int CalculaIdade(DateTime DtNascimento)
+        {
+            int idade = DateTime.Now.Year - DtNascimento.Year;
+            if (DateTime.Now.Month >= DtNascimento.Month)
+            {
+                idade += 1;
+            }
+            return idade;
+        }
         public static List<Aluno> ListarAlunosPesquisa(string ArgPesq)
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -100,22 +122,37 @@ namespace EscolaSis.Model
 
         }
 
-        public void SalvarAluno()
+        public void SalvarAluno(string tipo)
         {
+            string commandText = "";
+
+            if (tipo == "U")
+            {
+                commandText = "UPDATE Alunos ";
+                commandText += "SET ";
+                commandText += "Nome = @Nome, ";
+                commandText += "DataNascim = @DataNascim, ";
+                commandText += "RG = @RG, ";
+                commandText += "CPF = @CPF, ";
+                commandText += "Sexo = @Sexo, ";
+                commandText += "Endereco = @Endereco, ";
+                commandText += "Bairro = @Bairro, ";
+                commandText += "Cidade = @Cidade, ";
+                commandText += "CEP = @CEP, ";
+                commandText += "Telefone = @Telefone ";
+                commandText += "WHERE AlunoID = @AlunoID ";
+            }
+            else
+            {
+                commandText = "INSERT INTO Alunos ";
+                commandText += "(Nome, DataNascim, RG, CPF, Sexo, Endereco, Bairro, Cidade, CEP, Telefone) ";
+                commandText += " VALUES ";
+                commandText += "(@Nome, @DataNascim, @RG, @CPF, @Sexo, @Endereco, @Bairro, @Cidade, @CEP, @Telefone)";
+            }
+
+
             OleDbCommand cmd = new OleDbCommand();
-            cmd.CommandText = "UPDATE Alunos ";
-            cmd.CommandText += "SET ";
-            cmd.CommandText += "Nome = @Nome, ";
-            cmd.CommandText += "DataNascim = @DataNascim, ";
-            cmd.CommandText += "RG = @RG, ";
-            cmd.CommandText += "CPF = @CPF, ";
-            cmd.CommandText += "Sexo = @Sexo, ";
-            cmd.CommandText += "Endereco = @Endereco, ";
-            cmd.CommandText += "Bairro = @Bairro, ";
-            cmd.CommandText += "Cidade = @Cidade, ";
-            cmd.CommandText += "CEP = @CEP, ";
-            cmd.CommandText += "Telefone = @Telefone ";
-            cmd.CommandText += "WHERE AlunoID = @AlunoID ";
+            cmd.CommandText = commandText;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@Nome", Nome.ToString());
             if (DataNascim.Year < 1900) cmd.Parameters.AddWithValue("@DataNascim", DBNull.Value);
@@ -128,7 +165,7 @@ namespace EscolaSis.Model
             cmd.Parameters.AddWithValue("@Cidade", Cidade.ToString());
             cmd.Parameters.AddWithValue("@CEP", CEP.ToString());
             cmd.Parameters.AddWithValue("@Telefone", Telefone.ToString());
-            cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
+            if (tipo == "U") cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
 
             DB.ExecCommand(cmd);
 

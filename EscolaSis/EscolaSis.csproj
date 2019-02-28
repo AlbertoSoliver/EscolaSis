@@ -196,6 +196,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fotos\SemFoto.png" />
     <Content Include="img\3x4.png" />
     <Content Include="img\agt_family.png" />
     <Content Include="img\alunocomlivro25x25.jpg" />
