@@ -88,7 +88,6 @@ namespace EscolaSis.Model
             return lstAluno;
 
         }
-
         public void DadosAluno(Int32 AlunoIDPesquisar)
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -121,7 +120,6 @@ namespace EscolaSis.Model
             }
 
         }
-
         public void SalvarAluno(string tipo)
         {
             string commandText = "";
@@ -170,7 +168,6 @@ namespace EscolaSis.Model
             DB.ExecCommand(cmd);
 
         }
-
         public static List<Matricula> ListarMatriculasAluno(int alunoID)
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -204,7 +201,6 @@ namespace EscolaSis.Model
             return lstMatric;
 
         }
-
         public static List<Mensalidade> ListarMensalidadesAluno(int alunoID)
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -244,7 +240,6 @@ namespace EscolaSis.Model
             return lstMatric;
 
         }
-
         public static List<Responsavel> ListarResponsaveisAluno(int alunoID)
         {
             OleDbCommand cmd = new OleDbCommand();

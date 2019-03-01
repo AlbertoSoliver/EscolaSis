@@ -25,11 +25,11 @@ namespace EscolaSis.Forms.Aluno
             childForm.ShowDialog();
         }
 
-        private void btnNovoResp_Click(object sender, EventArgs e)
-        {
-            Form childForm = new ResponsavelNovo();
-            childForm.ShowDialog();
-        }
+        //private void btnNovoResp_Click(object sender, EventArgs e)
+        //{
+        //    Form childForm = new ResponsavelNovo(txbAlunoID.Text);
+        //    childForm.ShowDialog();
+        //}
 
         private void btnNovaMatric_Click_1(object sender, EventArgs e)
         {
@@ -284,46 +284,50 @@ namespace EscolaSis.Forms.Aluno
 
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
-            Form childForm = new ResponsavelNovo();
-            childForm.ShowDialog();
+
         }
 
         private void btnSalvarRespos_Click(object sender, EventArgs e)
         {
-            //if (txbTutorAlunoID.Text != "")
-            //{
+            if (txbTutorAlunoID.Text != "")
+            {
+                Model.Responsavel responsavelUpdate = new Model.Responsavel();
+                responsavelUpdate.TutorAlunoID = Convert.ToInt16(txbTutorAlunoID.Text);
+                responsavelUpdate.RelacaoAluno = cbxRelacAluno.Text;
+                responsavelUpdate.Pagador = ckbPagador.Checked ? "S" : "N";
+                responsavelUpdate.PodePegarEscola = ckbPodePegar.Checked ? "S" : "N";
 
-            //    Model.Responsavel responsavelUpdate = new Model.Responsavel();
-            //    responsavelUpdate.TutorAlunoID = Convert.ToInt16(txbTutorAlunoID.Text);
-            //    responsavelUpdate.res = Convert.ToInt16(txbTutorAlunoID.Text);
-            //    responsavelUpdate.Nome = txbNomeAluno.Text;
-            //    if (txbDataNascimAluno.CustomFormat.Trim() != "") responsavelUpdate.DataNascim = Convert.ToDateTime(txbDataNascimAluno.Text);
-            //    responsavelUpdate.RG = txbNumRGAluno.Text;
-            //    responsavelUpdate.CPF = txbCPFAluno.Text;
-            //    responsavelUpdate.Sexo = rbtMasc.Checked ? "M" : "F";
-            //    responsavelUpdate.Endereco = txbEnderecoAluno.Text;
-            //    responsavelUpdate.Bairro = txbBairroAluno.Text;
-            //    responsavelUpdate.Cidade = txbCidadeAluno.Text;
-            //    responsavelUpdate.CEP = txbCEPAluno.Text;
-            //    responsavelUpdate.Telefone = txbTelefoneAluno.Text;
+                try
+                {
+                    responsavelUpdate.SalvarResponsavelAluno("U");
+                    dgvAlunoResponsaveis.DataSource = Model.Aluno.ListarResponsaveisAluno(Convert.ToInt16(txbAlunoID.Text));
+                    MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Responsável pelo Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
-            //    try
-            //    {
-            //        responsavelUpdate.SalvarAluno("U");
+        private void btnRespoNovo_Click(object sender, EventArgs e)
+        {
+            if (this.txbAlunoID.Text != "")
+            {
+                Form childForm = new ResponsavelNovo(txbAlunoID.Text);
+                childForm.ShowDialog();
+                dgvAlunoResponsaveis.DataSource = Model.Aluno.ListarResponsaveisAluno(Convert.ToInt16(txbAlunoID.Text));
 
-            //        GravaFoto();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Aluno para incluir o responsável.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            //        MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Selecione um Responsável pelo Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
         }
     }
 }

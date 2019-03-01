@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResponsavelNovo));
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.ckbPodePegar = new System.Windows.Forms.CheckBox();
             this.ckbPagador = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cbxRelacAluno = new System.Windows.Forms.ComboBox();
+            this.parentesoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label12 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxResponsavel = new System.Windows.Forms.ComboBox();
+            this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parentesoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button1);
+            this.groupBox8.Controls.Add(this.btnSalvar);
             this.groupBox8.Controls.Add(this.ckbPodePegar);
             this.groupBox8.Controls.Add(this.ckbPagador);
-            this.groupBox8.Controls.Add(this.comboBox2);
-            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Controls.Add(this.cbxRelacAluno);
             this.groupBox8.Controls.Add(this.label12);
-            this.groupBox8.Controls.Add(this.label16);
-            this.groupBox8.Controls.Add(this.comboBox1);
+            this.groupBox8.Controls.Add(this.cbxResponsavel);
             this.groupBox8.Controls.Add(this.label17);
             this.groupBox8.Location = new System.Drawing.Point(12, 12);
             this.groupBox8.Name = "groupBox8";
@@ -59,14 +60,15 @@
             this.groupBox8.TabIndex = 22;
             this.groupBox8.TabStop = false;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(486, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 43);
-            this.button1.TabIndex = 39;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(486, 125);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(46, 43);
+            this.btnSalvar.TabIndex = 39;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // ckbPodePegar
             // 
@@ -88,57 +90,46 @@
             this.ckbPagador.Text = "Responsável Pagamento";
             this.ckbPagador.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbxRelacAluno
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
-            this.comboBox2.Location = new System.Drawing.Point(9, 78);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(204, 21);
-            this.comboBox2.TabIndex = 25;
+            this.cbxRelacAluno.DataSource = this.parentesoBindingSource;
+            this.cbxRelacAluno.DisplayMember = "Descricao";
+            this.cbxRelacAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRelacAluno.FormattingEnabled = true;
+            this.cbxRelacAluno.Location = new System.Drawing.Point(9, 78);
+            this.cbxRelacAluno.Name = "cbxRelacAluno";
+            this.cbxRelacAluno.Size = new System.Drawing.Size(204, 21);
+            this.cbxRelacAluno.TabIndex = 25;
+            this.cbxRelacAluno.ValueMember = "Codigo";
             // 
-            // textBox6
+            // parentesoBindingSource
             // 
-            this.textBox6.Location = new System.Drawing.Point(395, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(137, 20);
-            this.textBox6.TabIndex = 24;
+            this.parentesoBindingSource.DataSource = typeof(EscolaSis.Model.Tools.Parenteso);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 62);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 13);
+            this.label12.Size = new System.Drawing.Size(109, 13);
             this.label12.TabIndex = 22;
-            this.label12.Text = "Relação com o aluno";
+            this.label12.Text = "Relação com o Aluno";
             // 
-            // label16
+            // cbxResponsavel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(392, 17);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 13);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Telefone";
+            this.cbxResponsavel.DataSource = this.responsavelBindingSource;
+            this.cbxResponsavel.DisplayMember = "Nome";
+            this.cbxResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxResponsavel.FormattingEnabled = true;
+            this.cbxResponsavel.Location = new System.Drawing.Point(9, 32);
+            this.cbxResponsavel.Name = "cbxResponsavel";
+            this.cbxResponsavel.Size = new System.Drawing.Size(507, 21);
+            this.cbxResponsavel.TabIndex = 2;
+            this.cbxResponsavel.ValueMember = "TutorID";
             // 
-            // comboBox1
+            // responsavelBindingSource
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(355, 21);
-            this.comboBox1.TabIndex = 2;
+            this.responsavelBindingSource.DataSource = typeof(EscolaSis.Model.Responsavel);
             // 
             // label17
             // 
@@ -149,7 +140,7 @@
             this.label17.TabIndex = 20;
             this.label17.Text = "Nome";
             // 
-            // FormResponsavelNovo
+            // ResponsavelNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,11 +149,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormResponsavelNovo";
+            this.Name = "ResponsavelNovo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Responsável";
+            this.Load += new System.EventHandler(this.ResponsavelNovo_Load);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.parentesoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,14 +164,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.CheckBox ckbPodePegar;
         private System.Windows.Forms.CheckBox ckbPagador;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cbxRelacAluno;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxResponsavel;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.BindingSource responsavelBindingSource;
+        private System.Windows.Forms.BindingSource parentesoBindingSource;
     }
 }

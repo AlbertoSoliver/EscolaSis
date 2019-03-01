@@ -60,8 +60,7 @@ namespace EscolaSis.Model
             }
 
         }
-
-        public List<Responsavel> ListaResponsaveis(string filtro = "%")
+        public static List<Responsavel> ListaResponsaveis(string filtro = "%")
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -81,7 +80,7 @@ namespace EscolaSis.Model
                 Responsavel responsavel = new Responsavel();
                 responsavel.TutorID = Convert.ToInt32(item["TutorID"].ToString());
                 responsavel.Nome = item["Nome"].ToString();
-                if (item["DataNascimento"].ToString() !="") responsavel.DataNascimento = Convert.ToDateTime(item["DataNascimento"].ToString());
+                if (item["DataNascimento"].ToString() != "") responsavel.DataNascimento = Convert.ToDateTime(item["DataNascimento"].ToString());
                 responsavel.RG = item["RG"].ToString();
                 responsavel.CPF = item["CPF"].ToString();
                 responsavel.Endereco = item["Endereco"].ToString();
@@ -95,6 +94,44 @@ namespace EscolaSis.Model
             }
 
             return lstResp;
+        }
+        public void SalvarResponsavelAluno(string tipo)
+        {
+            string commandText = "";
+            if (tipo == "U")
+            {
+                commandText = "UPDATE TutoresAlunos ";
+                commandText += "SET ";
+                commandText += "RelacaoAluno = @RelacaoAluno, ";
+                commandText += "Pagador = @Pagador, ";
+                commandText += "PodePegarEscola = @PodePegarEscola ";
+                commandText += "WHERE TutorAlunoID = @TutorAlunoID ";
+
+            }
+            else
+            {
+                commandText = "INSERT INTO TutoresAlunos ";
+                commandText += "(RelacaoAluno, Pagador, PodePegarEscola, AlunoID, TutorID) ";
+                commandText += "VALUES ";
+                commandText += "(@RelacaoAluno, @Pagador, @PodePegarEscola, @AlunoID, @TutorID)";
+            }
+
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@RelacaoAluno", Tools.Parenteso.GetCodigo(RelacaoAluno.ToString()));
+            cmd.Parameters.AddWithValue("@Pagador", Pagador.ToString());
+            cmd.Parameters.AddWithValue("@PodePegarEscola", PodePegarEscola.ToString());
+            if (tipo == "I")
+            {
+                cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
+                cmd.Parameters.AddWithValue("@TutorID", TutorID.ToString());
+            }
+            else cmd.Parameters.AddWithValue("@TutorAlunoID", TutorAlunoID.ToString());
+
+            DB.ExecCommand(cmd);
+
         }
     }
 }
