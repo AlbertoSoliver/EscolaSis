@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -78,19 +79,23 @@ namespace EscolaSis.Forms.Aluno
                 {
                     pbxFoto.Image.Save(@"Fotos\Aluno" + Model.Aluno.UltimoAlunoIDCriado() + ".jpg");
                 }
-                MessageBox.Show("Dados gravados com sucesso!", "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
         private void girarFotoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pbxFoto = AlunoCadastro.GirarFoto(pbxFoto);
+            Image foto = pbxFoto.Image;
+            pbxFoto.ImageLocation = "SemFoto.png";
+            pbxFoto.Load();
+            pbxFoto.ImageLocation = AlunoCadastro.GirarFoto(foto);
+            pbxFoto.Load();
         }
 
         private void AlunoNovo_Load(object sender, EventArgs e)

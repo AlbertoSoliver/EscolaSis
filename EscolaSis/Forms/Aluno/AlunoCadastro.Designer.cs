@@ -109,6 +109,7 @@
             this.responsavelBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cbxResponsNome = new System.Windows.Forms.TextBox();
             this.txbTutorAlunoID = new System.Windows.Forms.TextBox();
             this.btnSalvarRespos = new System.Windows.Forms.Button();
             this.ckbPodePegar = new System.Windows.Forms.CheckBox();
@@ -118,7 +119,6 @@
             this.txbTelefoneRespons = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.responsavelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txbNomeAlunoResp = new System.Windows.Forms.TextBox();
@@ -187,6 +187,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txbNumMatricMensal = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.responsavelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.matriculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mensalidadeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -203,7 +204,7 @@
             this.mensalidadeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mensalidadeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.matriculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbxResponsNome = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlunoBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
@@ -226,7 +227,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource2)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentesoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.dgvAlunoOrientador.SuspendLayout();
@@ -245,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).BeginInit();
@@ -671,9 +672,10 @@
             this.mnuFoto.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMudarFoto,
             this.mnuLimparFoto,
+            this.toolStripSeparator3,
             this.girarAFotoToolStripMenuItem});
             this.mnuFoto.Name = "mnuFoto";
-            this.mnuFoto.Size = new System.Drawing.Size(139, 70);
+            this.mnuFoto.Size = new System.Drawing.Size(139, 76);
             // 
             // mnuMudarFoto
             // 
@@ -956,6 +958,14 @@
             this.groupBox8.TabIndex = 21;
             this.groupBox8.TabStop = false;
             // 
+            // cbxResponsNome
+            // 
+            this.cbxResponsNome.Location = new System.Drawing.Point(9, 33);
+            this.cbxResponsNome.Name = "cbxResponsNome";
+            this.cbxResponsNome.ReadOnly = true;
+            this.cbxResponsNome.Size = new System.Drawing.Size(355, 20);
+            this.cbxResponsNome.TabIndex = 41;
+            // 
             // txbTutorAlunoID
             // 
             this.txbTutorAlunoID.Location = new System.Drawing.Point(47, 10);
@@ -1035,10 +1045,6 @@
             this.label16.Size = new System.Drawing.Size(49, 13);
             this.label16.TabIndex = 23;
             this.label16.Text = "Telefone";
-            // 
-            // responsavelBindingSource1
-            // 
-            this.responsavelBindingSource1.DataSource = typeof(EscolaSis.Model.Responsavel);
             // 
             // label17
             // 
@@ -1768,6 +1774,10 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "N° de Matrícula";
             // 
+            // responsavelBindingSource1
+            // 
+            this.responsavelBindingSource1.DataSource = typeof(EscolaSis.Model.Responsavel);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1849,13 +1859,10 @@
             this.itmParcelamento.Text = "Mnesalidas do Período";
             this.itmParcelamento.Click += new System.EventHandler(this.itmParcelamento_Click);
             // 
-            // cbxResponsNome
+            // toolStripSeparator3
             // 
-            this.cbxResponsNome.Location = new System.Drawing.Point(9, 33);
-            this.cbxResponsNome.Name = "cbxResponsNome";
-            this.cbxResponsNome.ReadOnly = true;
-            this.cbxResponsNome.Size = new System.Drawing.Size(355, 20);
-            this.cbxResponsNome.TabIndex = 41;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(135, 6);
             // 
             // AlunoCadastro
             // 
@@ -1904,7 +1911,6 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentesoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1930,6 +1936,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).EndInit();
@@ -2105,5 +2112,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolStripMenuItem girarAFotoToolStripMenuItem;
         private System.Windows.Forms.TextBox cbxResponsNome;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

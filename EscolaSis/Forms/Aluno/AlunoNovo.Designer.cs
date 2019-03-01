@@ -55,6 +55,7 @@
             this.mnuFoto = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuMudarFoto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLimparFoto = new System.Windows.Forms.ToolStripMenuItem();
+            this.girarFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbIdade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txbNumMatric = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.girarFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -288,23 +289,31 @@
             this.mnuFoto.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMudarFoto,
             this.mnuLimparFoto,
+            this.toolStripSeparator1,
             this.girarFotoToolStripMenuItem});
             this.mnuFoto.Name = "mnuFoto";
-            this.mnuFoto.Size = new System.Drawing.Size(139, 70);
+            this.mnuFoto.Size = new System.Drawing.Size(139, 76);
             // 
             // mnuMudarFoto
             // 
             this.mnuMudarFoto.Name = "mnuMudarFoto";
-            this.mnuMudarFoto.Size = new System.Drawing.Size(180, 22);
+            this.mnuMudarFoto.Size = new System.Drawing.Size(138, 22);
             this.mnuMudarFoto.Text = "Mudar Foto";
             this.mnuMudarFoto.Click += new System.EventHandler(this.mnuMudarFoto_Click);
             // 
             // mnuLimparFoto
             // 
             this.mnuLimparFoto.Name = "mnuLimparFoto";
-            this.mnuLimparFoto.Size = new System.Drawing.Size(180, 22);
+            this.mnuLimparFoto.Size = new System.Drawing.Size(138, 22);
             this.mnuLimparFoto.Text = "Limpar Foto";
             this.mnuLimparFoto.Click += new System.EventHandler(this.mnuLimparFoto_Click);
+            // 
+            // girarFotoToolStripMenuItem
+            // 
+            this.girarFotoToolStripMenuItem.Name = "girarFotoToolStripMenuItem";
+            this.girarFotoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.girarFotoToolStripMenuItem.Text = "Girar Foto";
+            this.girarFotoToolStripMenuItem.Click += new System.EventHandler(this.girarFotoToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -393,12 +402,10 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "N° de Matrícula";
             // 
-            // girarFotoToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.girarFotoToolStripMenuItem.Name = "girarFotoToolStripMenuItem";
-            this.girarFotoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.girarFotoToolStripMenuItem.Text = "Girar Foto";
-            this.girarFotoToolStripMenuItem.Click += new System.EventHandler(this.girarFotoToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // AlunoNovo
             // 
@@ -469,5 +476,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMudarFoto;
         private System.Windows.Forms.ToolStripMenuItem mnuLimparFoto;
         private System.Windows.Forms.ToolStripMenuItem girarFotoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

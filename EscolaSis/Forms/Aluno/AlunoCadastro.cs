@@ -266,23 +266,20 @@ namespace EscolaSis.Forms.Aluno
             }
         }
 
-        public static PictureBox GirarFoto(PictureBox pbxFotoTransf)
+        public static string GirarFoto(Image ImageTransf)
         {
-            Image img = pbxFotoTransf.Image;
-            img.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            pbxFotoTransf.Image = img;
-            if (File.Exists("fototemp.jpg"))
-                File.Delete("fototemp.jpg");
-            pbxFotoTransf.Image.Save("fototemp.jpg");
-            pbxFotoTransf.ImageLocation = "fototemp.jpg";
-            pbxFotoTransf.Load();
-
-            return pbxFotoTransf;
+            ImageTransf.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            ImageTransf.Save("fototemp.jpg");
+            return "fototemp.jpg";
         }
 
         private void girarAFotoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pbxFoto = GirarFoto(pbxFoto);
+            Image foto = pbxFoto.Image;
+            pbxFoto.ImageLocation = "SemFoto.png";
+            pbxFoto.Load();
+            pbxFoto.ImageLocation = GirarFoto(foto);
+            pbxFoto.Load();
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)
@@ -325,7 +322,7 @@ namespace EscolaSis.Forms.Aluno
             //}
             //else
             //{
-            //    MessageBox.Show("Selecione um Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show("Selecione um Responsável pelo Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
         }
     }
