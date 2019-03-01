@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -46,6 +47,7 @@ namespace EscolaSis.Forms.Aluno
         {
             txbDataNascimAluno.CustomFormat = "dd/MM/yyyy";
             txbIdadeAluno.Text = Model.Aluno.CalculaIdade(txbDataNascimAluno.Value).ToString();
+            txbIdadeAluno.Text += Convert.ToInt16(txbIdadeAluno.Text) > 1 ? " anos" : " ano";
         }
 
         private void txbDataNascimAluno_KeyUp(object sender, KeyEventArgs e)
@@ -71,13 +73,13 @@ namespace EscolaSis.Forms.Aluno
 
                 pbxFoto.ImageLocation = file.FileName;
                 pbxFoto.Load();
-
             }
         }
 
         private void mnuLimparFoto_Click(object sender, EventArgs e)
         {
-            pbxFoto.Image = null;
+            pbxFoto.ImageLocation = "SemFoto.png";
+            pbxFoto.Load();
         }
 
         private void pbxFoto_Click_1(object sender, EventArgs e)
@@ -100,7 +102,6 @@ namespace EscolaSis.Forms.Aluno
             List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(alunoID);
             List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(alunoID);
 
-            cbxResponsNome.DataSource = (new Model.Responsavel()).ListaResponsaveis();
             cbxRelacAluno.DataSource = Model.Tools.Parenteso.ListaParentesco();
             cbxAnoLetivoMatric.DataSource = Model.Tools.ListaAnoLetivo();
             cbxAnoLetivoMatricula.DataSource = cbxAnoLetivoMatric.DataSource;
@@ -125,6 +126,7 @@ namespace EscolaSis.Forms.Aluno
                 txbDataNascimAluno.CustomFormat = "dd/MM/yyyy";
                 txbDataNascimAluno.Value = aluno.DataNascim;
                 txbIdadeAluno.Text = aluno.Idade.ToString();
+                txbIdadeAluno.Text += Convert.ToInt16(txbIdadeAluno.Text) > 1 ? " anos" : " ano";
             }
             txbNumRGAluno.Text = aluno.RG;
             txbCPFAluno.Text = aluno.CPF;
@@ -142,7 +144,8 @@ namespace EscolaSis.Forms.Aluno
             }
             else
             {
-                pbxFoto.Image = null;
+                pbxFoto.ImageLocation = null;
+                pbxFoto.Image = pbxFoto.InitialImage;
             }
 
             //dados dos responsaveis
@@ -205,40 +208,125 @@ namespace EscolaSis.Forms.Aluno
 
         private void btnSalvarAluno_Click(object sender, EventArgs e)
         {
-            Model.Aluno alunoUpdate = new Model.Aluno();
-            alunoUpdate.AlunoID = Convert.ToInt16(txbAlunoID.Text);
-            alunoUpdate.Nome = txbNomeAluno.Text;
-            if (txbDataNascimAluno.CustomFormat.Trim() != "") alunoUpdate.DataNascim = Convert.ToDateTime(txbDataNascimAluno.Text);
-            alunoUpdate.RG = txbNumRGAluno.Text;
-            alunoUpdate.CPF = txbCPFAluno.Text;
-            alunoUpdate.Sexo = rbtMasc.Checked ? "M" : "F";
-            alunoUpdate.Endereco = txbEnderecoAluno.Text;
-            alunoUpdate.Bairro = txbBairroAluno.Text;
-            alunoUpdate.Cidade = txbCidadeAluno.Text;
-            alunoUpdate.CEP = txbCEPAluno.Text;
-            alunoUpdate.Telefone = txbTelefoneAluno.Text;
+            if (txbAlunoID.Text != "")
+            {
 
-            try
-            {
-                alunoUpdate.SalvarAluno("U");
-                if (pbxFoto.Image == null)
+                Model.Aluno alunoUpdate = new Model.Aluno();
+                alunoUpdate.AlunoID = Convert.ToInt16(txbAlunoID.Text);
+                alunoUpdate.Nome = txbNomeAluno.Text;
+                if (txbDataNascimAluno.CustomFormat.Trim() != "") alunoUpdate.DataNascim = Convert.ToDateTime(txbDataNascimAluno.Text);
+                alunoUpdate.RG = txbNumRGAluno.Text;
+                alunoUpdate.CPF = txbCPFAluno.Text;
+                alunoUpdate.Sexo = rbtMasc.Checked ? "M" : "F";
+                alunoUpdate.Endereco = txbEnderecoAluno.Text;
+                alunoUpdate.Bairro = txbBairroAluno.Text;
+                alunoUpdate.Cidade = txbCidadeAluno.Text;
+                alunoUpdate.CEP = txbCEPAluno.Text;
+                alunoUpdate.Telefone = txbTelefoneAluno.Text;
+
+                try
                 {
-                    pbxFoto.ImageLocation = @"Fotos\SemFoto.png";
+                    alunoUpdate.SalvarAluno("U");
+
+                    GravaFoto();
+
+                    MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+        private void GravaFoto()
+        {
+            string velhaFoto = @"Fotos\Aluno" + txbAlunoID.Text + ".jpg";
+            if (pbxFoto.Image == pbxFoto.InitialImage)
+            {
+                if (File.Exists(velhaFoto))
+                    File.Delete(velhaFoto);
+            }
+            else
+            {
+                string novaFoto = pbxFoto.ImageLocation;
+                if (novaFoto != velhaFoto)
+                {
+                    pbxFoto.ImageLocation = @"SemFoto.png";
                     pbxFoto.Load();
-                    pbxFoto.Image = null;
-                    if (File.Exists(@"Fotos\Aluno" + txbAlunoID.Text + ".jpg"))
-                        File.Delete(@"Fotos\Aluno" + txbAlunoID.Text + ".jpg");
+                    File.Copy(novaFoto, @"Fotos\Aluno" + txbAlunoID.Text + ".jpg", true);
+                    pbxFoto.ImageLocation = @"Fotos\Aluno" + txbAlunoID.Text + ".jpg";
+                    pbxFoto.Load();
                 }
-                else
-                {
-                    pbxFoto.Image.Save(@"Fotos\Aluno" + txbAlunoID.Text + ".jpg");
-                }
-                MessageBox.Show("Dados gravados com sucesso!", "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        public static PictureBox GirarFoto(PictureBox pbxFotoTransf)
+        {
+            Image img = pbxFotoTransf.Image;
+            img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pbxFotoTransf.Image = img;
+            if (File.Exists("fototemp.jpg"))
+                File.Delete("fototemp.jpg");
+            pbxFotoTransf.Image.Save("fototemp.jpg");
+            pbxFotoTransf.ImageLocation = "fototemp.jpg";
+            pbxFotoTransf.Load();
+
+            return pbxFotoTransf;
+        }
+
+        private void girarAFotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pbxFoto = GirarFoto(pbxFoto);
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            Form childForm = new ResponsavelNovo();
+            childForm.ShowDialog();
+        }
+
+        private void btnSalvarRespos_Click(object sender, EventArgs e)
+        {
+            //if (txbTutorAlunoID.Text != "")
+            //{
+
+            //    Model.Responsavel responsavelUpdate = new Model.Responsavel();
+            //    responsavelUpdate.TutorAlunoID = Convert.ToInt16(txbTutorAlunoID.Text);
+            //    responsavelUpdate.res = Convert.ToInt16(txbTutorAlunoID.Text);
+            //    responsavelUpdate.Nome = txbNomeAluno.Text;
+            //    if (txbDataNascimAluno.CustomFormat.Trim() != "") responsavelUpdate.DataNascim = Convert.ToDateTime(txbDataNascimAluno.Text);
+            //    responsavelUpdate.RG = txbNumRGAluno.Text;
+            //    responsavelUpdate.CPF = txbCPFAluno.Text;
+            //    responsavelUpdate.Sexo = rbtMasc.Checked ? "M" : "F";
+            //    responsavelUpdate.Endereco = txbEnderecoAluno.Text;
+            //    responsavelUpdate.Bairro = txbBairroAluno.Text;
+            //    responsavelUpdate.Cidade = txbCidadeAluno.Text;
+            //    responsavelUpdate.CEP = txbCEPAluno.Text;
+            //    responsavelUpdate.Telefone = txbTelefoneAluno.Text;
+
+            //    try
+            //    {
+            //        responsavelUpdate.SalvarAluno("U");
+
+            //        GravaFoto();
+
+            //        MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Selecione um Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
         }
     }
 }

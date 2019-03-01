@@ -43,6 +43,7 @@ namespace EscolaSis.Forms.Aluno
         {
             txbDataNascim.CustomFormat = "dd/MM/yyyy";
             txbIdade.Text = Model.Aluno.CalculaIdade(txbDataNascim.Value).ToString();
+            txbIdade.Text += Convert.ToInt16(txbIdade.Text) > 1 ? " anos" : " ano";
         }
 
         private void txbDataNascim_KeyUp(object sender, KeyEventArgs e)
@@ -78,12 +79,24 @@ namespace EscolaSis.Forms.Aluno
                     pbxFoto.Image.Save(@"Fotos\Aluno" + Model.Aluno.UltimoAlunoIDCriado() + ".jpg");
                 }
                 MessageBox.Show("Dados gravados com sucesso!", "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "EscolaSIs", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void girarFotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pbxFoto = AlunoCadastro.GirarFoto(pbxFoto);
+        }
+
+        private void AlunoNovo_Load(object sender, EventArgs e)
+        {
+            pbxFoto.ImageLocation = null;
+            pbxFoto.Image = pbxFoto.InitialImage;
         }
     }
 }

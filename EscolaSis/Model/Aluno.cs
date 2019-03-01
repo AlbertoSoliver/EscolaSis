@@ -53,9 +53,9 @@ namespace EscolaSis.Model
         public static int CalculaIdade(DateTime DtNascimento)
         {
             int idade = DateTime.Now.Year - DtNascimento.Year;
-            if (DateTime.Now.Month >= DtNascimento.Month)
+            if (DateTime.Now.Month < DtNascimento.Month)
             {
-                idade += 1;
+                idade -= 1;
             }
             return idade;
         }

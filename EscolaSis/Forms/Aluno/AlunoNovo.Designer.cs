@@ -52,6 +52,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pbxFoto = new System.Windows.Forms.PictureBox();
+            this.mnuFoto = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuMudarFoto = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLimparFoto = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbIdade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,16 +64,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txbNumMatric = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.mnuFoto = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuMudarFoto = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLimparFoto = new System.Windows.Forms.ToolStripMenuItem();
+            this.girarFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.mnuFoto.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -272,6 +273,8 @@
             // pbxFoto
             // 
             this.pbxFoto.ContextMenuStrip = this.mnuFoto;
+            this.pbxFoto.ErrorImage = null;
+            this.pbxFoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbxFoto.InitialImage")));
             this.pbxFoto.Location = new System.Drawing.Point(7, 13);
             this.pbxFoto.Name = "pbxFoto";
             this.pbxFoto.Size = new System.Drawing.Size(90, 102);
@@ -279,6 +282,29 @@
             this.pbxFoto.TabIndex = 0;
             this.pbxFoto.TabStop = false;
             this.pbxFoto.Click += new System.EventHandler(this.pxbFoto_Click);
+            // 
+            // mnuFoto
+            // 
+            this.mnuFoto.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMudarFoto,
+            this.mnuLimparFoto,
+            this.girarFotoToolStripMenuItem});
+            this.mnuFoto.Name = "mnuFoto";
+            this.mnuFoto.Size = new System.Drawing.Size(139, 70);
+            // 
+            // mnuMudarFoto
+            // 
+            this.mnuMudarFoto.Name = "mnuMudarFoto";
+            this.mnuMudarFoto.Size = new System.Drawing.Size(180, 22);
+            this.mnuMudarFoto.Text = "Mudar Foto";
+            this.mnuMudarFoto.Click += new System.EventHandler(this.mnuMudarFoto_Click);
+            // 
+            // mnuLimparFoto
+            // 
+            this.mnuLimparFoto.Name = "mnuLimparFoto";
+            this.mnuLimparFoto.Size = new System.Drawing.Size(180, 22);
+            this.mnuLimparFoto.Text = "Limpar Foto";
+            this.mnuLimparFoto.Click += new System.EventHandler(this.mnuLimparFoto_Click);
             // 
             // groupBox1
             // 
@@ -301,7 +327,7 @@
             this.txbIdade.Enabled = false;
             this.txbIdade.Location = new System.Drawing.Point(436, 84);
             this.txbIdade.Name = "txbIdade";
-            this.txbIdade.Size = new System.Drawing.Size(38, 20);
+            this.txbIdade.Size = new System.Drawing.Size(46, 20);
             this.txbIdade.TabIndex = 8;
             // 
             // label5
@@ -367,27 +393,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "N° de Matrícula";
             // 
-            // mnuFoto
+            // girarFotoToolStripMenuItem
             // 
-            this.mnuFoto.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMudarFoto,
-            this.mnuLimparFoto});
-            this.mnuFoto.Name = "mnuFoto";
-            this.mnuFoto.Size = new System.Drawing.Size(139, 48);
-            // 
-            // mnuMudarFoto
-            // 
-            this.mnuMudarFoto.Name = "mnuMudarFoto";
-            this.mnuMudarFoto.Size = new System.Drawing.Size(138, 22);
-            this.mnuMudarFoto.Text = "Mudar Foto";
-            this.mnuMudarFoto.Click += new System.EventHandler(this.mnuMudarFoto_Click);
-            // 
-            // mnuLimparFoto
-            // 
-            this.mnuLimparFoto.Name = "mnuLimparFoto";
-            this.mnuLimparFoto.Size = new System.Drawing.Size(138, 22);
-            this.mnuLimparFoto.Text = "Limpar Foto";
-            this.mnuLimparFoto.Click += new System.EventHandler(this.mnuLimparFoto_Click);
+            this.girarFotoToolStripMenuItem.Name = "girarFotoToolStripMenuItem";
+            this.girarFotoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.girarFotoToolStripMenuItem.Text = "Girar Foto";
+            this.girarFotoToolStripMenuItem.Click += new System.EventHandler(this.girarFotoToolStripMenuItem_Click);
             // 
             // AlunoNovo
             // 
@@ -405,6 +416,7 @@
             this.Name = "AlunoNovo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Aluno";
+            this.Load += new System.EventHandler(this.AlunoNovo_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -413,9 +425,9 @@
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();
+            this.mnuFoto.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.mnuFoto.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -456,5 +468,6 @@
         private System.Windows.Forms.ContextMenuStrip mnuFoto;
         private System.Windows.Forms.ToolStripMenuItem mnuMudarFoto;
         private System.Windows.Forms.ToolStripMenuItem mnuLimparFoto;
+        private System.Windows.Forms.ToolStripMenuItem girarFotoToolStripMenuItem;
     }
 }
