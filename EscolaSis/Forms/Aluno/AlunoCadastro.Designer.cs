@@ -40,8 +40,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscarAluno = new System.Windows.Forms.Button();
             this.dgvListaAlunoBuscar = new System.Windows.Forms.DataGridView();
@@ -176,16 +179,14 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.cbxSituacMensaliade = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.cbxPeriodoLetivoMensal = new System.Windows.Forms.ComboBox();
-            this.periodoLetivoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.label32 = new System.Windows.Forms.Label();
-            this.cbxAnoLetidoMensal = new System.Windows.Forms.ComboBox();
+            this.cbxAnoReferMensal = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.txbNomeAlunoMensal = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txbNumMatricMensal = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.periodoLetivoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.periodoLetivoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.periodoLetivoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.periodoLetivoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -243,8 +244,8 @@
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoMensalidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource3)).BeginInit();
@@ -1510,9 +1511,7 @@
             this.groupBox13.Controls.Add(this.toolStrip2);
             this.groupBox13.Controls.Add(this.cbxSituacMensaliade);
             this.groupBox13.Controls.Add(this.label34);
-            this.groupBox13.Controls.Add(this.cbxPeriodoLetivoMensal);
-            this.groupBox13.Controls.Add(this.label32);
-            this.groupBox13.Controls.Add(this.cbxAnoLetidoMensal);
+            this.groupBox13.Controls.Add(this.cbxAnoReferMensal);
             this.groupBox13.Controls.Add(this.label33);
             this.groupBox13.Location = new System.Drawing.Point(20, 89);
             this.groupBox13.Name = "groupBox13";
@@ -1545,24 +1544,24 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewImageColumn1});
             this.dgvAlunoMensalidades.DataSource = this.mensalidadeBindingSource4;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlunoMensalidades.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoMensalidades.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvAlunoMensalidades.Location = new System.Drawing.Point(25, 105);
             this.dgvAlunoMensalidades.MultiSelect = false;
             this.dgvAlunoMensalidades.Name = "dgvAlunoMensalidades";
             this.dgvAlunoMensalidades.ReadOnly = true;
             this.dgvAlunoMensalidades.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Window;
-            this.dgvAlunoMensalidades.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoMensalidades.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvAlunoMensalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunoMensalidades.Size = new System.Drawing.Size(529, 243);
             this.dgvAlunoMensalidades.TabIndex = 43;
@@ -1586,14 +1585,21 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Vencimento";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "d";
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn11.HeaderText = "Vencim.";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 90;
+            this.dataGridViewTextBoxColumn11.Width = 75;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "ValorMensalidade";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = "0,00";
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn12.HeaderText = "Valor Mensal.";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -1602,6 +1608,10 @@
             // valorPagoDataGridViewTextBoxColumn
             // 
             this.valorPagoDataGridViewTextBoxColumn.DataPropertyName = "ValorPago";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = "0,00";
+            this.valorPagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.valorPagoDataGridViewTextBoxColumn.HeaderText = "Valor Pago";
             this.valorPagoDataGridViewTextBoxColumn.Name = "valorPagoDataGridViewTextBoxColumn";
             this.valorPagoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1621,7 +1631,7 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 36;
+            this.dataGridViewImageColumn1.Width = 20;
             // 
             // mensalidadeBindingSource4
             // 
@@ -1645,63 +1655,40 @@
             "Qualquer Situação",
             "Apenas Pagas",
             "Apenas Em Aberto"});
-            this.cbxSituacMensaliade.Location = new System.Drawing.Point(278, 78);
+            this.cbxSituacMensaliade.Location = new System.Drawing.Point(185, 78);
             this.cbxSituacMensaliade.Name = "cbxSituacMensaliade";
-            this.cbxSituacMensaliade.Size = new System.Drawing.Size(120, 21);
+            this.cbxSituacMensaliade.Size = new System.Drawing.Size(172, 21);
             this.cbxSituacMensaliade.TabIndex = 34;
             this.cbxSituacMensaliade.Tag = "";
+            this.cbxSituacMensaliade.SelectedIndexChanged += new System.EventHandler(this.cbxSituacMensaliade_SelectedIndexChanged);
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(275, 62);
+            this.label34.Location = new System.Drawing.Point(182, 62);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(49, 13);
             this.label34.TabIndex = 33;
             this.label34.Text = "Situação";
             // 
-            // cbxPeriodoLetivoMensal
+            // cbxAnoReferMensal
             // 
-            this.cbxPeriodoLetivoMensal.DataSource = this.periodoLetivoBindingSource2;
-            this.cbxPeriodoLetivoMensal.DisplayMember = "Descricao";
-            this.cbxPeriodoLetivoMensal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPeriodoLetivoMensal.FormattingEnabled = true;
-            this.cbxPeriodoLetivoMensal.Location = new System.Drawing.Point(112, 78);
-            this.cbxPeriodoLetivoMensal.Name = "cbxPeriodoLetivoMensal";
-            this.cbxPeriodoLetivoMensal.Size = new System.Drawing.Size(136, 21);
-            this.cbxPeriodoLetivoMensal.TabIndex = 32;
-            this.cbxPeriodoLetivoMensal.ValueMember = "Codigo";
-            // 
-            // periodoLetivoBindingSource2
-            // 
-            this.periodoLetivoBindingSource2.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(109, 62);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(77, 13);
-            this.label32.TabIndex = 31;
-            this.label32.Text = "Período Letivo";
-            // 
-            // cbxAnoLetidoMensal
-            // 
-            this.cbxAnoLetidoMensal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxAnoLetidoMensal.FormattingEnabled = true;
-            this.cbxAnoLetidoMensal.Location = new System.Drawing.Point(25, 78);
-            this.cbxAnoLetidoMensal.Name = "cbxAnoLetidoMensal";
-            this.cbxAnoLetidoMensal.Size = new System.Drawing.Size(64, 21);
-            this.cbxAnoLetidoMensal.TabIndex = 30;
+            this.cbxAnoReferMensal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAnoReferMensal.FormattingEnabled = true;
+            this.cbxAnoReferMensal.Location = new System.Drawing.Point(25, 78);
+            this.cbxAnoReferMensal.Name = "cbxAnoReferMensal";
+            this.cbxAnoReferMensal.Size = new System.Drawing.Size(138, 21);
+            this.cbxAnoReferMensal.TabIndex = 30;
+            this.cbxAnoReferMensal.SelectedIndexChanged += new System.EventHandler(this.cbxAnoReferMensal_SelectedIndexChanged);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(22, 62);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(58, 13);
+            this.label33.Size = new System.Drawing.Size(26, 13);
             this.label33.TabIndex = 29;
-            this.label33.Text = "Ano Letivo";
+            this.label33.Text = "Ano";
             // 
             // groupBox12
             // 
@@ -1748,6 +1735,10 @@
             this.label31.Size = new System.Drawing.Size(82, 13);
             this.label31.TabIndex = 0;
             this.label31.Text = "N° de Matrícula";
+            // 
+            // periodoLetivoBindingSource2
+            // 
+            this.periodoLetivoBindingSource2.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
             // 
             // periodoLetivoBindingSource1
             // 
@@ -1908,9 +1899,9 @@
             this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoMensalidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource3)).EndInit();
@@ -1980,9 +1971,7 @@
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ComboBox cbxSituacMensaliade;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox cbxPeriodoLetivoMensal;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox cbxAnoLetidoMensal;
+        private System.Windows.Forms.ComboBox cbxAnoReferMensal;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox txbNomeAlunoMensal;
@@ -2071,13 +2060,6 @@
         private System.Windows.Forms.BindingSource periodoLetivoBindingSource;
         private System.Windows.Forms.BindingSource periodoLetivoBindingSource1;
         private System.Windows.Forms.BindingSource resultadoFinalBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MensalidadeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorPagoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.BindingSource mensalidadeBindingSource4;
         private System.Windows.Forms.BindingSource periodoLetivoBindingSource2;
         private System.Windows.Forms.BindingSource matriculaBindingSource2;
@@ -2092,5 +2074,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MatriculaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomePeriodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MensalidadeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

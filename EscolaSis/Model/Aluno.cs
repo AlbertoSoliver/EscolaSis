@@ -204,13 +204,15 @@ namespace EscolaSis.Model
             return lstMatric;
 
         }
-        public static List<Mensalidade> ListarMensalidadesAluno(int alunoID)
+        public static List<Mensalidade> ListarMensalidadesAluno(int alunoID, string anoRef, string sitPag = "%")
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "cstAlunoMensalidades";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@AlunoID", alunoID);
+            cmd.Parameters.AddWithValue("@SitPagto", sitPag);
+            cmd.Parameters.AddWithValue("@AnoRef", anoRef);
 
             OleDbDataAdapter adp = DB.DBAdapter(cmd);
 
@@ -236,6 +238,7 @@ namespace EscolaSis.Model
                 mensal.JurosMulta = Convert.ToDecimal(item["JurosMulta"].ToString());
                 mensal.ValorPago = Convert.ToDecimal(item["ValorPago"].ToString());
                 mensal.FormaPagto = item["FormaPagto"].ToString();
+                mensal.SituacaoPagto = item["SitPagto"].ToString();
 
                 lstMatric.Add(mensal);
             }

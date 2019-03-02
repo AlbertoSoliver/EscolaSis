@@ -82,11 +82,10 @@ namespace EscolaSis.Forms.Aluno
 
             Model.Aluno aluno = new Model.Aluno();
 
-            int alunoID;
-            if (dgvListaAlunoBuscar.SelectedRows.Count > 0) alunoID = (int)dgvListaAlunoBuscar.SelectedRows[0].Cells[0].Value;
-            else alunoID = 0;
+            if (dgvListaAlunoBuscar.SelectedRows.Count > 0) txbAlunoID.Text = dgvListaAlunoBuscar.SelectedRows[0].Cells[0].Value.ToString();
+            else txbAlunoID.Text = "0";
 
-            aluno.DadosAluno(alunoID);
+            aluno.DadosAluno(Convert.ToInt16(txbAlunoID.Text));
 
             cbxRelacAluno.DataSource = Model.Tools.Parenteso.ListaParentesco();
 
@@ -99,18 +98,15 @@ namespace EscolaSis.Forms.Aluno
             cbxResultadoMatricula.DataSource = Model.Tools.ResultadoFinal.ListaResultadoFinal();
             cbxTurmaMatricula.DataSource = Model.Tools.ListaTurma();
 
-            cbxAnoLetidoMensal.DataSource = Model.Tools.ListaAnoLetivo();
-            cbxPeriodoLetivoMensal.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo();
+            cbxAnoReferMensal.DataSource = Model.Tools.ListaAnoLetivo();
             cbxSituacMensaliade.Text = "Qualquer Situação";
 
-            List<Model.Responsavel> listaResponsaveis = Model.Aluno.ListarResponsaveisAluno(alunoID);
-            List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(alunoID, cbxAnoLetidoMensal.SelectedValue.ToString());
-            List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(alunoID);
+            List<Model.Responsavel> listaResponsaveis = Model.Aluno.ListarResponsaveisAluno(Convert.ToInt16(txbAlunoID.Text));
+            List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoReferMensal.SelectedValue.ToString());
+            List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoReferMensal.SelectedValue.ToString());
 
             // dados do aluno
-            txbAlunoID.Text = aluno.AlunoID.ToString();
             txbNumMatricAluno.Text = aluno.NumMatricula;
-            txbAlunoID.Text = aluno.AlunoID.ToString();
             txbNomeAluno.Text = aluno.Nome;
             txbIdadeAluno.Text = "";
             txbDataNascimAluno.CustomFormat = " ";
@@ -386,6 +382,27 @@ namespace EscolaSis.Forms.Aluno
         private void cbxAnoLetivoMatric_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvAlunoDisciplinas.DataSource = Model.Aluno.ListarMatriculasAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoLetivoMatric.SelectedValue.ToString());
+        }
+
+        private void cbxAnoReferMensal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvAlunoMensalidades.DataSource = Model.Aluno.ListarMensalidadesAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoReferMensal.SelectedValue.ToString(), codigoSitPagto(cbxSituacMensaliade.SelectedIndex) );
+        }
+
+        private void cbxSituacMensaliade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvAlunoMensalidades.DataSource = Model.Aluno.ListarMensalidadesAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoReferMensal.SelectedValue.ToString(), codigoSitPagto(cbxSituacMensaliade.SelectedIndex));
+        }
+
+        public static string codigoSitPagto(int sitPagIndex)
+        {
+            switch (sitPagIndex)
+            {
+                case 0 : return "%";
+                case 1: return "%Pago";
+                case 2 : return "%Aberto";
+                default: return "%";
+            }
         }
     }
 }

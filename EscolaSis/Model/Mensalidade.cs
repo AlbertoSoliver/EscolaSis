@@ -23,10 +23,7 @@ namespace EscolaSis.Model
         public decimal JurosMulta { get; set; }
         public decimal ValorPago { get; set; }
         public string FormaPagto { get; set; }
-        public string SituacaoPagto
-        {
-            get { return FormaPagto == "" ? "Em Aberto" : "Pago"; }
-        }
+        public string SituacaoPagto { get; set; }
 
         public Mensalidade() { }
 
@@ -58,6 +55,7 @@ namespace EscolaSis.Model
                 JurosMulta = Convert.ToDecimal(dt.Rows[0]["JurosMulta"].ToString());
                 ValorPago = Convert.ToDecimal(dt.Rows[0]["ValorPago"].ToString());
                 FormaPagto = dt.Rows[0]["FormaPagto"].ToString();
+                SituacaoPagto = dt.Rows[0]["SitPagto"].ToString();
             }
         }
 
