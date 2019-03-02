@@ -28,42 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatricNova));
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.cbxTurma = new System.Windows.Forms.ComboBox();
+            this.btnGravar = new System.Windows.Forms.Button();
+            this.txbRelatorio = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.cbxResultado = new System.Windows.Forms.ComboBox();
+            this.resultadoFinalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbDisciplianAtividade = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cbxOrientador = new System.Windows.Forms.ComboBox();
+            this.orientadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cbxPeriodoLetivo = new System.Windows.Forms.ComboBox();
+            this.periodoLetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cbxAnoLetivo = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultadoFinalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orientadorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.comboBox12);
-            this.groupBox11.Controls.Add(this.button4);
-            this.groupBox11.Controls.Add(this.textBox8);
+            this.groupBox11.Controls.Add(this.cbxTurma);
+            this.groupBox11.Controls.Add(this.btnGravar);
+            this.groupBox11.Controls.Add(this.txbRelatorio);
             this.groupBox11.Controls.Add(this.label29);
-            this.groupBox11.Controls.Add(this.comboBox8);
+            this.groupBox11.Controls.Add(this.cbxResultado);
             this.groupBox11.Controls.Add(this.label28);
-            this.groupBox11.Controls.Add(this.textBox5);
+            this.groupBox11.Controls.Add(this.txbDisciplianAtividade);
             this.groupBox11.Controls.Add(this.label27);
             this.groupBox11.Controls.Add(this.label26);
-            this.groupBox11.Controls.Add(this.comboBox7);
+            this.groupBox11.Controls.Add(this.cbxOrientador);
             this.groupBox11.Controls.Add(this.label23);
-            this.groupBox11.Controls.Add(this.comboBox5);
+            this.groupBox11.Controls.Add(this.cbxPeriodoLetivo);
             this.groupBox11.Controls.Add(this.label24);
-            this.groupBox11.Controls.Add(this.comboBox6);
+            this.groupBox11.Controls.Add(this.cbxAnoLetivo);
             this.groupBox11.Controls.Add(this.label25);
             this.groupBox11.Location = new System.Drawing.Point(12, 12);
             this.groupBox11.Name = "groupBox11";
@@ -72,10 +79,10 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Cadastro de Matrícula";
             // 
-            // comboBox12
+            // cbxTurma
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
+            this.cbxTurma.FormattingEnabled = true;
+            this.cbxTurma.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -84,28 +91,29 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox12.Location = new System.Drawing.Point(21, 198);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(126, 21);
-            this.comboBox12.TabIndex = 43;
+            this.cbxTurma.Location = new System.Drawing.Point(21, 198);
+            this.cbxTurma.Name = "cbxTurma";
+            this.cbxTurma.Size = new System.Drawing.Size(126, 21);
+            this.cbxTurma.TabIndex = 43;
             // 
-            // button4
+            // btnGravar
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(254, 314);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(46, 43);
-            this.button4.TabIndex = 42;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
+            this.btnGravar.Location = new System.Drawing.Point(237, 313);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(46, 43);
+            this.btnGravar.TabIndex = 42;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // textBox8
+            // txbRelatorio
             // 
-            this.textBox8.Location = new System.Drawing.Point(21, 248);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(259, 60);
-            this.textBox8.TabIndex = 41;
+            this.txbRelatorio.Location = new System.Drawing.Point(21, 248);
+            this.txbRelatorio.Multiline = true;
+            this.txbRelatorio.Name = "txbRelatorio";
+            this.txbRelatorio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txbRelatorio.Size = new System.Drawing.Size(259, 60);
+            this.txbRelatorio.TabIndex = 41;
             // 
             // label29
             // 
@@ -116,23 +124,21 @@
             this.label29.TabIndex = 40;
             this.label29.Text = "Relatório Final";
             // 
-            // comboBox8
+            // cbxResultado
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
-            this.comboBox8.Location = new System.Drawing.Point(178, 198);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(102, 21);
-            this.comboBox8.TabIndex = 39;
+            this.cbxResultado.DataSource = this.resultadoFinalBindingSource;
+            this.cbxResultado.DisplayMember = "Descricao";
+            this.cbxResultado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxResultado.FormattingEnabled = true;
+            this.cbxResultado.Location = new System.Drawing.Point(178, 198);
+            this.cbxResultado.Name = "cbxResultado";
+            this.cbxResultado.Size = new System.Drawing.Size(102, 21);
+            this.cbxResultado.TabIndex = 39;
+            this.cbxResultado.ValueMember = "Codigo";
+            // 
+            // resultadoFinalBindingSource
+            // 
+            this.resultadoFinalBindingSource.DataSource = typeof(EscolaSis.Model.Tools.ResultadoFinal);
             // 
             // label28
             // 
@@ -143,12 +149,12 @@
             this.label28.TabIndex = 38;
             this.label28.Text = "Resultado Final";
             // 
-            // textBox5
+            // txbDisciplianAtividade
             // 
-            this.textBox5.Location = new System.Drawing.Point(21, 148);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(262, 20);
-            this.textBox5.TabIndex = 37;
+            this.txbDisciplianAtividade.Location = new System.Drawing.Point(21, 148);
+            this.txbDisciplianAtividade.Name = "txbDisciplianAtividade";
+            this.txbDisciplianAtividade.Size = new System.Drawing.Size(262, 20);
+            this.txbDisciplianAtividade.TabIndex = 37;
             // 
             // label27
             // 
@@ -168,23 +174,21 @@
             this.label26.TabIndex = 34;
             this.label26.Text = "Tuma";
             // 
-            // comboBox7
+            // cbxOrientador
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
-            this.comboBox7.Location = new System.Drawing.Point(21, 99);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(262, 21);
-            this.comboBox7.TabIndex = 33;
+            this.cbxOrientador.DataSource = this.orientadorBindingSource;
+            this.cbxOrientador.DisplayMember = "Nome";
+            this.cbxOrientador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOrientador.FormattingEnabled = true;
+            this.cbxOrientador.Location = new System.Drawing.Point(21, 99);
+            this.cbxOrientador.Name = "cbxOrientador";
+            this.cbxOrientador.Size = new System.Drawing.Size(262, 21);
+            this.cbxOrientador.TabIndex = 33;
+            this.cbxOrientador.ValueMember = "OrientadorID";
+            // 
+            // orientadorBindingSource
+            // 
+            this.orientadorBindingSource.DataSource = typeof(EscolaSis.Model.Orientador);
             // 
             // label23
             // 
@@ -195,23 +199,21 @@
             this.label23.TabIndex = 32;
             this.label23.Text = "Orientador";
             // 
-            // comboBox5
+            // cbxPeriodoLetivo
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
-            this.comboBox5.Location = new System.Drawing.Point(151, 51);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(132, 21);
-            this.comboBox5.TabIndex = 28;
+            this.cbxPeriodoLetivo.DataSource = this.periodoLetivoBindingSource;
+            this.cbxPeriodoLetivo.DisplayMember = "Descricao";
+            this.cbxPeriodoLetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPeriodoLetivo.FormattingEnabled = true;
+            this.cbxPeriodoLetivo.Location = new System.Drawing.Point(151, 51);
+            this.cbxPeriodoLetivo.Name = "cbxPeriodoLetivo";
+            this.cbxPeriodoLetivo.Size = new System.Drawing.Size(132, 21);
+            this.cbxPeriodoLetivo.TabIndex = 28;
+            this.cbxPeriodoLetivo.ValueMember = "Codigo";
+            // 
+            // periodoLetivoBindingSource
+            // 
+            this.periodoLetivoBindingSource.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
             // 
             // label24
             // 
@@ -222,10 +224,10 @@
             this.label24.TabIndex = 27;
             this.label24.Text = "Período Letivo";
             // 
-            // comboBox6
+            // cbxAnoLetivo
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cbxAnoLetivo.FormattingEnabled = true;
+            this.cbxAnoLetivo.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -234,10 +236,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox6.Location = new System.Drawing.Point(21, 51);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(109, 21);
-            this.comboBox6.TabIndex = 26;
+            this.cbxAnoLetivo.Location = new System.Drawing.Point(21, 51);
+            this.cbxAnoLetivo.Name = "cbxAnoLetivo";
+            this.cbxAnoLetivo.Size = new System.Drawing.Size(109, 21);
+            this.cbxAnoLetivo.TabIndex = 26;
             // 
             // label25
             // 
@@ -248,7 +250,7 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Ano Letivo";
             // 
-            // FormMatricNova
+            // MatricNova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,11 +259,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormMatricNova";
+            this.Name = "MatricNova";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nova Matrícula";
+            this.Load += new System.EventHandler(this.MatricNova_Load);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultadoFinalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orientadorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,20 +275,23 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox cbxTurma;
+        private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.TextBox txbRelatorio;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cbxResultado;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbDisciplianAtividade;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cbxOrientador;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbxPeriodoLetivo;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cbxAnoLetivo;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.BindingSource periodoLetivoBindingSource;
+        private System.Windows.Forms.BindingSource resultadoFinalBindingSource;
+        private System.Windows.Forms.BindingSource orientadorBindingSource;
     }
 }

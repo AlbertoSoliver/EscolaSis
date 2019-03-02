@@ -142,6 +142,7 @@
     <Compile Include="MDIPrincipal.Designer.cs">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\EscolaDados.cs" />
     <Compile Include="Model\Matricula.cs" />
     <Compile Include="Model\Mensalidade.cs" />
     <Compile Include="Model\Orientador.cs" />

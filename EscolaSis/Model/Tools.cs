@@ -6,6 +6,10 @@ namespace EscolaSis.Model
 {
     class Tools
     {
+        public static Model.EscolaDados DadosEscola()
+        {
+            return new Model.EscolaDados();
+        }
         public static List<string> ListaAnoLetivo()
         {
             OleDbCommand cmd = new OleDbCommand();
@@ -148,7 +152,6 @@ namespace EscolaSis.Model
                 };
             }
         }
-
         public class PeriodoLetivo
         {
             public string Codigo { get; set; }
@@ -257,79 +260,27 @@ namespace EscolaSis.Model
 
                 return descricaoPeriodoLetivo;
             }
-            public static List<PeriodoLetivo> ListaPeriodoLetivo()
+            public static List<PeriodoLetivo> ListaPeriodoLetivo(bool ParaCadastro = false)
             {
-                return new List<PeriodoLetivo>
-                {
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B1",
-                        Descricao = "1º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B2",
-                        Descricao = "2º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B3",
-                        Descricao = "3º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B4",
-                        Descricao = "4º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B5",
-                        Descricao = "5º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "B6",
-                        Descricao = "6º Bimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "T1",
-                        Descricao = "1º Trimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                        Codigo = "T2",
-                        Descricao = "2º Trimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                    Codigo = "T3",
-                    Descricao = "3º Trimestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                    Codigo = "S1",
-                    Descricao = "1º Semestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                    Codigo = "S2",
-                    Descricao = "2º Semestre"
-                    },
-                    new PeriodoLetivo
-                    {
-                    Codigo = "A0",
-                    Descricao = "Ano Escolar"
-                    }
-                };
-            }
-        }
+                List<PeriodoLetivo> lstPeriodos = new List<PeriodoLetivo>();
 
-        public class PeriodoEscolar
-        {
-            public int AnoLetivo { get; set; }
-            public string CodigoPeriodoLetivo { get; set; }
-            public string PeriodoLetivo { get; set; }
+                if (!ParaCadastro) lstPeriodos.Add( new PeriodoLetivo { Codigo = "%", Descricao = "Todos" });
+
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B1", Descricao = "1º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B2", Descricao = "2º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B3", Descricao = "3º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B4", Descricao = "4º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B5", Descricao = "5º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "B6", Descricao = "6º Bimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "T1", Descricao = "1º Trimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "T2", Descricao = "2º Trimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "T3", Descricao = "3º Trimestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "S1", Descricao = "1º Semestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "S2", Descricao = "2º Semestre" });
+                lstPeriodos.Add( new PeriodoLetivo { Codigo = "A0", Descricao = "Ano Escolar" });
+
+                return lstPeriodos;
+            }
         }
         public class ResultadoFinal
         {

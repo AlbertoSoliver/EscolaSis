@@ -168,13 +168,15 @@ namespace EscolaSis.Model
             DB.ExecCommand(cmd);
 
         }
-        public static List<Matricula> ListarMatriculasAluno(int alunoID)
+        public static List<Matricula> ListarMatriculasAluno(int alunoID, string anoLetivo = "%", string periodoLetivo = "%")
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "cstAlunoMatriculas";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@AlunoID", alunoID);
+            cmd.Parameters.AddWithValue("@AnoLetivoMatric", anoLetivo);
+            cmd.Parameters.AddWithValue("@CodigoPeriodoMatr", periodoLetivo);
 
             OleDbDataAdapter adp = DB.DBAdapter(cmd);
 
@@ -190,6 +192,7 @@ namespace EscolaSis.Model
                     MatriculaID = Convert.ToInt32(item["MatriculaID"].ToString()),
                     Disciplina = item["Disciplina"].ToString(),
                     AnoLetivo = item["AnoLetivo"].ToString(),
+                    CodigoPeriodo = item["CodigoPeriodoMatr"].ToString(),
                     OrientadorID = Convert.ToInt32(dt.Rows[0]["OrientadorID"].ToString()),
                     NomeOrientador = item["NomeOrientador"].ToString(),
                     Turma = item["Turma"].ToString(),

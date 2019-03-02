@@ -8,6 +8,7 @@ namespace EscolaSis.Forms.Aluno
 {
     public partial class AlunoCadastro : Form
     {
+
         public AlunoCadastro()
         {
             InitializeComponent();
@@ -22,18 +23,6 @@ namespace EscolaSis.Forms.Aluno
         private void itmParcela_Click(object sender, EventArgs e)
         {
             Form childForm = new MensalidadeManter();
-            childForm.ShowDialog();
-        }
-
-        //private void btnNovoResp_Click(object sender, EventArgs e)
-        //{
-        //    Form childForm = new ResponsavelNovo(txbAlunoID.Text);
-        //    childForm.ShowDialog();
-        //}
-
-        private void btnNovaMatric_Click_1(object sender, EventArgs e)
-        {
-            Form childForm = new MatricNova();
             childForm.ShowDialog();
         }
 
@@ -98,21 +87,25 @@ namespace EscolaSis.Forms.Aluno
             else alunoID = 0;
 
             aluno.DadosAluno(alunoID);
-            List<Model.Responsavel> listaResponsaveis = Model.Aluno.ListarResponsaveisAluno(alunoID);
-            List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(alunoID);
-            List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(alunoID);
 
             cbxRelacAluno.DataSource = Model.Tools.Parenteso.ListaParentesco();
+
             cbxAnoLetivoMatric.DataSource = Model.Tools.ListaAnoLetivo();
-            cbxAnoLetivoMatricula.DataSource = cbxAnoLetivoMatric.DataSource;
-            cbxPeriodoLetivoMatri.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo();
-            cbxPeriodoLetivoMatricula.DataSource = cbxPeriodoLetivoMatri.DataSource;
+            //cbxPeriodoLetivoMatri.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo();
+
+            cbxAnoLetivoMatricula.DataSource = Model.Tools.ListaAnoLetivo();
+            cbxPeriodoLetivoMatricula.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo(true);
             cbxOrientadorMatricula.DataSource = (new Model.Orientador()).ListaOrientadores();
             cbxResultadoMatricula.DataSource = Model.Tools.ResultadoFinal.ListaResultadoFinal();
             cbxTurmaMatricula.DataSource = Model.Tools.ListaTurma();
-            cbxAnoLetidoMensal.DataSource = cbxAnoLetivoMatric.DataSource;
-            cbxPeriodoLetivoMensal.DataSource = cbxPeriodoLetivoMatri.DataSource;
+
+            cbxAnoLetidoMensal.DataSource = Model.Tools.ListaAnoLetivo();
+            cbxPeriodoLetivoMensal.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo();
             cbxSituacMensaliade.Text = "Qualquer Situação";
+
+            List<Model.Responsavel> listaResponsaveis = Model.Aluno.ListarResponsaveisAluno(alunoID);
+            List<Model.Matricula> listaMatriculas = Model.Aluno.ListarMatriculasAluno(alunoID, cbxAnoLetidoMensal.SelectedValue.ToString());
+            List<Model.Mensalidade> listaMensalidades = Model.Aluno.ListarMensalidadesAluno(alunoID);
 
             // dados do aluno
             txbAlunoID.Text = aluno.AlunoID.ToString();
@@ -327,7 +320,72 @@ namespace EscolaSis.Forms.Aluno
             {
                 MessageBox.Show("Selecione um Aluno para incluir o responsável.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        private void btnGravarMatricula_Click(object sender, EventArgs e)
+        {
+            if (dgvAlunoDisciplinas.Rows.Count > 0)
+            {
+                if ((Convert.ToInt16("0" + cbxAnoLetivoMatricula.Text)) <= 1980 && (Convert.ToInt16("0" + cbxAnoLetivoMatricula.Text) > DateTime.Now.Year + 1))
+                {
+                    MessageBox.Show("Ano letivo inválido.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cbxAnoLetivoMatricula.Focus();
+                    return;
+                };
+
+                Model.Matricula matriculaUpdate = new Model.Matricula();
+                matriculaUpdate.MatriculaID = Convert.ToInt16(dgvAlunoDisciplinas.SelectedRows[0].Cells[0].Value);
+                matriculaUpdate.OrientadorID = Convert.ToInt16(cbxOrientadorMatricula.SelectedValue.ToString());
+                matriculaUpdate.AnoLetivo = cbxAnoLetivoMatricula.Text;
+                matriculaUpdate.Disciplina = txbDisciplinaMatricula.Text;
+                matriculaUpdate.CodigoPeriodo = cbxPeriodoLetivoMatricula.SelectedValue.ToString();
+                matriculaUpdate.Turma = cbxTurmaMatricula.Text;
+                matriculaUpdate.ResultadoFinal = cbxResultadoMatricula.SelectedValue.ToString();
+                matriculaUpdate.RelatorioAtividade = txbRelatorioMatricula.Text;
+
+                try
+                {
+                    matriculaUpdate.SalvarMatriculaAluno("U");
+                    dgvAlunoDisciplinas.DataSource = Model.Aluno.ListarMatriculasAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoLetivoMatric.SelectedValue.ToString());
+                    MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Matrícula do Aluno para gravar os dados.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void cbxAnoLetivoMatricula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnNovaMatricula_Click(object sender, EventArgs e)
+        {
+            if (this.txbAlunoID.Text != "")
+            {
+                Form childForm = new MatricNova(txbAlunoID.Text);
+                childForm.ShowDialog();
+                dgvAlunoDisciplinas.DataSource = Model.Aluno.ListarMatriculasAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoLetivoMatric.SelectedValue.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Aluno para incluir o responsável.", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void cbxAnoLetivoMatric_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvAlunoDisciplinas.DataSource = Model.Aluno.ListarMatriculasAluno(Convert.ToInt16(txbAlunoID.Text), cbxAnoLetivoMatric.SelectedValue.ToString());
         }
     }
 }

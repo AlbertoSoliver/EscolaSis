@@ -24,12 +24,7 @@ namespace EscolaSis.Model
         {
             get
             {
-                switch (ResultadoFinal)
-                {
-                    case "A": return "Aprovado";
-                    case "R": return "Reporovado";
-                    default: return "Sem Avaliação";
-                }
+                return Model.Tools.ResultadoFinal.GetDescricao(ResultadoFinal);
             }
         }
 
@@ -61,6 +56,48 @@ namespace EscolaSis.Model
                 RelatorioAtividade = dt.Rows[0]["RelatorioAtividade"].ToString();
                 ResultadoFinal = dt.Rows[0]["ResultadoFinal"].ToString();
             }
+
+        }
+        public void SalvarMatriculaAluno(string tipo)
+        {
+            string commandText = "";
+            if (tipo == "U")
+            {
+                commandText = "UPDATE Matriculas ";
+                commandText += "SET ";
+                commandText += "OrientadorID = @OrientadorID, ";
+                commandText += "CodigoPeriodoMatr = @CodigoPeriodoMatr, ";
+                commandText += "AnoLetivo = @AnoLetivo, ";
+                commandText += "Turma = @Turma, ";
+                commandText += "Disciplina = @Disciplina, ";
+                commandText += "RelatorioAtividade = @RelatorioAtividade, ";
+                commandText += "ResultadoFinal = @ResultadoFinal ";
+                commandText += "WHERE MatriculaID = @MatriculaID ";
+
+            }
+            else
+            {
+                commandText = "INSERT INTO Matriculas ";
+                commandText += "(OrientadorID, CodigoPeriodoMatr, AnoLetivo, Turma, Disciplina, RelatorioAtividade, ResultadoFinal, AlunoID) ";
+                commandText += "VALUES ";
+                commandText += "(@OrientadorID, @CodigoPeriodoMatr, @AnoLetivo, @Turma, @Disciplina, @RelatorioAtividade, @ResultadoFinal, @AlunoID)";
+            }
+
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@OrientadorID", Convert.ToInt32(OrientadorID.ToString()));
+            cmd.Parameters.AddWithValue("@CodigoPeriodoMatr", CodigoPeriodo.ToString());
+            cmd.Parameters.AddWithValue("@AnoLetivo", AnoLetivo.ToString());
+            cmd.Parameters.AddWithValue("@Turma", Turma.ToString());
+            cmd.Parameters.AddWithValue("@Disciplina", Disciplina.ToString());
+            cmd.Parameters.AddWithValue("@RelatorioAtividade", RelatorioAtividade.ToString());
+            cmd.Parameters.AddWithValue("@ResultadoFinal", ResultadoFinal.ToString());
+            if (tipo == "I") cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
+            else cmd.Parameters.AddWithValue("@MatriculaID", MatriculaID.ToString());
+
+            DB.ExecCommand(cmd);
 
         }
     }

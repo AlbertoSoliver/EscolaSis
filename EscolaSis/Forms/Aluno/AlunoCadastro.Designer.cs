@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlunoCadastro));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscarAluno = new System.Windows.Forms.Button();
             this.dgvListaAlunoBuscar = new System.Windows.Forms.DataGridView();
@@ -110,8 +110,8 @@
             this.responsavelBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.cbxResponsNome = new System.Windows.Forms.TextBox();
             this.txbTutorAlunoID = new System.Windows.Forms.TextBox();
+            this.cbxResponsNome = new System.Windows.Forms.TextBox();
             this.btnSalvarRespos = new System.Windows.Forms.Button();
             this.ckbPodePegar = new System.Windows.Forms.CheckBox();
             this.ckbPagador = new System.Windows.Forms.CheckBox();
@@ -130,7 +130,7 @@
             this.dgvAlunoOrientador = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.cbxTurmaMatricula = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnGravarMatricula = new System.Windows.Forms.Button();
             this.txbRelatorioMatricula = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cbxResultadoMatricula = new System.Windows.Forms.ComboBox();
@@ -143,7 +143,7 @@
             this.orientadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label23 = new System.Windows.Forms.Label();
             this.cbxPeriodoLetivoMatricula = new System.Windows.Forms.ComboBox();
-            this.periodoLetivoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.periodoLetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label24 = new System.Windows.Forms.Label();
             this.cbxAnoLetivoMatricula = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -151,12 +151,10 @@
             this.dgvAlunoDisciplinas = new System.Windows.Forms.DataGridView();
             this.MatriculaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePeriodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matriculaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.cbxPeriodoLetivoMatri = new System.Windows.Forms.ComboBox();
-            this.periodoLetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label21 = new System.Windows.Forms.Label();
+            this.btnNovaMatricula = new System.Windows.Forms.ToolStripButton();
             this.cbxAnoLetivoMatric = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -188,6 +186,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txbNumMatricMensal = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.periodoLetivoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.periodoLetivoBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.periodoLetivoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.responsavelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.matriculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mensalidadeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -232,12 +233,11 @@
             this.dgvAlunoOrientador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultadoFinalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orientadorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoDisciplinas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource2)).BeginInit();
             this.toolStrip4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox13.SuspendLayout();
@@ -245,6 +245,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).BeginInit();
@@ -286,38 +289,38 @@
             this.dgvListaAlunoBuscar.AllowUserToResizeRows = false;
             this.dgvListaAlunoBuscar.AutoGenerateColumns = false;
             this.dgvListaAlunoBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaAlunoBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaAlunoBuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaAlunoBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaAlunoBuscar.ColumnHeadersVisible = false;
             this.dgvListaAlunoBuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn1});
             this.dgvListaAlunoBuscar.DataSource = this.alunoBindingSource1;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaAlunoBuscar.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaAlunoBuscar.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaAlunoBuscar.Location = new System.Drawing.Point(15, 52);
             this.dgvListaAlunoBuscar.MultiSelect = false;
             this.dgvListaAlunoBuscar.Name = "dgvListaAlunoBuscar";
             this.dgvListaAlunoBuscar.ReadOnly = true;
             this.dgvListaAlunoBuscar.RowHeadersVisible = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.Window;
-            this.dgvListaAlunoBuscar.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvListaAlunoBuscar.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaAlunoBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlunoBuscar.Size = new System.Drawing.Size(227, 452);
             this.dgvListaAlunoBuscar.TabIndex = 38;
@@ -852,14 +855,14 @@
             this.dgvAlunoResponsaveis.AllowUserToResizeRows = false;
             this.dgvAlunoResponsaveis.AutoGenerateColumns = false;
             this.dgvAlunoResponsaveis.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlunoResponsaveis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoResponsaveis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAlunoResponsaveis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlunoResponsaveis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -868,24 +871,24 @@
             this.dataGridViewTextBoxColumn7,
             this.excluir});
             this.dgvAlunoResponsaveis.DataSource = this.responsavelBindingSource2;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlunoResponsaveis.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoResponsaveis.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAlunoResponsaveis.Location = new System.Drawing.Point(16, 66);
             this.dgvAlunoResponsaveis.MultiSelect = false;
             this.dgvAlunoResponsaveis.Name = "dgvAlunoResponsaveis";
             this.dgvAlunoResponsaveis.ReadOnly = true;
             this.dgvAlunoResponsaveis.RowHeadersVisible = false;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.Window;
-            this.dgvAlunoResponsaveis.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoResponsaveis.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAlunoResponsaveis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunoResponsaveis.Size = new System.Drawing.Size(538, 101);
             this.dgvAlunoResponsaveis.TabIndex = 37;
@@ -947,8 +950,8 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.cbxResponsNome);
             this.groupBox8.Controls.Add(this.txbTutorAlunoID);
+            this.groupBox8.Controls.Add(this.cbxResponsNome);
             this.groupBox8.Controls.Add(this.btnSalvarRespos);
             this.groupBox8.Controls.Add(this.ckbPodePegar);
             this.groupBox8.Controls.Add(this.ckbPagador);
@@ -963,6 +966,14 @@
             this.groupBox8.TabIndex = 21;
             this.groupBox8.TabStop = false;
             // 
+            // txbTutorAlunoID
+            // 
+            this.txbTutorAlunoID.Location = new System.Drawing.Point(94, 10);
+            this.txbTutorAlunoID.Name = "txbTutorAlunoID";
+            this.txbTutorAlunoID.Size = new System.Drawing.Size(100, 20);
+            this.txbTutorAlunoID.TabIndex = 42;
+            this.txbTutorAlunoID.Visible = false;
+            // 
             // cbxResponsNome
             // 
             this.cbxResponsNome.Location = new System.Drawing.Point(9, 33);
@@ -970,14 +981,6 @@
             this.cbxResponsNome.ReadOnly = true;
             this.cbxResponsNome.Size = new System.Drawing.Size(355, 20);
             this.cbxResponsNome.TabIndex = 41;
-            // 
-            // txbTutorAlunoID
-            // 
-            this.txbTutorAlunoID.Location = new System.Drawing.Point(47, 10);
-            this.txbTutorAlunoID.Name = "txbTutorAlunoID";
-            this.txbTutorAlunoID.Size = new System.Drawing.Size(100, 20);
-            this.txbTutorAlunoID.TabIndex = 40;
-            this.txbTutorAlunoID.Visible = false;
             // 
             // btnSalvarRespos
             // 
@@ -1124,7 +1127,7 @@
             // 
             this.dgvAlunoOrientador.Controls.Add(this.button2);
             this.dgvAlunoOrientador.Controls.Add(this.cbxTurmaMatricula);
-            this.dgvAlunoOrientador.Controls.Add(this.button4);
+            this.dgvAlunoOrientador.Controls.Add(this.btnGravarMatricula);
             this.dgvAlunoOrientador.Controls.Add(this.txbRelatorioMatricula);
             this.dgvAlunoOrientador.Controls.Add(this.label29);
             this.dgvAlunoOrientador.Controls.Add(this.cbxResultadoMatricula);
@@ -1170,14 +1173,15 @@
             this.cbxTurmaMatricula.Size = new System.Drawing.Size(126, 21);
             this.cbxTurmaMatricula.TabIndex = 43;
             // 
-            // button4
+            // btnGravarMatricula
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(234, 314);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(46, 43);
-            this.button4.TabIndex = 42;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnGravarMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnGravarMatricula.Image")));
+            this.btnGravarMatricula.Location = new System.Drawing.Point(234, 314);
+            this.btnGravarMatricula.Name = "btnGravarMatricula";
+            this.btnGravarMatricula.Size = new System.Drawing.Size(46, 43);
+            this.btnGravarMatricula.TabIndex = 42;
+            this.btnGravarMatricula.UseVisualStyleBackColor = true;
+            this.btnGravarMatricula.Click += new System.EventHandler(this.btnGravarMatricula_Click);
             // 
             // txbRelatorioMatricula
             // 
@@ -1274,7 +1278,7 @@
             // 
             // cbxPeriodoLetivoMatricula
             // 
-            this.cbxPeriodoLetivoMatricula.DataSource = this.periodoLetivoBindingSource1;
+            this.cbxPeriodoLetivoMatricula.DataSource = this.periodoLetivoBindingSource;
             this.cbxPeriodoLetivoMatricula.DisplayMember = "Descricao";
             this.cbxPeriodoLetivoMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriodoLetivoMatricula.FormattingEnabled = true;
@@ -1284,9 +1288,9 @@
             this.cbxPeriodoLetivoMatricula.TabIndex = 28;
             this.cbxPeriodoLetivoMatricula.ValueMember = "Codigo";
             // 
-            // periodoLetivoBindingSource1
+            // periodoLetivoBindingSource
             // 
-            this.periodoLetivoBindingSource1.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
+            this.periodoLetivoBindingSource.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
             // 
             // label24
             // 
@@ -1300,19 +1304,11 @@
             // cbxAnoLetivoMatricula
             // 
             this.cbxAnoLetivoMatricula.FormattingEnabled = true;
-            this.cbxAnoLetivoMatricula.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
             this.cbxAnoLetivoMatricula.Location = new System.Drawing.Point(21, 51);
             this.cbxAnoLetivoMatricula.Name = "cbxAnoLetivoMatricula";
             this.cbxAnoLetivoMatricula.Size = new System.Drawing.Size(109, 21);
             this.cbxAnoLetivoMatricula.TabIndex = 26;
+            this.cbxAnoLetivoMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxAnoLetivoMatricula_KeyPress);
             // 
             // label25
             // 
@@ -1327,8 +1323,6 @@
             // 
             this.groupBox10.Controls.Add(this.dgvAlunoDisciplinas);
             this.groupBox10.Controls.Add(this.toolStrip4);
-            this.groupBox10.Controls.Add(this.cbxPeriodoLetivoMatri);
-            this.groupBox10.Controls.Add(this.label21);
             this.groupBox10.Controls.Add(this.cbxAnoLetivoMatric);
             this.groupBox10.Controls.Add(this.label20);
             this.groupBox10.Location = new System.Drawing.Point(18, 90);
@@ -1346,37 +1340,38 @@
             this.dgvAlunoDisciplinas.AllowUserToResizeRows = false;
             this.dgvAlunoDisciplinas.AutoGenerateColumns = false;
             this.dgvAlunoDisciplinas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlunoDisciplinas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoDisciplinas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAlunoDisciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlunoDisciplinas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MatriculaID,
-            this.dataGridViewTextBoxColumn9});
+            this.dataGridViewTextBoxColumn9,
+            this.NomePeriodo});
             this.dgvAlunoDisciplinas.DataSource = this.matriculaBindingSource2;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlunoDisciplinas.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoDisciplinas.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAlunoDisciplinas.Location = new System.Drawing.Point(25, 102);
             this.dgvAlunoDisciplinas.MultiSelect = false;
             this.dgvAlunoDisciplinas.Name = "dgvAlunoDisciplinas";
             this.dgvAlunoDisciplinas.ReadOnly = true;
             this.dgvAlunoDisciplinas.RowHeadersVisible = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.Window;
-            this.dgvAlunoDisciplinas.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoDisciplinas.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAlunoDisciplinas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunoDisciplinas.Size = new System.Drawing.Size(214, 253);
             this.dgvAlunoDisciplinas.TabIndex = 45;
@@ -1389,14 +1384,23 @@
             this.MatriculaID.Name = "MatriculaID";
             this.MatriculaID.ReadOnly = true;
             this.MatriculaID.Visible = false;
+            this.MatriculaID.Width = 80;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Disciplina";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Disciplina";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Disciplina/Atividade";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 213;
+            this.dataGridViewTextBoxColumn9.Width = 133;
+            // 
+            // NomePeriodo
+            // 
+            this.NomePeriodo.DataPropertyName = "NomePeriodo";
+            this.NomePeriodo.HeaderText = "Período";
+            this.NomePeriodo.Name = "NomePeriodo";
+            this.NomePeriodo.ReadOnly = true;
+            this.NomePeriodo.Width = 80;
             // 
             // matriculaBindingSource2
             // 
@@ -1406,67 +1410,32 @@
             // 
             this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton9});
+            this.btnNovaMatricula});
             this.toolStrip4.Location = new System.Drawing.Point(3, 16);
             this.toolStrip4.Name = "toolStrip4";
             this.toolStrip4.Size = new System.Drawing.Size(259, 31);
             this.toolStrip4.TabIndex = 44;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // toolStripButton9
+            // btnNovaMatricula
             // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton9.Text = "toolStripButton9";
-            // 
-            // cbxPeriodoLetivoMatri
-            // 
-            this.cbxPeriodoLetivoMatri.DataSource = this.periodoLetivoBindingSource;
-            this.cbxPeriodoLetivoMatri.DisplayMember = "Descricao";
-            this.cbxPeriodoLetivoMatri.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPeriodoLetivoMatri.FormattingEnabled = true;
-            this.cbxPeriodoLetivoMatri.Location = new System.Drawing.Point(129, 75);
-            this.cbxPeriodoLetivoMatri.Name = "cbxPeriodoLetivoMatri";
-            this.cbxPeriodoLetivoMatri.Size = new System.Drawing.Size(110, 21);
-            this.cbxPeriodoLetivoMatri.TabIndex = 28;
-            this.cbxPeriodoLetivoMatri.ValueMember = "Codigo";
-            // 
-            // periodoLetivoBindingSource
-            // 
-            this.periodoLetivoBindingSource.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(138, 59);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(77, 13);
-            this.label21.TabIndex = 27;
-            this.label21.Text = "Período Letivo";
+            this.btnNovaMatricula.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNovaMatricula.Image = ((System.Drawing.Image)(resources.GetObject("btnNovaMatricula.Image")));
+            this.btnNovaMatricula.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnNovaMatricula.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNovaMatricula.Name = "btnNovaMatricula";
+            this.btnNovaMatricula.Size = new System.Drawing.Size(28, 28);
+            this.btnNovaMatricula.Click += new System.EventHandler(this.btnNovaMatricula_Click);
             // 
             // cbxAnoLetivoMatric
             // 
-            this.cbxAnoLetivoMatric.DisplayMember = "Descricao";
             this.cbxAnoLetivoMatric.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAnoLetivoMatric.FormattingEnabled = true;
-            this.cbxAnoLetivoMatric.Items.AddRange(new object[] {
-            "Pai",
-            "Mãe",
-            "Irmão(ã)",
-            "Avô(ó)",
-            "Irmão(ã)",
-            "Tio(a)",
-            "Primo(a)",
-            "Amigo(a)"});
             this.cbxAnoLetivoMatric.Location = new System.Drawing.Point(25, 75);
             this.cbxAnoLetivoMatric.Name = "cbxAnoLetivoMatric";
-            this.cbxAnoLetivoMatric.Size = new System.Drawing.Size(79, 21);
+            this.cbxAnoLetivoMatric.Size = new System.Drawing.Size(214, 21);
             this.cbxAnoLetivoMatric.TabIndex = 26;
-            this.cbxAnoLetivoMatric.ValueMember = "Codigo";
+            this.cbxAnoLetivoMatric.SelectedIndexChanged += new System.EventHandler(this.cbxAnoLetivoMatric_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -1558,14 +1527,14 @@
             this.dgvAlunoMensalidades.AllowUserToResizeRows = false;
             this.dgvAlunoMensalidades.AutoGenerateColumns = false;
             this.dgvAlunoMensalidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlunoMensalidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunoMensalidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAlunoMensalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlunoMensalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MensalidadeID,
@@ -1576,24 +1545,24 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewImageColumn1});
             this.dgvAlunoMensalidades.DataSource = this.mensalidadeBindingSource4;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlunoMensalidades.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunoMensalidades.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAlunoMensalidades.Location = new System.Drawing.Point(25, 105);
             this.dgvAlunoMensalidades.MultiSelect = false;
             this.dgvAlunoMensalidades.Name = "dgvAlunoMensalidades";
             this.dgvAlunoMensalidades.ReadOnly = true;
             this.dgvAlunoMensalidades.RowHeadersVisible = false;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.Window;
-            this.dgvAlunoMensalidades.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunoMensalidades.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAlunoMensalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunoMensalidades.Size = new System.Drawing.Size(529, 243);
             this.dgvAlunoMensalidades.TabIndex = 43;
@@ -1780,6 +1749,18 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "N° de Matrícula";
             // 
+            // periodoLetivoBindingSource1
+            // 
+            this.periodoLetivoBindingSource1.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
+            // 
+            // periodoLetivoBindingSource4
+            // 
+            this.periodoLetivoBindingSource4.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
+            // 
+            // periodoLetivoBindingSource3
+            // 
+            this.periodoLetivoBindingSource3.DataSource = typeof(EscolaSis.Model.Tools.PeriodoLetivo);
+            // 
             // responsavelBindingSource1
             // 
             this.responsavelBindingSource1.DataSource = typeof(EscolaSis.Model.Responsavel);
@@ -1819,13 +1800,8 @@
             // 
             // btnNovoResp
             // 
-            //this.btnNovoResp.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoResp.Image")));
-            //this.btnNovoResp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            //this.btnNovoResp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            //this.btnNovoResp.Name = "btnNovoResp";
-            //this.btnNovoResp.Size = new System.Drawing.Size(132, 28);
-            //this.btnNovoResp.Text = "Novo Responsável";
-            //this.btnNovoResp.Click += new System.EventHandler(this.btnNovoResp_Click);
+            this.btnNovoResp.Name = "btnNovoResp";
+            this.btnNovoResp.Size = new System.Drawing.Size(23, 23);
             // 
             // btnNovaMatric
             // 
@@ -1835,7 +1811,6 @@
             this.btnNovaMatric.Name = "btnNovaMatric";
             this.btnNovaMatric.Size = new System.Drawing.Size(116, 28);
             this.btnNovaMatric.Text = "Nova Matrícula";
-            this.btnNovaMatric.Click += new System.EventHandler(this.btnNovaMatric_Click_1);
             // 
             // toolStripDropDownButton1
             // 
@@ -1919,14 +1894,13 @@
             this.dgvAlunoOrientador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultadoFinalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orientadorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoDisciplinas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource2)).EndInit();
             this.toolStrip4.ResumeLayout(false);
             this.toolStrip4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1937,6 +1911,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource2)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodoLetivoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matriculaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensalidadeBindingSource3)).EndInit();
@@ -1979,8 +1956,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.ComboBox cbxPeriodoLetivoMatri;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cbxAnoLetivoMatric;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -2015,7 +1990,7 @@
         private System.Windows.Forms.TextBox txbNumMatricMensal;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button btnSalvarRespos;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnGravarMatricula;
         private System.Windows.Forms.ComboBox cbxTurmaMatricula;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
@@ -2064,12 +2039,11 @@
         private System.Windows.Forms.TextBox txbNumMatricAluno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripButton btnRespoNovo;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton btnNovaMatricula;
         private System.Windows.Forms.ToolStripButton btnExcluirAluno;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnImpCarteirinha;
         private System.Windows.Forms.ToolStripButton btnImpCarne;
-        private System.Windows.Forms.TextBox txbTutorAlunoID;
         private System.Windows.Forms.DataGridView dgvAlunoResponsaveis;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvListaAlunoBuscar;
@@ -2107,12 +2081,16 @@
         private System.Windows.Forms.BindingSource mensalidadeBindingSource4;
         private System.Windows.Forms.BindingSource periodoLetivoBindingSource2;
         private System.Windows.Forms.BindingSource matriculaBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MatriculaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolStripMenuItem girarAFotoToolStripMenuItem;
         private System.Windows.Forms.TextBox cbxResponsNome;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.TextBox txbTutorAlunoID;
+        private System.Windows.Forms.BindingSource periodoLetivoBindingSource3;
+        private System.Windows.Forms.BindingSource periodoLetivoBindingSource4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatriculaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePeriodo;
     }
 }
