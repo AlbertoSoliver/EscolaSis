@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResponsavelNovo));
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txbTelefone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txbCEP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,18 +43,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dbtFemin = new System.Windows.Forms.RadioButton();
-            this.rbtMaec = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.rbtFemin = new System.Windows.Forms.RadioButton();
+            this.rbtMasc = new System.Windows.Forms.RadioButton();
+            this.txbCPF = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txbNumRG = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbDataNascim = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbNomeAluno = new System.Windows.Forms.TextBox();
+            this.txbNomeTutor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbNumMatric = new System.Windows.Forms.TextBox();
+            this.txbCodigoCadastro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -62,18 +62,19 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // btnGravar
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(570, 397);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(46, 43);
-            this.button3.TabIndex = 44;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
+            this.btnGravar.Location = new System.Drawing.Point(570, 397);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(46, 43);
+            this.btnGravar.TabIndex = 44;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.txbTelefone);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.txbCEP);
             this.groupBox4.Controls.Add(this.label10);
@@ -89,12 +90,12 @@
             this.groupBox4.TabIndex = 43;
             this.groupBox4.TabStop = false;
             // 
-            // textBox7
+            // txbTelefone
             // 
-            this.textBox7.Location = new System.Drawing.Point(436, 92);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 20);
-            this.textBox7.TabIndex = 13;
+            this.txbTelefone.Location = new System.Drawing.Point(436, 92);
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(137, 20);
+            this.txbTelefone.TabIndex = 13;
             // 
             // label11
             // 
@@ -172,7 +173,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txbCPF);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txbNumRG);
             this.groupBox3.Controls.Add(this.label6);
@@ -184,8 +185,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dbtFemin);
-            this.groupBox5.Controls.Add(this.rbtMaec);
+            this.groupBox5.Controls.Add(this.rbtFemin);
+            this.groupBox5.Controls.Add(this.rbtMasc);
             this.groupBox5.Location = new System.Drawing.Point(358, 19);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(215, 59);
@@ -193,34 +194,34 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Genero";
             // 
-            // dbtFemin
+            // rbtFemin
             // 
-            this.dbtFemin.AutoSize = true;
-            this.dbtFemin.Location = new System.Drawing.Point(124, 24);
-            this.dbtFemin.Name = "dbtFemin";
-            this.dbtFemin.Size = new System.Drawing.Size(67, 17);
-            this.dbtFemin.TabIndex = 12;
-            this.dbtFemin.TabStop = true;
-            this.dbtFemin.Text = "Feminino";
-            this.dbtFemin.UseVisualStyleBackColor = true;
+            this.rbtFemin.AutoSize = true;
+            this.rbtFemin.Location = new System.Drawing.Point(124, 24);
+            this.rbtFemin.Name = "rbtFemin";
+            this.rbtFemin.Size = new System.Drawing.Size(67, 17);
+            this.rbtFemin.TabIndex = 12;
+            this.rbtFemin.TabStop = true;
+            this.rbtFemin.Text = "Feminino";
+            this.rbtFemin.UseVisualStyleBackColor = true;
             // 
-            // rbtMaec
+            // rbtMasc
             // 
-            this.rbtMaec.AutoSize = true;
-            this.rbtMaec.Location = new System.Drawing.Point(25, 24);
-            this.rbtMaec.Name = "rbtMaec";
-            this.rbtMaec.Size = new System.Drawing.Size(73, 17);
-            this.rbtMaec.TabIndex = 11;
-            this.rbtMaec.TabStop = true;
-            this.rbtMaec.Text = "Masculino";
-            this.rbtMaec.UseVisualStyleBackColor = true;
+            this.rbtMasc.AutoSize = true;
+            this.rbtMasc.Location = new System.Drawing.Point(25, 24);
+            this.rbtMasc.Name = "rbtMasc";
+            this.rbtMasc.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasc.TabIndex = 11;
+            this.rbtMasc.TabStop = true;
+            this.rbtMasc.Text = "Masculino";
+            this.rbtMasc.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txbCPF
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 7;
+            this.txbCPF.Location = new System.Drawing.Point(195, 42);
+            this.txbCPF.Name = "txbCPF";
+            this.txbCPF.Size = new System.Drawing.Size(137, 20);
+            this.txbCPF.TabIndex = 7;
             // 
             // label7
             // 
@@ -251,9 +252,9 @@
             // 
             this.groupBox1.Controls.Add(this.txbDataNascim);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txbNomeAluno);
+            this.groupBox1.Controls.Add(this.txbNomeTutor);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txbNumMatric);
+            this.groupBox1.Controls.Add(this.txbCodigoCadastro);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(14, 10);
             this.groupBox1.Name = "groupBox1";
@@ -263,13 +264,15 @@
             // 
             // txbDataNascim
             // 
-            this.txbDataNascim.CustomFormat = "";
-            this.txbDataNascim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txbDataNascim.CustomFormat = " ";
+            this.txbDataNascim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txbDataNascim.Location = new System.Drawing.Point(461, 84);
             this.txbDataNascim.Name = "txbDataNascim";
             this.txbDataNascim.Size = new System.Drawing.Size(112, 20);
             this.txbDataNascim.TabIndex = 6;
             this.txbDataNascim.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
+            this.txbDataNascim.ValueChanged += new System.EventHandler(this.txbDataNascim_ValueChanged);
+            this.txbDataNascim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbDataNascim_KeyUp);
             // 
             // label4
             // 
@@ -280,12 +283,12 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Data de Nascimento";
             // 
-            // txbNomeAluno
+            // txbNomeTutor
             // 
-            this.txbNomeAluno.Location = new System.Drawing.Point(25, 84);
-            this.txbNomeAluno.Name = "txbNomeAluno";
-            this.txbNomeAluno.Size = new System.Drawing.Size(410, 20);
-            this.txbNomeAluno.TabIndex = 3;
+            this.txbNomeTutor.Location = new System.Drawing.Point(25, 84);
+            this.txbNomeTutor.Name = "txbNomeTutor";
+            this.txbNomeTutor.Size = new System.Drawing.Size(410, 20);
+            this.txbNomeTutor.TabIndex = 3;
             // 
             // label3
             // 
@@ -296,13 +299,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nome do Responsável";
             // 
-            // txbNumMatric
+            // txbCodigoCadastro
             // 
-            this.txbNumMatric.Enabled = false;
-            this.txbNumMatric.Location = new System.Drawing.Point(25, 37);
-            this.txbNumMatric.Name = "txbNumMatric";
-            this.txbNumMatric.Size = new System.Drawing.Size(100, 20);
-            this.txbNumMatric.TabIndex = 1;
+            this.txbCodigoCadastro.Enabled = false;
+            this.txbCodigoCadastro.Location = new System.Drawing.Point(25, 37);
+            this.txbCodigoCadastro.Name = "txbCodigoCadastro";
+            this.txbCodigoCadastro.Size = new System.Drawing.Size(100, 20);
+            this.txbCodigoCadastro.TabIndex = 1;
             // 
             // label2
             // 
@@ -318,11 +321,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ResponsavelNovo";
@@ -342,9 +345,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txbCEP;
         private System.Windows.Forms.Label label10;
@@ -356,18 +359,18 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton dbtFemin;
-        private System.Windows.Forms.RadioButton rbtMaec;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton rbtFemin;
+        private System.Windows.Forms.RadioButton rbtMasc;
+        private System.Windows.Forms.TextBox txbCPF;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbNumRG;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker txbDataNascim;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbNomeAluno;
+        private System.Windows.Forms.TextBox txbNomeTutor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbNumMatric;
+        private System.Windows.Forms.TextBox txbCodigoCadastro;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -10,6 +10,7 @@ namespace EscolaSis.Model
     class Aluno
     {
         public int AlunoID { get; set; }
+        public DateTime DataCadastro { get; set; }
         public string NumMatricula { get; set; }
         public string Nome { get; set; }
         public DateTime DataNascim { get; set; }
@@ -59,7 +60,7 @@ namespace EscolaSis.Model
             }
             return idade;
         }
-        public static List<Aluno> ListarAlunosPesquisa(string ArgPesq)
+        public static List<Aluno> ListarAlunosPesquisa(string ArgPesq, bool IncluirTodosOpc = false)
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -74,6 +75,8 @@ namespace EscolaSis.Model
             adp.Fill(dt);
 
             List<Aluno> lstAluno = new List<Aluno>();
+
+            if (IncluirTodosOpc) lstAluno.Add(new Aluno { AlunoID = 0, NumMatricula = "", Nome = "Todos" });
 
             foreach (DataRow item in dt.Rows)
             {
@@ -105,6 +108,7 @@ namespace EscolaSis.Model
             {
                 AlunoID = Convert.ToInt32(dt.Rows[0]["AlunoID"].ToString());
                 NumMatricula = dt.Rows[0]["NumMatricula"].ToString();
+                DataCadastro = Convert.ToDateTime(dt.Rows[0]["DataCadastro"].ToString());
                 Nome = dt.Rows[0]["Nome"].ToString();
                 if (dt.Rows[0]["DataNascim"].ToString() != "") DataNascim = Convert.ToDateTime(dt.Rows[0]["DataNascim"].ToString());
                 RG = dt.Rows[0]["RG"].ToString();
@@ -123,12 +127,16 @@ namespace EscolaSis.Model
         public void SalvarAluno(string tipo)
         {
             string commandText = "";
+            string numMatric = "";
 
             if (tipo == "U")
             {
+                if (NumMatricula.ToString() == "") numMatric = (DataCadastro.Year * 10000 + AlunoID).ToString();
+                else numMatric = NumMatricula.ToString();
                 commandText = "UPDATE Alunos ";
                 commandText += "SET ";
                 commandText += "Nome = @Nome, ";
+                commandText += "NumeroMatricula = @NumeroMatricula, ";
                 commandText += "DataNascim = @DataNascim, ";
                 commandText += "RG = @RG, ";
                 commandText += "CPF = @CPF, ";
@@ -142,10 +150,12 @@ namespace EscolaSis.Model
             }
             else
             {
+                if (NumMatricula.ToString() == "") numMatric = (DataCadastro.Year * 10000 + UltimoAlunoIDCriado() + 1).ToString();
+                else numMatric = NumMatricula.ToString();
                 commandText = "INSERT INTO Alunos ";
-                commandText += "(Nome, DataNascim, RG, CPF, Sexo, Endereco, Bairro, Cidade, CEP, Telefone) ";
+                commandText += "(Nome, NumeroMatricula, DataNascim, RG, CPF, Sexo, Endereco, Bairro, Cidade, CEP, Telefone) ";
                 commandText += " VALUES ";
-                commandText += "(@Nome, @DataNascim, @RG, @CPF, @Sexo, @Endereco, @Bairro, @Cidade, @CEP, @Telefone)";
+                commandText += "(@Nome, @NumeroMatricula, @DataNascim, @RG, @CPF, @Sexo, @Endereco, @Bairro, @Cidade, @CEP, @Telefone)";
             }
 
 
@@ -153,6 +163,7 @@ namespace EscolaSis.Model
             cmd.CommandText = commandText;
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@Nome", Nome.ToString());
+            cmd.Parameters.AddWithValue("@NumeroMatricula", numMatric);
             if (DataNascim.Year < 1900) cmd.Parameters.AddWithValue("@DataNascim", DBNull.Value);
             else cmd.Parameters.AddWithValue("@DataNascim", DataNascim);
             cmd.Parameters.AddWithValue("@RG", RG.ToString());
@@ -167,6 +178,20 @@ namespace EscolaSis.Model
 
             DB.ExecCommand(cmd);
 
+        }
+        public void DeletarAluno()
+        {
+            string commandText = "";
+
+            commandText = "DELETE FROM Alunos ";
+            commandText += "WHERE AlunoID = @AlunoID ";
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@AlunoID", AlunoID.ToString());
+
+            DB.ExecCommand(cmd);
         }
         public static List<Matricula> ListarMatriculasAluno(int alunoID, string anoLetivo = "%", string periodoLetivo = "%")
         {
@@ -212,7 +237,7 @@ namespace EscolaSis.Model
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@AlunoID", alunoID);
             cmd.Parameters.AddWithValue("@SitPagto", sitPag);
-            cmd.Parameters.AddWithValue("@AnoRef", anoRef);
+            cmd.Parameters.AddWithValue("@AnoRef", anoRef == "" ? "&" : anoRef);
 
             OleDbDataAdapter adp = DB.DBAdapter(cmd);
 

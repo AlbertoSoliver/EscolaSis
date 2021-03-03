@@ -55,6 +55,7 @@
             this.mnuFoto = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuMudarFoto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLimparFoto = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.girarFotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbIdade = new System.Windows.Forms.TextBox();
@@ -65,7 +66,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txbNumMatric = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -308,6 +308,11 @@
             this.mnuLimparFoto.Text = "Limpar Foto";
             this.mnuLimparFoto.Click += new System.EventHandler(this.mnuLimparFoto_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            // 
             // girarFotoToolStripMenuItem
             // 
             this.girarFotoToolStripMenuItem.Name = "girarFotoToolStripMenuItem";
@@ -387,7 +392,6 @@
             // 
             // txbNumMatric
             // 
-            this.txbNumMatric.Enabled = false;
             this.txbNumMatric.Location = new System.Drawing.Point(25, 37);
             this.txbNumMatric.Name = "txbNumMatric";
             this.txbNumMatric.Size = new System.Drawing.Size(100, 20);
@@ -401,11 +405,6 @@
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "N° de Matrícula";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // AlunoNovo
             // 

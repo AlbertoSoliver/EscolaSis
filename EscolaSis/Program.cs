@@ -16,7 +16,7 @@ namespace EscolaSis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIPrincipal());
+            Application.Run(new Forms.ControleAcesso.Login());
         }
     }
 }

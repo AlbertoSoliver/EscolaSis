@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -8,7 +8,8 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>EscolaSis</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -35,6 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -44,6 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>EscolaSis</RootNamespace>
@@ -51,7 +54,28 @@
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoEscolaSis.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -64,7 +88,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Forms\Relatorio\CarneMensalidades\CarneDados.xsc">
+      <DependentUpon>CarneDados.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Relatorio\CarneMensalidades\CarneDados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarneDados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\Relatorio\CarneMensalidades\CarneDados.xss">
+      <DependentUpon>CarneDados.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\EscolaSis.Model.Aluno.datasource" />
+    <None Include="Properties\DataSources\EscolaSis.Model.AreaConhecimento.datasource" />
+    <None Include="Properties\DataSources\EscolaSis.Model.Curso.datasource" />
     <None Include="Properties\DataSources\EscolaSis.Model.Matricula.datasource" />
     <None Include="Properties\DataSources\EscolaSis.Model.Mensalidade.datasource" />
     <None Include="Properties\DataSources\EscolaSis.Model.Orientador.datasource" />
@@ -72,9 +110,130 @@
     <None Include="Properties\DataSources\EscolaSis.Model.Tools+Parenteso.datasource" />
     <None Include="Properties\DataSources\EscolaSis.Model.Tools+PeriodoLetivo.datasource" />
     <None Include="Properties\DataSources\EscolaSis.Model.Tools+ResultadoFinal.datasource" />
+    <None Include="Properties\DataSources\EscolaSis.Model.Turma.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ControleAcesso\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControleAcesso\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curso\CursoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curso\CursoLista.Designer.cs">
+      <DependentUpon>CursoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curso\GradeCurrCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curso\GradeCurrCurso.Designer.cs">
+      <DependentUpon>GradeCurrCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curso\GradeCurricManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curso\GradeCurricManter.Designer.cs">
+      <DependentUpon>GradeCurricManter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Curso\ManterCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Curso\ManterCurso.Designer.cs">
+      <DependentUpon>ManterCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Escola\Escola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Escola\Escola.Designer.cs">
+      <DependentUpon>Escola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Caderneta\Caderneta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Caderneta\Caderneta.Designer.cs">
+      <DependentUpon>Caderneta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Caderneta\SelecCaderneta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Caderneta\SelecCaderneta.Designer.cs">
+      <DependentUpon>SelecCaderneta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\CarneDados.cs">
+      <DependentUpon>CarneDados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\CarneDados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarneDados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\CarneMensal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\CarneMensal.Designer.cs">
+      <DependentUpon>CarneMensal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\SelecaoDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\CarneMensalidades\SelecaoDados.Designer.cs">
+      <DependentUpon>SelecaoDados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Carteirinha\Carteirinha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\Carteirinha\Carteirinha.Designer.cs">
+      <DependentUpon>Carteirinha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaAlunos\ListaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaAlunos\ListaAluno.Designer.cs">
+      <DependentUpon>ListaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaAlunos\SelecListaAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaAlunos\SelecListaAluno.Designer.cs">
+      <DependentUpon>SelecListaAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaParcelas\ListaParcelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaParcelas\ListaParcelas.Designer.cs">
+      <DependentUpon>ListaParcelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaParcelas\SelecListaParcela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorio\ListaParcelas\SelecListaParcela.Designer.cs">
+      <DependentUpon>SelecListaParcela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sobre\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sobre\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Turma\ManterTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Turma\ManterTurma.Designer.cs">
+      <DependentUpon>ManterTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Turma\TurmaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Turma\TurmaLista.Designer.cs">
+      <DependentUpon>TurmaLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Aluno.cs" />
+    <Compile Include="Model\AreaConhecimento.cs" />
+    <Compile Include="Model\ControleAcesso.cs" />
+    <Compile Include="Model\Curso.cs" />
+    <Compile Include="Model\CursoGradeCurric.cs" />
     <Compile Include="Model\DB.cs" />
     <Compile Include="Forms\Aluno\AlunoCadastro.cs">
       <SubType>Form</SubType>
@@ -148,6 +307,7 @@
     <Compile Include="Model\Orientador.cs" />
     <Compile Include="Model\Responsavel.cs" />
     <Compile Include="Model\Tools.cs" />
+    <Compile Include="Model\Turma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -156,10 +316,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Aluno\AlunoCadastro.resx">
       <DependentUpon>AlunoCadastro.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Aluno\AlunoNovo.resx">
       <DependentUpon>AlunoNovo.cs</DependentUpon>
@@ -176,17 +338,76 @@
     <EmbeddedResource Include="Forms\Aluno\ResponsavelNovo.resx">
       <DependentUpon>ResponsavelNovo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControleAcesso\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curso\CursoLista.resx">
+      <DependentUpon>CursoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curso\GradeCurrCurso.resx">
+      <DependentUpon>GradeCurrCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curso\GradeCurricManter.resx">
+      <DependentUpon>GradeCurricManter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Curso\ManterCurso.resx">
+      <DependentUpon>ManterCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Escola\Escola.resx">
+      <DependentUpon>Escola.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orientador\OrientadorCadastro.resx">
       <DependentUpon>OrientadorCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Orientador\OrientadorNovo.resx">
       <DependentUpon>OrientadorNovo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\Caderneta\Caderneta.rdlc" />
+    <EmbeddedResource Include="Forms\Relatorio\Caderneta\Caderneta.resx">
+      <DependentUpon>Caderneta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\Caderneta\SelecCaderneta.resx">
+      <DependentUpon>SelecCaderneta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\CarneMensalidades\CarneMensal.resx">
+      <DependentUpon>CarneMensal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\CarneMensalidades\SelecaoDados.resx">
+      <DependentUpon>SelecaoDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\Carteirinha\Carteirinha.resx">
+      <DependentUpon>Carteirinha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\Carteirinha\Carteirinha.rdlc" />
+    <EmbeddedResource Include="Forms\Relatorio\CarneMensalidades\CarneMensal.rdlc" />
+    <EmbeddedResource Include="Forms\Relatorio\ListaAlunos\ListaAluno.resx">
+      <DependentUpon>ListaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\ListaAlunos\ListaAluno.rdlc" />
+    <EmbeddedResource Include="Forms\Relatorio\ListaAlunos\SelecListaAluno.resx">
+      <DependentUpon>SelecListaAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\ListaParcelas\ListaParcelas.rdlc" />
+    <EmbeddedResource Include="Forms\Relatorio\ListaParcelas\ListaParcelas.resx">
+      <DependentUpon>ListaParcelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Relatorio\ListaParcelas\SelecListaParcela.resx">
+      <DependentUpon>SelecListaParcela.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Responsavel\ResponsavelCadastro.resx">
       <DependentUpon>ResponsavelCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Responsavel\ResponsavelNovo.resx">
       <DependentUpon>ResponsavelNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sobre\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Turma\ManterTurma.resx">
+      <DependentUpon>ManterTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Turma\TurmaLista.resx">
+      <DependentUpon>TurmaLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
@@ -212,6 +433,8 @@
     <Content Include="img\gnome_document_new.png" />
     <Content Include="img\gnome_edit_delete 16x16.png" />
     <Content Include="img\gnome_edit_delete.png" />
+    <Content Include="img\LogoEscolaSis.ico" />
+    <Content Include="img\LogoEscolaSis.png" />
     <Content Include="img\matricula24x24.png" />
     <Content Include="img\my_profile.png" />
     <Content Include="img\pagamentomensalidade24x24.png" />
@@ -220,6 +443,8 @@
     <Content Include="img\professora24x24.png" />
     <Content Include="img\report.png" />
     <Content Include="img\save.png" />
+    <None Include="img\Secretaria24x24.png" />
+    <None Include="img\Secretaria60x60.png" />
     <Content Include="img\security_card.png" />
     <Content Include="img\sid-the-science-kid.png" />
     <Content Include="img\site icons.txt" />
@@ -228,7 +453,19 @@
     <Content Include="BaseEscola.mdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SemFoto.png">
+    <Content Include="LogoEscolaSis.ico" />
+    <Content Include="SemFoto.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

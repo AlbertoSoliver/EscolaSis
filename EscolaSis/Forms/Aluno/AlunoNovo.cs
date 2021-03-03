@@ -92,7 +92,7 @@ namespace EscolaSis.Forms.Aluno
         private void girarFotoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Image foto = pbxFoto.Image;
-            pbxFoto.ImageLocation = "SemFoto.png";
+            pbxFoto.ImageLocation = "SemFoto.jpg";
             pbxFoto.Load();
             pbxFoto.ImageLocation = AlunoCadastro.GirarFoto(foto);
             pbxFoto.Load();

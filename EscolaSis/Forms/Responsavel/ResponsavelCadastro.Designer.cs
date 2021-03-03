@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResponsavelCadastro));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbxListaResponsavel = new System.Windows.Forms.ListBox();
+            this.responsavelBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.txbPesquisarTutor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovoAluno = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnExcluirResposavel = new System.Windows.Forms.ToolStripButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txbTelefone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txbCEP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,27 +59,33 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dbtFemin = new System.Windows.Forms.RadioButton();
-            this.rbtMaec = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.rbtFemin = new System.Windows.Forms.RadioButton();
+            this.rbtMasc = new System.Windows.Forms.RadioButton();
+            this.txbCPF = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txbNumRG = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txbDataNascim = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbNomeAluno = new System.Windows.Forms.TextBox();
+            this.txbNomeTutor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbNumMatric = new System.Windows.Forms.TextBox();
+            this.txbCodigoCadastro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvAlunosDoTutor = new System.Windows.Forms.DataGridView();
+            this.alunoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.responsavelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txbNomeAlunoResp = new System.Windows.Forms.TextBox();
+            this.txbNomeRespAluno = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -84,14 +96,15 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunosDoTutor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lbxListaResponsavel);
+            this.panel1.Controls.Add(this.txbPesquisarTutor);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -100,20 +113,29 @@
             this.panel1.Size = new System.Drawing.Size(242, 518);
             this.panel1.TabIndex = 0;
             // 
-            // listBox1
+            // lbxListaResponsavel
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(214, 446);
-            this.listBox1.TabIndex = 2;
+            this.lbxListaResponsavel.DataSource = this.responsavelBindingSource2;
+            this.lbxListaResponsavel.DisplayMember = "Nome";
+            this.lbxListaResponsavel.FormattingEnabled = true;
+            this.lbxListaResponsavel.Location = new System.Drawing.Point(15, 52);
+            this.lbxListaResponsavel.Name = "lbxListaResponsavel";
+            this.lbxListaResponsavel.Size = new System.Drawing.Size(214, 446);
+            this.lbxListaResponsavel.TabIndex = 2;
+            this.lbxListaResponsavel.ValueMember = "TutorID";
+            this.lbxListaResponsavel.SelectedIndexChanged += new System.EventHandler(this.lbxListaResponsavel_SelectedIndexChanged);
             // 
-            // textBox1
+            // responsavelBindingSource2
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 1;
+            this.responsavelBindingSource2.DataSource = typeof(EscolaSis.Model.Responsavel);
+            // 
+            // txbPesquisarTutor
+            // 
+            this.txbPesquisarTutor.Location = new System.Drawing.Point(15, 26);
+            this.txbPesquisarTutor.Name = "txbPesquisarTutor";
+            this.txbPesquisarTutor.Size = new System.Drawing.Size(214, 20);
+            this.txbPesquisarTutor.TabIndex = 1;
+            this.txbPesquisarTutor.TextChanged += new System.EventHandler(this.txbPesquisarTutor_TextChanged);
             // 
             // label1
             // 
@@ -123,6 +145,10 @@
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Pessoa";
+            // 
+            // responsavelBindingSource
+            // 
+            this.responsavelBindingSource.DataSource = typeof(EscolaSis.Model.Responsavel);
             // 
             // panel2
             // 
@@ -139,15 +165,17 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(150, 18);
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(622, 498);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.btnGravar);
             this.tabPage1.Controls.Add(this.toolStrip1);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -160,24 +188,25 @@
             this.tabPage1.Text = "Pessoa Responsável";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnGravar
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(562, 423);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(46, 43);
-            this.button3.TabIndex = 40;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
+            this.btnGravar.Location = new System.Drawing.Point(562, 423);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(46, 43);
+            this.btnGravar.TabIndex = 40;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNovoAluno,
-            this.toolStripButton2});
+            this.btnExcluirResposavel});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(608, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(608, 39);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -188,23 +217,24 @@
             this.btnNovoAluno.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnNovoAluno.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNovoAluno.Name = "btnNovoAluno";
-            this.btnNovoAluno.Size = new System.Drawing.Size(28, 28);
+            this.btnNovoAluno.Size = new System.Drawing.Size(36, 36);
             this.btnNovoAluno.Text = "Novo Aluno";
             this.btnNovoAluno.Click += new System.EventHandler(this.btnNovoAluno_Click_1);
             // 
-            // toolStripButton2
+            // btnExcluirResposavel
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton2.Text = "Excluir Aluno";
+            this.btnExcluirResposavel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExcluirResposavel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirResposavel.Image")));
+            this.btnExcluirResposavel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnExcluirResposavel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcluirResposavel.Name = "btnExcluirResposavel";
+            this.btnExcluirResposavel.Size = new System.Drawing.Size(28, 36);
+            this.btnExcluirResposavel.Text = "Excluir Responsável";
+            this.btnExcluirResposavel.Click += new System.EventHandler(this.btnExcluirResposavel_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox7);
+            this.groupBox4.Controls.Add(this.txbTelefone);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.txbCEP);
             this.groupBox4.Controls.Add(this.label10);
@@ -214,18 +244,18 @@
             this.groupBox4.Controls.Add(this.lblbairro);
             this.groupBox4.Controls.Add(this.txbEndereco);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(6, 262);
+            this.groupBox4.Location = new System.Drawing.Point(6, 271);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(601, 138);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
-            // textBox7
+            // txbTelefone
             // 
-            this.textBox7.Location = new System.Drawing.Point(436, 92);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 20);
-            this.textBox7.TabIndex = 13;
+            this.txbTelefone.Location = new System.Drawing.Point(436, 92);
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(137, 20);
+            this.txbTelefone.TabIndex = 13;
             // 
             // label11
             // 
@@ -303,11 +333,11 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txbCPF);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txbNumRG);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(6, 163);
+            this.groupBox3.Location = new System.Drawing.Point(6, 172);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(601, 93);
             this.groupBox3.TabIndex = 2;
@@ -315,8 +345,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dbtFemin);
-            this.groupBox5.Controls.Add(this.rbtMaec);
+            this.groupBox5.Controls.Add(this.rbtFemin);
+            this.groupBox5.Controls.Add(this.rbtMasc);
             this.groupBox5.Location = new System.Drawing.Point(358, 19);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(215, 59);
@@ -324,34 +354,34 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Genero";
             // 
-            // dbtFemin
+            // rbtFemin
             // 
-            this.dbtFemin.AutoSize = true;
-            this.dbtFemin.Location = new System.Drawing.Point(124, 24);
-            this.dbtFemin.Name = "dbtFemin";
-            this.dbtFemin.Size = new System.Drawing.Size(67, 17);
-            this.dbtFemin.TabIndex = 12;
-            this.dbtFemin.TabStop = true;
-            this.dbtFemin.Text = "Feminino";
-            this.dbtFemin.UseVisualStyleBackColor = true;
+            this.rbtFemin.AutoSize = true;
+            this.rbtFemin.Location = new System.Drawing.Point(124, 24);
+            this.rbtFemin.Name = "rbtFemin";
+            this.rbtFemin.Size = new System.Drawing.Size(67, 17);
+            this.rbtFemin.TabIndex = 12;
+            this.rbtFemin.TabStop = true;
+            this.rbtFemin.Text = "Feminino";
+            this.rbtFemin.UseVisualStyleBackColor = true;
             // 
-            // rbtMaec
+            // rbtMasc
             // 
-            this.rbtMaec.AutoSize = true;
-            this.rbtMaec.Location = new System.Drawing.Point(25, 24);
-            this.rbtMaec.Name = "rbtMaec";
-            this.rbtMaec.Size = new System.Drawing.Size(73, 17);
-            this.rbtMaec.TabIndex = 11;
-            this.rbtMaec.TabStop = true;
-            this.rbtMaec.Text = "Masculino";
-            this.rbtMaec.UseVisualStyleBackColor = true;
+            this.rbtMasc.AutoSize = true;
+            this.rbtMasc.Location = new System.Drawing.Point(25, 24);
+            this.rbtMasc.Name = "rbtMasc";
+            this.rbtMasc.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasc.TabIndex = 11;
+            this.rbtMasc.TabStop = true;
+            this.rbtMasc.Text = "Masculino";
+            this.rbtMasc.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txbCPF
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 7;
+            this.txbCPF.Location = new System.Drawing.Point(195, 42);
+            this.txbCPF.Name = "txbCPF";
+            this.txbCPF.Size = new System.Drawing.Size(137, 20);
+            this.txbCPF.TabIndex = 7;
             // 
             // label7
             // 
@@ -382,11 +412,11 @@
             // 
             this.groupBox1.Controls.Add(this.txbDataNascim);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txbNomeAluno);
+            this.groupBox1.Controls.Add(this.txbNomeTutor);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txbNumMatric);
+            this.groupBox1.Controls.Add(this.txbCodigoCadastro);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(6, 36);
+            this.groupBox1.Location = new System.Drawing.Point(6, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(601, 121);
             this.groupBox1.TabIndex = 0;
@@ -401,6 +431,8 @@
             this.txbDataNascim.Size = new System.Drawing.Size(112, 20);
             this.txbDataNascim.TabIndex = 6;
             this.txbDataNascim.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
+            this.txbDataNascim.ValueChanged += new System.EventHandler(this.txbDataNascim_ValueChanged);
+            this.txbDataNascim.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbDataNascim_KeyUp);
             // 
             // label4
             // 
@@ -411,12 +443,12 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Data de Nascimento";
             // 
-            // txbNomeAluno
+            // txbNomeTutor
             // 
-            this.txbNomeAluno.Location = new System.Drawing.Point(25, 84);
-            this.txbNomeAluno.Name = "txbNomeAluno";
-            this.txbNomeAluno.Size = new System.Drawing.Size(410, 20);
-            this.txbNomeAluno.TabIndex = 3;
+            this.txbNomeTutor.Location = new System.Drawing.Point(25, 84);
+            this.txbNomeTutor.Name = "txbNomeTutor";
+            this.txbNomeTutor.Size = new System.Drawing.Size(410, 20);
+            this.txbNomeTutor.TabIndex = 3;
             // 
             // label3
             // 
@@ -427,13 +459,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nome do Responsável";
             // 
-            // txbNumMatric
+            // txbCodigoCadastro
             // 
-            this.txbNumMatric.Enabled = false;
-            this.txbNumMatric.Location = new System.Drawing.Point(25, 37);
-            this.txbNumMatric.Name = "txbNumMatric";
-            this.txbNumMatric.Size = new System.Drawing.Size(100, 20);
-            this.txbNumMatric.TabIndex = 1;
+            this.txbCodigoCadastro.Enabled = false;
+            this.txbCodigoCadastro.Location = new System.Drawing.Point(25, 37);
+            this.txbCodigoCadastro.Name = "txbCodigoCadastro";
+            this.txbCodigoCadastro.Size = new System.Drawing.Size(100, 20);
+            this.txbCodigoCadastro.TabIndex = 1;
             // 
             // label2
             // 
@@ -458,7 +490,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.dataGridView2);
+            this.groupBox7.Controls.Add(this.dgvAlunosDoTutor);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Location = new System.Drawing.Point(20, 89);
             this.groupBox7.Name = "groupBox7";
@@ -466,13 +498,76 @@
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             // 
-            // dataGridView2
+            // dgvAlunosDoTutor
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 38);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(538, 307);
-            this.dataGridView2.TabIndex = 37;
+            this.dgvAlunosDoTutor.AllowUserToAddRows = false;
+            this.dgvAlunosDoTutor.AllowUserToDeleteRows = false;
+            this.dgvAlunosDoTutor.AllowUserToResizeRows = false;
+            this.dgvAlunosDoTutor.AutoGenerateColumns = false;
+            this.dgvAlunosDoTutor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlunosDoTutor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAlunosDoTutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunosDoTutor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.alunoIDDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn});
+            this.dgvAlunosDoTutor.DataSource = this.responsavelBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlunosDoTutor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAlunosDoTutor.Location = new System.Drawing.Point(16, 38);
+            this.dgvAlunosDoTutor.MultiSelect = false;
+            this.dgvAlunosDoTutor.Name = "dgvAlunosDoTutor";
+            this.dgvAlunosDoTutor.ReadOnly = true;
+            this.dgvAlunosDoTutor.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Window;
+            this.dgvAlunosDoTutor.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAlunosDoTutor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlunosDoTutor.Size = new System.Drawing.Size(538, 307);
+            this.dgvAlunosDoTutor.TabIndex = 43;
+            // 
+            // alunoIDDataGridViewTextBoxColumn
+            // 
+            this.alunoIDDataGridViewTextBoxColumn.DataPropertyName = "AlunoID";
+            this.alunoIDDataGridViewTextBoxColumn.HeaderText = "AlunoID";
+            this.alunoIDDataGridViewTextBoxColumn.Name = "alunoIDDataGridViewTextBoxColumn";
+            this.alunoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.alunoIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 318;
+            // 
+            // relacaoAlunoDescrDataGridViewTextBoxColumn
+            // 
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.DataPropertyName = "RelacaoAlunoDescr";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.HeaderText = "Parentesco";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.Name = "relacaoAlunoDescrDataGridViewTextBoxColumn";
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.ReadOnly = true;
+            this.relacaoAlunoDescrDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // responsavelBindingSource1
+            // 
+            this.responsavelBindingSource1.DataSource = typeof(EscolaSis.Model.Responsavel);
             // 
             // label15
             // 
@@ -485,7 +580,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.txbNomeAlunoResp);
+            this.groupBox6.Controls.Add(this.txbNomeRespAluno);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Location = new System.Drawing.Point(20, 6);
             this.groupBox6.Name = "groupBox6";
@@ -493,13 +588,13 @@
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             // 
-            // txbNomeAlunoResp
+            // txbNomeRespAluno
             // 
-            this.txbNomeAlunoResp.Enabled = false;
-            this.txbNomeAlunoResp.Location = new System.Drawing.Point(16, 39);
-            this.txbNomeAlunoResp.Name = "txbNomeAlunoResp";
-            this.txbNomeAlunoResp.Size = new System.Drawing.Size(538, 20);
-            this.txbNomeAlunoResp.TabIndex = 3;
+            this.txbNomeRespAluno.Enabled = false;
+            this.txbNomeRespAluno.Location = new System.Drawing.Point(16, 39);
+            this.txbNomeRespAluno.Name = "txbNomeRespAluno";
+            this.txbNomeRespAluno.Size = new System.Drawing.Size(538, 20);
+            this.txbNomeRespAluno.TabIndex = 3;
             // 
             // label13
             // 
@@ -528,6 +623,8 @@
             this.Load += new System.EventHandler(this.FormAlunosCadastro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -545,7 +642,8 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunosDoTutor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -555,8 +653,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox lbxListaResponsavel;
+        private System.Windows.Forms.TextBox txbPesquisarTutor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -567,17 +665,17 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNovoAluno;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btnExcluirResposavel;
         private System.Windows.Forms.DateTimePicker txbDataNascim;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbNomeAluno;
+        private System.Windows.Forms.TextBox txbNomeTutor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbNumMatric;
+        private System.Windows.Forms.TextBox txbCodigoCadastro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton dbtFemin;
-        private System.Windows.Forms.RadioButton rbtMaec;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton rbtFemin;
+        private System.Windows.Forms.RadioButton rbtMasc;
+        private System.Windows.Forms.TextBox txbCPF;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbNumRG;
         private System.Windows.Forms.Label label6;
@@ -590,13 +688,19 @@
         private System.Windows.Forms.TextBox txbCidade;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox txbNomeAlunoResp;
+        private System.Windows.Forms.TextBox txbNomeRespAluno;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dgvAlunosDoTutor;
+        private System.Windows.Forms.BindingSource responsavelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alunoIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn relacaoAlunoDescrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource responsavelBindingSource1;
+        private System.Windows.Forms.BindingSource responsavelBindingSource2;
     }
 }

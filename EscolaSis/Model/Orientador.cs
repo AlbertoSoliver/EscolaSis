@@ -6,9 +6,11 @@ using System.Data.OleDb;
 namespace EscolaSis.Model
 {
     class Orientador
+
     {
         public int OrientadorID { get; set; }
         public string Nome { get; set; }
+        public string Pseudonimo { get; set; }
         public DateTime DataNascimento { get; set; }
         public string Formacao { get; set; }
         public DateTime DataAdmissao { get; set; }
@@ -40,6 +42,7 @@ namespace EscolaSis.Model
             {
                 OrientadorID = Convert.ToInt32(dt.Rows[0]["OrientadorID"].ToString());
                 Nome = dt.Rows[0]["Nome"].ToString();
+                Pseudonimo = dt.Rows[0]["Pseudonimo"].ToString();
                 if (dt.Rows[0]["DataNascimento"].ToString() != "") DataNascimento = Convert.ToDateTime(dt.Rows[0]["DataNascimento"].ToString());
                 Formacao = dt.Rows[0]["Formacao"].ToString();
                 if (dt.Rows[0]["DataAdmissao"].ToString() != "") DataAdmissao = Convert.ToDateTime(dt.Rows[0]["DataAdmissao"].ToString());
@@ -56,14 +59,13 @@ namespace EscolaSis.Model
             }
 
         }
-
-        public List<Orientador> ListaOrientadores(string filtro = "%")
+        public static List<Orientador> ListaOrientadores(string filtro = "%", bool IncluirTodos = false)
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "cstOrientadorLista";
             cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@Nome", filtro);
+            cmd.Parameters.AddWithValue("@Nome", "%" + filtro + "%");
 
             OleDbDataAdapter adp = DB.DBAdapter(cmd);
 
@@ -71,6 +73,8 @@ namespace EscolaSis.Model
             adp.Fill(dt);
 
             List<Orientador> lstOrientador = new List<Orientador>();
+
+            if (IncluirTodos) lstOrientador.Add(new Orientador {OrientadorID = 0, Nome="Todos" });
 
             foreach (DataRow item in dt.Rows)
             {
@@ -95,6 +99,80 @@ namespace EscolaSis.Model
             }
 
             return lstOrientador;
+        }
+        public void SalvarOrientador(string tipo)
+        {
+            string commandText = "";
+
+            if (tipo == "U")
+            {
+                commandText = "UPDATE Orientadores ";
+                commandText += "SET ";
+                commandText += "Nome = @Nome, ";
+                commandText += "Pseudonimo = @Pseudonimo, ";
+                commandText += "DataNascimento = @DataNascimento, ";
+                commandText += "Formacao = @Formacao, ";
+                commandText += "DataAdmissao = @DataAdmissao, ";
+                commandText += "Funcao = @Funcao, ";
+                commandText += "DataAfastam = @DataAfastam, ";
+                commandText += "RG = @RG, ";
+                commandText += "CPF = @CPF, ";
+                commandText += "Sexo = @Sexo, ";
+                commandText += "Endereco = @Endereco, ";
+                commandText += "Bairro = @Bairro, ";
+                commandText += "Cidade = @Cidade, ";
+                commandText += "CEP = @CEP, ";
+                commandText += "Telefone = @Telefone ";
+                commandText += "WHERE OrientadorID = @OrientadorID ";
+            }
+            else
+            {
+                commandText = "INSERT INTO Orientadores ";
+                commandText += "(Nome, Pseudonimo, DataNascimento, Formacao, DataAdmissao, Funcao, DataAfastam, RG, CPF, Sexo, Endereco, Bairro, Cidade, CEP, Telefone) ";
+                commandText += " VALUES ";
+                commandText += "(@Nome, @Pseudonimo, @DataNascimento, @Formacao, @DataAdmissao, @Funcao, @DataAfastam, @RG, @CPF, @Sexo, @Endereco, @Bairro, @Cidade, @CEP, @Telefone)";
+            }
+
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Nome", Nome.ToString());
+            cmd.Parameters.AddWithValue("@Pseudonimo", Pseudonimo.ToString());
+            if (DataNascimento.Year < 1900) cmd.Parameters.AddWithValue("@DataNascimento", DBNull.Value);
+            else cmd.Parameters.AddWithValue("@DataNascimento", DataNascimento);
+            cmd.Parameters.AddWithValue("@Formacao", Formacao.ToString());
+            if (DataAdmissao.Year < 1900) cmd.Parameters.AddWithValue("@DataAdmissao", DBNull.Value);
+            else cmd.Parameters.AddWithValue("@DataAdmissao", DataAdmissao);
+            cmd.Parameters.AddWithValue("@Funcao", Funcao.ToString());
+            if (DataAfastam.Year < 1900) cmd.Parameters.AddWithValue("@DataAfastam", DBNull.Value);
+            else cmd.Parameters.AddWithValue("@DataAfastam", DataAfastam);
+            cmd.Parameters.AddWithValue("@RG", RG.ToString());
+            cmd.Parameters.AddWithValue("@CPF", CPF.ToString());
+            cmd.Parameters.AddWithValue("@Sexo", Sexo.ToString());
+            cmd.Parameters.AddWithValue("@Endereco", Endereco.ToString());
+            cmd.Parameters.AddWithValue("@Bairro", Bairro.ToString());
+            cmd.Parameters.AddWithValue("@Cidade", Cidade.ToString());
+            cmd.Parameters.AddWithValue("@CEP", CEP.ToString());
+            cmd.Parameters.AddWithValue("@Telefone", Telefone.ToString());
+            if (tipo == "U") cmd.Parameters.AddWithValue("@OrientadorID", OrientadorID.ToString());
+
+            DB.ExecCommand(cmd);
+
+        }
+        public void DeletarOrientador()
+        {
+            string commandText = "";
+
+            commandText = "DELETE FROM Orientadores ";
+            commandText += "WHERE OrientadorID = @OrientadorID ";
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@OrientadorID", OrientadorID.ToString());
+
+            DB.ExecCommand(cmd);
         }
     }
 }

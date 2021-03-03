@@ -27,7 +27,24 @@ namespace EscolaSis.Model
 
             return lstAnoLetivo;
         }
-        public static List<string> ListaTurma()
+        public static List<string> ListaAnoMensaliade()
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstAnoMensalidadeLista";
+            cmd.Parameters.Clear();
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            List<string> lstAnoMensalidade = new List<string>();
+            foreach (DataRow item in dt.Rows) lstAnoMensalidade.Add(item["AnoPagemento"].ToString());
+
+            return lstAnoMensalidade;
+        }
+        public static List<string> ListaTurma(bool IncluirTodos = false)
         {
             OleDbCommand cmd = new OleDbCommand();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -40,9 +57,47 @@ namespace EscolaSis.Model
             adp.Fill(dt);
 
             List<string> lstaTurma = new List<string>();
+            if (IncluirTodos) lstaTurma.Add("Todas as Turmas");
             foreach (DataRow item in dt.Rows) lstaTurma.Add(item["Turma"].ToString());
 
             return lstaTurma;
+        }
+        public static List<string> ListaMesesAno()
+        {
+            return new List<string>()
+            {
+                "Janeiro",
+                "Fevereiro",
+                "Março",
+                "Abril",
+                "Maio",
+                "Junho",
+                "Julho",
+                "Agosto",
+                "Setembro",
+                "Outubro",
+                "Novembro",
+                "Dezembro"
+            };
+        }
+        public static List<string> ListaFormPagto()
+        {
+            return new List<string>()
+            {
+                "Dinheiro",
+                "Cartão",
+                "Boleto Bancário",
+                "Bolsa de Estudo"
+            };
+        }
+        public static List<string> ListaReferMensalidade()
+        {
+            return new List<string>()
+            {
+                "",
+                "Matrícula Anual",
+                "Mensalidade Regular"
+            };
         }
 
         public class Parenteso

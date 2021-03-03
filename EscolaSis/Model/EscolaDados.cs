@@ -1,7 +1,17 @@
-﻿namespace EscolaSis.Model
+﻿using System;
+using System.Data;
+using System.Data.OleDb;
+
+namespace EscolaSis.Model
 {
     class EscolaDados
     {
+        private string _RazaoSocial;
+        public string RazaoSocial
+        {
+            get { return _RazaoSocial; }
+            set { _RazaoSocial = value; }
+        }
         private string _NomeEscola;
         public string NomeEscola
         {
@@ -50,17 +60,76 @@
             get { return _PeriodoLetivoPadrao; }
             set { _PeriodoLetivoPadrao = value; }
         }
+        private decimal _TaxaDesconto;
 
+        public decimal TaxaDesconto
+        {
+            get { return _TaxaDesconto; }
+            set { _TaxaDesconto = value; }
+        }
+        private decimal _TaxaJuros;
+
+        public decimal TaxaJuros
+        {
+            get { return _TaxaJuros; }
+            set { _TaxaJuros = value; }
+        }
+        private decimal _TaxaMulta;
+
+        public decimal TaxaMulta
+        {
+            get { return _TaxaMulta; }
+            set { _TaxaMulta = value; }
+        }
 
         public EscolaDados()
         {
-            _NomeEscola = "";
-            _CNPJ = "";
-            _Endereco = "";
-            _Bairro = "";
-            _Cidade = "";
-            _CEP = "";
-            _PeriodoLetivoPadrao = "A0";
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstEscola";
+            cmd.Parameters.Clear();
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                _RazaoSocial = "Joelma Ferreira Sena-ME";
+                _NomeEscola = "Escola Rabiscando";
+                _CNPJ = "12.366.573/0001-12";
+                _Endereco = "R. Marechal Deodoro da Fonseca n.293";
+                _Bairro = "Folga";
+                _Cidade = "Ruy Barbosa - BA";
+                _CEP = "46.800-000";
+                _PeriodoLetivoPadrao = "A0";
+                _TaxaDesconto = Convert.ToDecimal(dt.Rows[0]["Desconto"].ToString());
+                _TaxaMulta = Convert.ToDecimal(dt.Rows[0]["Multa"].ToString());
+                _TaxaJuros = Convert.ToDecimal(dt.Rows[0]["Juros"].ToString());
+            }
+
+        }
+        public void SalvarEscola()
+        {
+            string commandText = "";
+
+
+                commandText = "UPDATE Escola ";
+                commandText += "SET ";
+                commandText += "Desconto = @Desconto, ";
+                commandText += "Multa = @Multa, ";
+                commandText += "Juros = @Juros ";
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Desconto", TaxaDesconto);
+            cmd.Parameters.AddWithValue("@Multa", TaxaMulta);
+            cmd.Parameters.AddWithValue("@Juros", TaxaJuros);
+
+            DB.ExecCommand(cmd);
+
         }
 
     }

@@ -32,6 +32,7 @@ namespace EscolaSis.Forms.Aluno
             {
                 responsavelInsert.SalvarResponsavelAluno("I");
                 MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             catch (Exception ex)
             {

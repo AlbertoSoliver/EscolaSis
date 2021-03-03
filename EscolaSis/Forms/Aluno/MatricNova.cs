@@ -16,7 +16,7 @@ namespace EscolaSis.Forms.Aluno
         {
             cbxAnoLetivo.DataSource = Model.Tools.ListaAnoLetivo();
             cbxPeriodoLetivo.DataSource = Model.Tools.PeriodoLetivo.ListaPeriodoLetivo(true);
-            cbxOrientador.DataSource = (new Model.Orientador()).ListaOrientadores();
+            cbxOrientador.DataSource = Model.Orientador.ListaOrientadores();
             cbxResultado.DataSource = Model.Tools.ResultadoFinal.ListaResultadoFinal();
             cbxTurma.DataSource = Model.Tools.ListaTurma();
 
@@ -37,18 +37,19 @@ namespace EscolaSis.Forms.Aluno
 
                 Model.Matricula matriculaInsert = new Model.Matricula();
                 matriculaInsert.AlunoID = Convert.ToUInt16(_AlunoID);
-                matriculaInsert.OrientadorID = Convert.ToInt16(cbxOrientador.SelectedValue.ToString());
+                matriculaInsert.OrientadorID = Convert.ToInt16(Convert.ToString(cbxOrientador.SelectedValue));
                 matriculaInsert.AnoLetivo = cbxAnoLetivo.Text;
                 matriculaInsert.Disciplina = txbDisciplianAtividade.Text;
-                matriculaInsert.CodigoPeriodo = cbxPeriodoLetivo.SelectedValue.ToString();
+                matriculaInsert.CodigoPeriodo = Convert.ToString(cbxPeriodoLetivo.SelectedValue);
                 matriculaInsert.Turma = cbxTurma.Text;
-                matriculaInsert.ResultadoFinal = cbxResultado.SelectedValue.ToString();
+                matriculaInsert.ResultadoFinal = Convert.ToString(cbxResultado.SelectedValue);
                 matriculaInsert.RelatorioAtividade = txbRelatorio.Text;
 
                 try
                 {
                     matriculaInsert.SalvarMatriculaAluno("I");
                     MessageBox.Show("Dados gravados com sucesso!", "EscolaSis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
                 }
                 catch (Exception ex)
                 {

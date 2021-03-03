@@ -12,6 +12,8 @@ namespace EscolaSis.Model
         public int AlunoID { get; set; }
         public int MatriculaID { get; set; }
         public int OrientadorID { get; set; }
+        public string NomeAluno { get; set; }
+        public string NumMatricula { get; set; }
         public string NomeOrientador { get; set; }
         public string AnoLetivo { get; set; }
         public string CodigoPeriodo { get; set; }
@@ -49,7 +51,6 @@ namespace EscolaSis.Model
                 OrientadorID = Convert.ToInt32(dt.Rows[0]["OrientadorID"].ToString());
                 NomeOrientador = dt.Rows[0]["NomeOrientador"].ToString();
                 AnoLetivo = dt.Rows[0]["AnoLetivo"].ToString();
-                //DataNascim = Convert.ToDateTime(dt.Rows[0]["DataNascim"].ToString());
                 CodigoPeriodo = dt.Rows[0]["CodigoPeriodoMatr"].ToString();
                 Turma = dt.Rows[0]["Turma"].ToString();
                 Disciplina = dt.Rows[0]["Disciplina"].ToString();
@@ -99,6 +100,51 @@ namespace EscolaSis.Model
 
             DB.ExecCommand(cmd);
 
+        }
+        public void DeletarMatriculaAluno()
+        {
+            string commandText = "";
+            commandText = "DELETE FROM Matriculas ";
+            commandText += "WHERE MatriculaID = @MatriculaID ";
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandText = commandText;
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@MatriculaID", MatriculaID.ToString());
+
+            DB.ExecCommand(cmd);
+        }
+        public static List<Matricula> ListaAlunosPorTurma(string orientadorID, string anoLetivo, string turma)
+        {
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "cstAlunosTurma";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@OrientadorID", orientadorID);
+            cmd.Parameters.AddWithValue("@AnoLetivo", anoLetivo);
+            cmd.Parameters.AddWithValue("@Turma", turma);
+
+            OleDbDataAdapter adp = DB.DBAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            List<Matricula> lstAlunosTurma = new List<Matricula>();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                Matricula matricula = new Matricula();
+                matricula.NomeAluno = item["NomeAluno"].ToString();
+                matricula.NumMatricula = item["NumMatricula"].ToString();
+                matricula.Disciplina = item["Disciplina"].ToString();
+                matricula.Turma = item["Turma"].ToString();
+                matricula.AnoLetivo = item["AnoLetivo"].ToString();
+                matricula.ResultadoFinal = item["ResultadoFinal"].ToString();
+                matricula.NomeOrientador = item["NomeOrientador"].ToString();
+                lstAlunosTurma.Add(matricula);
+            }
+
+            return lstAlunosTurma;
         }
     }
 }

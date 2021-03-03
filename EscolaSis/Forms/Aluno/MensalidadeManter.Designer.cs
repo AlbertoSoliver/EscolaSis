@@ -28,53 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MensalidadeManter));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.cbxRespPagto = new System.Windows.Forms.ComboBox();
+            this.responsavelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxAnoRefer = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cbxMesRefer = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txbValor = new System.Windows.Forms.NumericUpDown();
+            this.txbDataVencim = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txbDataEmissão = new System.Windows.Forms.DateTimePicker();
             this.label35 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpFormPagto = new System.Windows.Forms.GroupBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.txbValorPatoMens = new System.Windows.Forms.NumericUpDown();
+            this.txbValorPagtoMens = new System.Windows.Forms.NumericUpDown();
             this.label40 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.txbJuros = new System.Windows.Forms.NumericUpDown();
             this.label39 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txbValorDesc = new System.Windows.Forms.NumericUpDown();
             this.txbDataPagto = new System.Windows.Forms.DateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxFormPagto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
+            this.btnGravarLancamento = new System.Windows.Forms.Button();
+            this.chkRealizPagto = new System.Windows.Forms.CheckBox();
+            this.cbxReferencia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txbValorPatoMens)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValor)).BeginInit();
+            this.grpFormPagto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValorPagtoMens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbJuros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValorDesc)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.cbxReferencia);
+            this.groupBox1.Controls.Add(this.cbxRespPagto);
+            this.groupBox1.Controls.Add(this.cbxAnoRefer);
             this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.comboBox12);
+            this.groupBox1.Controls.Add(this.cbxMesRefer);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.txbValor);
+            this.groupBox1.Controls.Add(this.txbDataVencim);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.txbDataEmissão);
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -83,10 +89,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parcela";
             // 
-            // comboBox12
+            // cbxRespPagto
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
+            this.cbxRespPagto.DataSource = this.responsavelBindingSource;
+            this.cbxRespPagto.DisplayMember = "Nome";
+            this.cbxRespPagto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRespPagto.FormattingEnabled = true;
+            this.cbxRespPagto.Location = new System.Drawing.Point(15, 149);
+            this.cbxRespPagto.Name = "cbxRespPagto";
+            this.cbxRespPagto.Size = new System.Drawing.Size(405, 21);
+            this.cbxRespPagto.TabIndex = 53;
+            this.cbxRespPagto.ValueMember = "TutorAlunoID";
+            // 
+            // responsavelBindingSource
+            // 
+            this.responsavelBindingSource.DataSource = typeof(EscolaSis.Model.Responsavel);
+            // 
+            // cbxAnoRefer
+            // 
+            this.cbxAnoRefer.FormattingEnabled = true;
+            this.cbxAnoRefer.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -95,15 +117,45 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox12.Location = new System.Drawing.Point(294, 37);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(126, 21);
-            this.comboBox12.TabIndex = 49;
+            this.cbxAnoRefer.Location = new System.Drawing.Point(358, 38);
+            this.cbxAnoRefer.MaxLength = 4;
+            this.cbxAnoRefer.Name = "cbxAnoRefer";
+            this.cbxAnoRefer.Size = new System.Drawing.Size(62, 21);
+            this.cbxAnoRefer.TabIndex = 52;
+            this.cbxAnoRefer.Text = "1998";
+            this.cbxAnoRefer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxAnoRefer_KeyPress);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(12, 129);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(149, 13);
+            this.label27.TabIndex = 50;
+            this.label27.Text = "Responsável pelo Pagamento";
+            // 
+            // cbxMesRefer
+            // 
+            this.cbxMesRefer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMesRefer.FormattingEnabled = true;
+            this.cbxMesRefer.Items.AddRange(new object[] {
+            "Pai",
+            "Mãe",
+            "Irmão(ã)",
+            "Avô(ó)",
+            "Irmão(ã)",
+            "Tio(a)",
+            "Primo(a)",
+            "Amigo(a)"});
+            this.cbxMesRefer.Location = new System.Drawing.Point(272, 37);
+            this.cbxMesRefer.Name = "cbxMesRefer";
+            this.cbxMesRefer.Size = new System.Drawing.Size(80, 21);
+            this.cbxMesRefer.TabIndex = 49;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(291, 21);
+            this.label26.Location = new System.Drawing.Point(269, 21);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(113, 13);
             this.label26.TabIndex = 48;
@@ -112,43 +164,37 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(291, 74);
+            this.label37.Location = new System.Drawing.Point(269, 74);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(31, 13);
+            this.label37.Size = new System.Drawing.Size(94, 13);
             this.label37.TabIndex = 45;
-            this.label37.Text = "Valor";
+            this.label37.Text = "Valor Mensalidade";
             // 
-            // numericUpDown1
+            // txbValor
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(294, 90);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.txbValor.DecimalPlaces = 2;
+            this.txbValor.Location = new System.Drawing.Point(272, 90);
+            this.txbValor.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(127, 20);
-            this.numericUpDown1.TabIndex = 44;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.ThousandsSeparator = true;
+            this.txbValor.Name = "txbValor";
+            this.txbValor.Size = new System.Drawing.Size(149, 20);
+            this.txbValor.TabIndex = 44;
+            this.txbValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbValor.ThousandsSeparator = true;
+            this.txbValor.ValueChanged += new System.EventHandler(this.txbValor_ValueChanged);
             // 
-            // textBox1
+            // txbDataVencim
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 20);
-            this.textBox1.TabIndex = 47;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(147, 90);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(108, 20);
-            this.dateTimePicker2.TabIndex = 43;
-            this.dateTimePicker2.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
+            this.txbDataVencim.CustomFormat = "";
+            this.txbDataVencim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txbDataVencim.Location = new System.Drawing.Point(147, 90);
+            this.txbDataVencim.Name = "txbDataVencim";
+            this.txbDataVencim.Size = new System.Drawing.Size(108, 20);
+            this.txbDataVencim.TabIndex = 43;
+            this.txbDataVencim.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -168,15 +214,16 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Referência";
             // 
-            // dateTimePicker1
+            // txbDataEmissão
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(15, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker1.TabIndex = 41;
-            this.dateTimePicker1.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
+            this.txbDataEmissão.CustomFormat = "";
+            this.txbDataEmissão.Enabled = false;
+            this.txbDataEmissão.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txbDataEmissão.Location = new System.Drawing.Point(15, 90);
+            this.txbDataEmissão.Name = "txbDataEmissão";
+            this.txbDataEmissão.Size = new System.Drawing.Size(105, 20);
+            this.txbDataEmissão.TabIndex = 41;
+            this.txbDataEmissão.Value = new System.DateTime(2019, 2, 6, 0, 0, 0, 0);
             // 
             // label35
             // 
@@ -187,24 +234,24 @@
             this.label35.TabIndex = 40;
             this.label35.Text = "Emissão";
             // 
-            // groupBox2
+            // grpFormPagto
             // 
-            this.groupBox2.Controls.Add(this.label41);
-            this.groupBox2.Controls.Add(this.txbValorPatoMens);
-            this.groupBox2.Controls.Add(this.label40);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
-            this.groupBox2.Controls.Add(this.label39);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.txbDataPagto);
-            this.groupBox2.Controls.Add(this.label38);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 194);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(427, 137);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Pagamento da Parcela";
+            this.grpFormPagto.Controls.Add(this.label41);
+            this.grpFormPagto.Controls.Add(this.txbValorPagtoMens);
+            this.grpFormPagto.Controls.Add(this.label40);
+            this.grpFormPagto.Controls.Add(this.txbJuros);
+            this.grpFormPagto.Controls.Add(this.label39);
+            this.grpFormPagto.Controls.Add(this.txbValorDesc);
+            this.grpFormPagto.Controls.Add(this.txbDataPagto);
+            this.grpFormPagto.Controls.Add(this.label38);
+            this.grpFormPagto.Controls.Add(this.cbxFormPagto);
+            this.grpFormPagto.Controls.Add(this.label3);
+            this.grpFormPagto.Enabled = false;
+            this.grpFormPagto.Location = new System.Drawing.Point(12, 205);
+            this.grpFormPagto.Name = "grpFormPagto";
+            this.grpFormPagto.Size = new System.Drawing.Size(427, 137);
+            this.grpFormPagto.TabIndex = 1;
+            this.grpFormPagto.TabStop = false;
             // 
             // label41
             // 
@@ -215,21 +262,21 @@
             this.label41.TabIndex = 59;
             this.label41.Text = "Valor Pago";
             // 
-            // txbValorPatoMens
+            // txbValorPagtoMens
             // 
-            this.txbValorPatoMens.DecimalPlaces = 2;
-            this.txbValorPatoMens.Location = new System.Drawing.Point(294, 91);
-            this.txbValorPatoMens.Maximum = new decimal(new int[] {
+            this.txbValorPagtoMens.DecimalPlaces = 2;
+            this.txbValorPagtoMens.Location = new System.Drawing.Point(294, 91);
+            this.txbValorPagtoMens.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.txbValorPatoMens.Name = "txbValorPatoMens";
-            this.txbValorPatoMens.ReadOnly = true;
-            this.txbValorPatoMens.Size = new System.Drawing.Size(126, 20);
-            this.txbValorPatoMens.TabIndex = 58;
-            this.txbValorPatoMens.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txbValorPatoMens.ThousandsSeparator = true;
+            this.txbValorPagtoMens.Name = "txbValorPagtoMens";
+            this.txbValorPagtoMens.ReadOnly = true;
+            this.txbValorPagtoMens.Size = new System.Drawing.Size(126, 20);
+            this.txbValorPagtoMens.TabIndex = 58;
+            this.txbValorPagtoMens.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbValorPagtoMens.ThousandsSeparator = true;
             // 
             // label40
             // 
@@ -240,20 +287,21 @@
             this.label40.TabIndex = 57;
             this.label40.Text = "Juros e Multa";
             // 
-            // numericUpDown3
+            // txbJuros
             // 
-            this.numericUpDown3.DecimalPlaces = 2;
-            this.numericUpDown3.Location = new System.Drawing.Point(167, 91);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.txbJuros.DecimalPlaces = 2;
+            this.txbJuros.Location = new System.Drawing.Point(167, 91);
+            this.txbJuros.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(110, 20);
-            this.numericUpDown3.TabIndex = 56;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown3.ThousandsSeparator = true;
+            this.txbJuros.Name = "txbJuros";
+            this.txbJuros.Size = new System.Drawing.Size(110, 20);
+            this.txbJuros.TabIndex = 56;
+            this.txbJuros.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbJuros.ThousandsSeparator = true;
+            this.txbJuros.ValueChanged += new System.EventHandler(this.txbJuros_ValueChanged);
             // 
             // label39
             // 
@@ -264,25 +312,26 @@
             this.label39.TabIndex = 55;
             this.label39.Text = "Desconto";
             // 
-            // numericUpDown2
+            // txbValorDesc
             // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Location = new System.Drawing.Point(15, 91);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.txbValorDesc.DecimalPlaces = 2;
+            this.txbValorDesc.Location = new System.Drawing.Point(15, 91);
+            this.txbValorDesc.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(115, 20);
-            this.numericUpDown2.TabIndex = 54;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown2.ThousandsSeparator = true;
+            this.txbValorDesc.Name = "txbValorDesc";
+            this.txbValorDesc.Size = new System.Drawing.Size(115, 20);
+            this.txbValorDesc.TabIndex = 54;
+            this.txbValorDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbValorDesc.ThousandsSeparator = true;
+            this.txbValorDesc.ValueChanged += new System.EventHandler(this.txbValorDesc_ValueChanged);
             // 
             // txbDataPagto
             // 
             this.txbDataPagto.CustomFormat = " ";
-            this.txbDataPagto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txbDataPagto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txbDataPagto.Location = new System.Drawing.Point(294, 44);
             this.txbDataPagto.Name = "txbDataPagto";
             this.txbDataPagto.Size = new System.Drawing.Size(126, 20);
@@ -300,10 +349,11 @@
             this.label38.TabIndex = 52;
             this.label38.Text = "Pagamento";
             // 
-            // comboBox1
+            // cbxFormPagto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxFormPagto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFormPagto.FormattingEnabled = true;
+            this.cbxFormPagto.Items.AddRange(new object[] {
             "Pai",
             "Mãe",
             "Irmão(ã)",
@@ -312,10 +362,10 @@
             "Tio(a)",
             "Primo(a)",
             "Amigo(a)"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 21);
-            this.comboBox1.TabIndex = 51;
+            this.cbxFormPagto.Location = new System.Drawing.Point(15, 43);
+            this.cbxFormPagto.Name = "cbxFormPagto";
+            this.cbxFormPagto.Size = new System.Drawing.Size(262, 21);
+            this.cbxFormPagto.TabIndex = 51;
             // 
             // label3
             // 
@@ -326,39 +376,44 @@
             this.label3.TabIndex = 50;
             this.label3.Text = "Forma de Pagamento";
             // 
-            // button5
+            // btnGravarLancamento
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(393, 337);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(46, 43);
-            this.button5.TabIndex = 50;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnGravarLancamento.Image = ((System.Drawing.Image)(resources.GetObject("btnGravarLancamento.Image")));
+            this.btnGravarLancamento.Location = new System.Drawing.Point(393, 354);
+            this.btnGravarLancamento.Name = "btnGravarLancamento";
+            this.btnGravarLancamento.Size = new System.Drawing.Size(46, 43);
+            this.btnGravarLancamento.TabIndex = 50;
+            this.btnGravarLancamento.UseVisualStyleBackColor = true;
+            this.btnGravarLancamento.Click += new System.EventHandler(this.btnGravarLancamento_Click);
             // 
-            // textBox5
+            // chkRealizPagto
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(15, 146);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(406, 20);
-            this.textBox5.TabIndex = 51;
+            this.chkRealizPagto.AutoSize = true;
+            this.chkRealizPagto.Location = new System.Drawing.Point(27, 205);
+            this.chkRealizPagto.Name = "chkRealizPagto";
+            this.chkRealizPagto.Size = new System.Drawing.Size(121, 17);
+            this.chkRealizPagto.TabIndex = 61;
+            this.chkRealizPagto.Text = "Realizar Pagamento";
+            this.chkRealizPagto.UseVisualStyleBackColor = true;
+            this.chkRealizPagto.Click += new System.EventHandler(this.chkRealizPagto_Click);
             // 
-            // label27
+            // cbxReferencia
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(12, 129);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(149, 13);
-            this.label27.TabIndex = 50;
-            this.label27.Text = "Responsável pelo Pagamento";
+            this.cbxReferencia.FormattingEnabled = true;
+            this.cbxReferencia.Location = new System.Drawing.Point(15, 37);
+            this.cbxReferencia.MaxLength = 4;
+            this.cbxReferencia.Name = "cbxReferencia";
+            this.cbxReferencia.Size = new System.Drawing.Size(240, 21);
+            this.cbxReferencia.TabIndex = 54;
             // 
             // MensalidadeManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 385);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(451, 403);
+            this.Controls.Add(this.chkRealizPagto);
+            this.Controls.Add(this.btnGravarLancamento);
+            this.Controls.Add(this.grpFormPagto);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
@@ -367,44 +422,50 @@
             this.Name = "MensalidadeManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lançamento de Mensalidade";
+            this.Load += new System.EventHandler(this.MensalidadeManter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txbValorPatoMens)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.responsavelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValor)).EndInit();
+            this.grpFormPagto.ResumeLayout(false);
+            this.grpFormPagto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValorPagtoMens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbJuros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txbValorDesc)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txbDataEmissão;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker txbDataVencim;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown txbValor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cbxMesRefer;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox grpFormPagto;
+        private System.Windows.Forms.ComboBox cbxFormPagto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker txbDataPagto;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.NumericUpDown txbValorPatoMens;
+        private System.Windows.Forms.NumericUpDown txbValorPagtoMens;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown txbJuros;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.NumericUpDown txbValorDesc;
+        private System.Windows.Forms.Button btnGravarLancamento;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cbxAnoRefer;
+        private System.Windows.Forms.ComboBox cbxRespPagto;
+        private System.Windows.Forms.BindingSource responsavelBindingSource;
+        private System.Windows.Forms.CheckBox chkRealizPagto;
+        private System.Windows.Forms.ComboBox cbxReferencia;
     }
 }

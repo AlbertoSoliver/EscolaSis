@@ -132,5 +132,69 @@ namespace EscolaSis
             childForm.MdiParent = this;
             childForm.Show();
         }
+
+        private void MDIPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SobretoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Sobre.AboutBox();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void escolaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Escola.Escola();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void cadernetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Relatorio.Caderneta.SelecCaderneta();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void listaDeAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Relatorio.ListaAlunos.SelecListaAluno();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void listaDeParcelasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Relatorio.ListaParcelas.SelecListaParcela();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void MDIPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Curso.CursoLista();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void turmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Forms.Turma.TurmaLista();
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
     }
 }
