@@ -141,7 +141,7 @@
             // 
             // orientadorBindingSource
             // 
-            this.orientadorBindingSource.DataSource = typeof(EscolaSis.Model.Orientador);
+            //this.orientadorBindingSource.DataSource = typeof(EscolaSis.Model.Orientador);
             // 
             // txbPesquisarOrientador
             // 
